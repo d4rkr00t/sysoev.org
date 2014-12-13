@@ -1,0 +1,16 @@
+{
+  "name": "sysoev.org",
+  "version": "1.0.0",
+  "description": "Personal blog sysoev.org",
+  "author": "Stanislav Sysoev @d4rkr00t",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^1.7.2",
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-copy": "0.0.2",
+    "gulp-load-plugins": "^0.7.1",
+    "gulp-sass": "^1.1.0",
+    "gulp-swig": "^0.7.4"
+  }
+}
