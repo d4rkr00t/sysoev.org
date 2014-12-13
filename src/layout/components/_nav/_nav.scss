@@ -1,7 +1,8 @@
 .nav
 {
-    display: inline-block;
     position: relative;
+
+    display: inline-block;
 
     margin: 0;
     padding: 0;
@@ -29,6 +30,19 @@
             font-family: $fontTitle;
             font-size: $fontTiniest;
             font-weight: normal;
+
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+
+        &.-active
+        {
+            .nav__item-link, .nav__item-link:visited
+            {
+                color: $colorLinkHover;
+            }
         }
     }
 }

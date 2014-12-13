@@ -1,5 +1,5 @@
 layout/css/*.css
 layout/js/*.min.js
-styleguide/**
+styleguide/
 !styleguide/img/*
 node_modules
