@@ -17,12 +17,12 @@
             margin-left: -27px;
             padding: 0 0 0 24px;
 
-            border-left: 3px solid rgba(0, 0, 0, .25);
+            border-left: 3px solid rgba($fuscousGrey, .4);
         }
     }
 
     ul, ol {
-        margin-bottom: $vR * 4;
+        margin-bottom: ($vR * 4) - 1;
         padding: 0;
 
         list-style: none;
@@ -74,7 +74,7 @@
 .section-divider {
     display: block;
 
-    width: 100px;
+    width: 144px;
     margin: $vR * 8 auto $vR * 8 auto;
 
     border: 0;
