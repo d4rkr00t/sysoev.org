@@ -15,6 +15,15 @@
 
         margin-left: 12px;
 
+        font-family: $fontTitle;
+        font-size: $fontTiniest;
+        font-weight: normal;
+
+        &.-icon
+        {
+            font-size: $fontSmall;
+        }
+
         &:first-child
         {
             margin-left: 0;
@@ -26,10 +35,6 @@
             text-transform: uppercase;
 
             color: rgba(#fff, .4);
-
-            font-family: $fontTitle;
-            font-size: $fontTiniest;
-            font-weight: normal;
 
             &:hover
             {

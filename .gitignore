@@ -1,5 +1,4 @@
-layout/css/*.css
-layout/js/*.min.js
 styleguide/
 !styleguide/img/*
+!src/styleguide
 node_modules
