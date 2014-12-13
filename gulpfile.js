@@ -21,6 +21,9 @@ var gulp = require('gulp'),
         styles: ['src/layout/components/*.scss', 'src/layout/components/**/*.scss'],
         partials: 'src/layout/components/**/*.html',
         font: 'src/layout/components/_icon/font/*',
+        svg: 'src/layout/components/**/*.svg',
+        js: 'src/layout/js/*.js',
+        compJs: 'src/layout/components/**/*.js',
         styleguide: {
             pages: 'src/styleguide/pages/*.html',
             styleguide: 'src/styleguide/index.html',
@@ -29,7 +32,9 @@ var gulp = require('gulp'),
                 main: 'styleguide',
                 pages: 'styleguide/pages',
                 styles: 'styleguide/css',
-                font: 'styleguide/font'
+                font: 'styleguide/font',
+                svg: 'styleguide/svg',
+                js: 'styleguide/js',
             }
         }
     };
@@ -42,21 +47,6 @@ gulp.task('serve', function() {
         notify: false,
         server: 'styleguide'
     });
-});
-
-/**
- * Dev Styles
- */
-gulp.task('style:dev', function() {
-    return gulp.src(paths.mainStyle)
-        .pipe($.sass({
-            errLogToConsole: true,
-            sourceComments: 'map'
-        }))
-        .on('error', console.error.bind(console))
-        .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe(gulp.dest(paths.styleguide.dest.styles))
-        .pipe(reload({ stream: true }));
 });
 
 /**
@@ -105,7 +95,7 @@ gulp.task('styleguide:pages', function() {
 });
 
 /**
- * SVG Dev
+ * FONT Dev
  */
 gulp.task('font:dev', function() {
     return gulp.src(paths.font)
@@ -118,6 +108,34 @@ gulp.task('font:dev', function() {
 });
 
 /**
+ * SVG
+ */
+gulp.task('svg:dev', function() {
+    return gulp.src(paths.svg)
+        .pipe($.copy(paths.styleguide.dest.svg, {
+            prefix: paths.svg.split('/').reduce(function(prev) {
+                return prev + 1;
+            }, 0) - 2
+        }))
+        .pipe(reload({ stream: true }));
+});
+
+/**
+ * Scripts
+ */
+gulp.task('js:dev', function() {
+    // Single entry point to browserify
+    gulp.src(paths.js)
+        .pipe($.browserify({
+            insertGlobals: false,
+            debug: true
+        }))
+        .on('error', console.error.bind(console))
+        .pipe(gulp.dest(paths.styleguide.dest.js))
+        .pipe(reload({ stream: true }));
+});
+
+/**
  * Watchers
  */
 gulp.task('watch', function() {
@@ -126,14 +144,15 @@ gulp.task('watch', function() {
     gulp.watch(paths.styleguide.styleguide, ['styleguide:main']);
     gulp.watch(paths.styleguide.pages, ['styleguide:pages']);
     gulp.watch(paths.partials, ['styleguide:pages']);
+    gulp.watch([paths.js, paths.compJs], ['js:dev']);
 });
 
 gulp.task('dev', [
-    'style:dev',
     'styleguide:styles',
     'styleguide:main',
     'styleguide:pages',
     'font:dev',
+    'svg:dev',
     'watch',
     'serve'
 ]);

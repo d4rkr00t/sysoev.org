@@ -78,7 +78,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum placeat repudi
       </section>
 
       <section class="img">
-    <img src="/img/img1.jpg" alt="">
+    <a class="lightbox-target" href="/img/img1.jpg" data-size="1920x1200"><img src="/img/img1.jpg" alt=""></a>
 </section>
 
 
@@ -90,7 +90,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum placeat repudi
 
       <section class="img">
     <div class="img__img-cont">
-        <img src="/img/img1.jpg" alt="">
+        <a class="lightbox-target" href="/img/img1.jpg" data-size="1920x1200" data-desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ipsa ipsum quia nam, dicta saepe mollitia assumenda placeat aliquam corporis, recusandae id tenetur architecto?"><img src="/img/img1.jpg" alt=""></a>
     </div>
     <div class="img__desc">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis ipsa ipsum quia nam, dicta saepe mollitia assumenda placeat aliquam corporis, recusandae id tenetur architecto?
@@ -205,6 +205,59 @@ alert('123');
 
 </div>
 
+
+  <div class="pswp pswp--css_animation" tabindex="-1" role="dialog" aria-hidden="true">
+
+  <div class="pswp__bg"></div>
+
+  <div class="pswp__scroll-wrap">
+
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+
+    <div class="pswp__ui pswp__ui--hidden">
+
+      <div class="pswp__top-bar">
+
+        <div class="pswp__counter"></div>
+
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+        <button class="pswp__button pswp__button--share" title="Share"></button>
+
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="/js/photoswipe.min.js"></script>
+<script src="/js/photoswipe-ui-default.min.js"></script>
+
+
+  <script src="/js/page__post.js"></script>
 
 </body>
 
