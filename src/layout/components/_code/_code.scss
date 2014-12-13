@@ -1,8 +1,10 @@
 .code {
+    margin: $vR * 8 auto $vR * 8 auto;
+    padding: $vR * 2;
+
     background: $colorCodeBG;
+
     font-size: $fontCode;
-    margin: 51px auto 51px auto;
-    padding: 27px 18px;
 
     code {
         margin: 0;

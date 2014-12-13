@@ -1,6 +1,7 @@
 .img {
-    margin: 51px auto 51px auto;
     position: relative;
+
+    margin: $vR * 8 auto $vR * 8 auto;
 
     img {
         max-width: 100%;
@@ -11,21 +12,28 @@
     }
 
     &__desc {
-        width: 300 - 18px;
-        top: 18px;
-        right: 0;
         position: absolute;
-        font-size: $fontSmall;
+        top: $vR * 2;
+        right: 0;
+
+        width: 300 - 18px;
+
         color: $colorLightText;
+
         font-family: $fontTitle;
+        font-size: $fontSmall;
+        line-height: $vR * 3;
 
         &:before {
-            width: 80px;
             position: absolute;
-            top: -18px;
+            top: -($vR * 2);
             left: 0;
-            border-top: 1px solid rgba(0, 0, 0, .15);
+
+            width: 80px;
+
             content: "";
+
+            border-top: 1px solid rgba(0, 0, 0, .15);
         }
     }
 }
@@ -38,12 +46,12 @@
         }
 
         &__desc {
-            width: 100%;
             position: relative;
             top: 0;
             right: 0;
-            margin: 9px auto 0;
-            padding: 0 18px;
+
+            width: 100%;
+            margin: $vR auto 0;
 
             &:before {
                 display: none;

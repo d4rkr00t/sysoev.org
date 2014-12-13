@@ -7,7 +7,7 @@
     }
 
     p {
-        margin: 0 0 30px;
+        margin: 0 0 $vR * 4;
 
         &.section__notice {
             position: relative;
@@ -17,12 +17,12 @@
             margin-left: -27px;
             padding: 0 0 0 24px;
 
-            border-left: 3px solid rgba(0, 0, 0, .7);
+            border-left: 3px solid rgba(0, 0, 0, .25);
         }
     }
 
     ul, ol {
-        margin-bottom: 30px;
+        margin-bottom: $vR * 4;
         padding: 0;
 
         list-style: none;
@@ -47,7 +47,6 @@
         box-sizing: border-box;
         width: 58px;
         margin-left: -58px;
-        padding-top: 3px;
         padding-right: 15px;
 
         content: '•';
@@ -76,7 +75,7 @@
     display: block;
 
     width: 100px;
-    margin: 51px auto 41px auto;
+    margin: $vR * 8 auto $vR * 8 auto;
 
     border: 0;
     border-top: 1px solid rgba(0, 0, 0, .15);

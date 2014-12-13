@@ -4,8 +4,8 @@
     font-weight: 700;
     font-style: normal;
     line-height: 1.2;
-    margin-top: 40px;
-    margin-bottom: 4px;
+    margin-top: $vR * 5;
+    margin-bottom: $vR / 2;
 
     &.-size-1 {
         font-size: $fontBase * 2.7272727;
