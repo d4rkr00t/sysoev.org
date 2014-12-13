@@ -1,6 +1,9 @@
 .section {
     letter-spacing: 0.159999996423721px;
 
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
     &.-narrow {
         max-width: $narrowContMaxWidth;
         margin: 0 auto;

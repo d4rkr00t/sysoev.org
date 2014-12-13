@@ -67,8 +67,6 @@
 
         &-direction
         {
-            margin-bottom: $vR * 3;
-
             text-transform: uppercase;
 
             color: rgba(#fff, .5);
@@ -78,7 +76,17 @@
 
         &-title
         {
+            margin-top: $vR * 3;
+
             font-size: $fontBase * 1.2;
+        }
+    }
+
+    &.-main
+    {
+        .footer__post-switcher-direction
+        {
+            font-size: $fontMiddle;
         }
     }
 }
