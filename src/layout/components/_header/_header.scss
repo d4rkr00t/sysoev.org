@@ -47,6 +47,11 @@
             color: rgba(#fff, .5);
         }
 
+        &:hover, &:hover:visited
+        {
+            color: $golden;
+        }
+
         &-img
         {
             width: 70px;
@@ -202,11 +207,10 @@
 
     margin-bottom: 50px;
     padding: 0;
-    height: 100vh;
 
     .header__bg
     {
-        opacity: 1;
+        opacity: .3;
 
         &:after
         {
@@ -217,22 +221,21 @@
 
             content: '';
 
-            background: linear-gradient(to bottom, rgba($liver, .5) 0%, rgba($liver, 0) 200px);
+            background: rgba($liver, .9);
         }
     }
 
     .header__content
     {
         max-width: $mainContMaxWidth;
-        margin: -100px auto 42px;
+        margin: 0 auto;
+        padding: 21px 0;
 
         text-align: center;
 
-        color: #fff;
+        color: rgba(#fff, .7);
 
         position: relative;
-        top: 50%;
-        transform: translateY(-50%);
         text-shadow: 0 0 1px rgba($colorText, .1);
 
         .title
@@ -243,17 +246,6 @@
         &-desc
         {
             margin-bottom: 60px;
-        }
-    }
-
-    .header__intro-sep
-    {
-        border-top: 2px solid rgba(#fff, .8);
-
-        &:before
-        {
-            border-right: 1px solid rgba(#fff, .8);
-            border-left: 1px solid rgba(#fff, .8);
         }
     }
 }

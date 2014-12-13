@@ -17,14 +17,14 @@ var gulp = require('gulp'),
     ],
 
     paths = {
-        mainStyle: 'layout/css/style.scss',
-        styles: ['layout/components/*.scss', 'layout/components/**/*.scss'],
-        partials: 'layout/components/**/*.html',
-        font: 'layout/components/_icon/font/*',
+        mainStyle: 'src/layout/css/style.scss',
+        styles: ['src/layout/components/*.scss', 'src/layout/components/**/*.scss'],
+        partials: 'src/layout/components/**/*.html',
+        font: 'src/layout/components/_icon/font/*',
         styleguide: {
-            pages: 'styleguide/src/pages/*.html',
-            styleguide: 'styleguide/src/index.html',
-            style: 'styleguide/css/styleguide.scss',
+            pages: 'src/styleguide/pages/*.html',
+            styleguide: 'src/styleguide/index.html',
+            style: 'src/styleguide/styleguide.scss',
             dest: {
                 main: 'styleguide',
                 pages: 'styleguide/pages',
