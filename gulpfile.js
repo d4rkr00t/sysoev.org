@@ -28,7 +28,8 @@ var gulp = require('gulp'),
             dest: {
                 main: 'styleguide',
                 pages: 'styleguide/pages',
-                styles: 'styleguide/css'
+                styles: 'styleguide/css',
+                font: 'styleguide/font'
             }
         }
     };
@@ -108,7 +109,11 @@ gulp.task('styleguide:pages', function() {
  */
 gulp.task('font:dev', function() {
     return gulp.src(paths.font)
-        .pipe($.copy(paths.styleguide.dest.main))
+        .pipe($.copy(paths.styleguide.dest.font, {
+            prefix: paths.font.split('/').reduce(function(prev) {
+                return prev + 1;
+            }, 0)
+        }))
         .pipe(reload({ stream: true }));
 });
 
