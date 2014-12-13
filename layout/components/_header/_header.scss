@@ -1,0 +1,259 @@
+.header
+{
+    position: relative;
+
+    padding: 60px 0 40px;
+
+    background: darken($liver, 12);
+    background-size: cover;
+
+    &__bg
+    {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        opacity: .07;
+        background: $liver no-repeat 100% 100%;
+        background-size: cover;
+    }
+
+    &__content
+    {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__logo
+    {
+        display: block;
+
+        width: 110px;
+        margin: 0 auto 54px;
+
+        text-align: center;
+        text-decoration: none;
+
+        font-family: $fontTitle;
+        font-size: 21px;
+        font-weight: 300;
+
+        &, &:visited
+        {
+            color: rgba(#fff, .5);
+        }
+
+        &-img
+        {
+            width: 70px;
+            margin-bottom: 6px;
+
+            border-radius: 50%;
+        }
+
+        &-text
+        {
+            letter-spacing: 1px;
+        }
+    }
+
+    &__intro
+    {
+        text-align: center;
+
+        color: rgba(#fff, .5);
+
+        font-family: $fontTitle;
+        font-size: $fontBase * .8;
+
+        &-main
+        {
+            color: rgba(#fff, .7);
+
+            font-size: $fontBase * 1.5;
+            font-weight: 500;
+        }
+
+        &-sep
+        {
+            position: relative;
+
+            width: 100px;
+            margin: 30px auto 33px;
+
+            border-top: 2px solid rgba(#fff, .2);
+
+            &:before
+            {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+
+                display: block;
+
+                width: 4px;
+                height: 13px;
+                margin-top: -7px;
+                margin-left: -2px;
+
+                content: '';
+                transform: rotate(45deg);
+
+                border-right: 1px solid rgba(#fff, .3);
+                border-left: 1px solid rgba(#fff, .3);
+            }
+        }
+    }
+
+    &__place
+    {
+        margin-top: 9px;
+    }
+
+    &__contacts
+    {
+        margin: 24px 0 0 0;
+        padding: 0;
+
+        list-style: none;
+
+        font-size: $fontBase;
+
+        li
+        {
+            display: inline-block;
+
+            a
+            {
+                text-decoration: none;
+
+                color: rgba(#fff, .5);
+
+                font-size: $fontBase * 1.2;
+
+                &:hover
+                {
+                    color: $golden;
+                }
+
+                i
+                {
+                    position: relative;
+                    top: 2px;
+                }
+            }
+        }
+    }
+
+    &__top
+    {
+        position: relative;
+        z-index: 2;
+
+        padding: 18px;
+
+        .header__logo
+        {
+            position: relative;
+
+            display: inline-block;
+
+            width: 42px;
+            margin-right: 27px;
+
+            &:after
+            {
+                position: absolute;
+                top: 0;
+                right: -18px;
+
+                height: 42px;
+
+                content: '';
+
+                border-right: 1px solid rgba(#fff, .3);
+            }
+
+            img
+            {
+                width: 42px;
+            }
+        }
+
+        .header__contacts
+        {
+            display: inline-block;
+
+            margin: 0;
+
+            font-size: $fontSmall;
+        }
+    }
+}
+
+
+.header.-post.-with-image
+{
+    position: relative;
+
+    margin-bottom: 50px;
+    padding: 0;
+    height: 100vh;
+
+    .header__bg
+    {
+        opacity: 1;
+
+        &:after
+        {
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            content: '';
+
+            background: linear-gradient(to bottom, rgba($liver, .5) 0%, rgba($liver, 0) 200px);
+        }
+    }
+
+    .header__content
+    {
+        max-width: $mainContMaxWidth;
+        margin: -100px auto 42px;
+
+        text-align: center;
+
+        color: #fff;
+
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        text-shadow: 0 0 1px rgba($colorText, .1);
+
+        .title
+        {
+            margin-top: 0;
+        }
+
+        &-desc
+        {
+            margin-bottom: 60px;
+        }
+    }
+
+    .header__intro-sep
+    {
+        border-top: 2px solid rgba(#fff, .8);
+
+        &:before
+        {
+            border-right: 1px solid rgba(#fff, .8);
+            border-left: 1px solid rgba(#fff, .8);
+        }
+    }
+}

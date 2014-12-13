@@ -1,0 +1,12 @@
+.quote {
+    margin: 51px auto 51px auto;
+
+    color: $colorLightText;
+
+    font-size: $fontBase * 1.2;
+    font-style: italic;
+
+    &.-before-header {
+        margin-bottom: 41px;
+    }
+}

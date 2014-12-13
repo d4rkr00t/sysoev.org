@@ -1,0 +1,35 @@
+/**
+ * FONT
+ */
+$fontDefault: Georgia, Cambria, 'Times New Roman', Times, serif;
+$fontTitle: 'Helvetica Neue' Helvetica Arial sans-serif;
+
+$fontBase: 22px;
+$fontMiddle: 20px;
+$fontSmall: 18px;
+$fontCode: 16px;
+$lineHeight: 1.5;
+
+/**
+ * COLORS
+ */
+
+$oceanGreen: #57AD68;
+$golden: #F7C04F;
+
+$colorText: darken(#69606B, 3);
+$colorLightText: #69606B;
+$colorSubTitle: rgba(0, 0, 0, .44);
+
+$colorLink: $oceanGreen;
+$colorLinkHover: darken($oceanGreen, 10);
+
+$colorCodeBG: #f5f2f0;
+$liver: #514753;
+
+/**
+ * CONT
+ */
+$mainContMaxWidth: 1120px;
+$mainContMinWidth: 480px;
+$narrowContMaxWidth: 700px;

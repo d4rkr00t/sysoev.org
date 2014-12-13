@@ -1,0 +1,26 @@
+.title {
+    font-family: $fontTitle;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.2;
+    margin-top: 40px;
+    margin-bottom: 4px;
+
+    &.-size-1 {
+        font-size: $fontBase * 2.7272727;
+        margin-left: -3px;
+    }
+
+    &.-size-2 {
+        font-size: $fontBase * 1.6363636;
+        margin-left: -1.8px;
+    }
+
+    &.-size-3 {
+        color: $colorSubTitle;
+        font-size: $fontBase * 1.4545454;
+        font-weight: 300;
+        margin-left: -1.6px;
+    }
+}

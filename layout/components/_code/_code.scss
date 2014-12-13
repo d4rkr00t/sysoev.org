@@ -1,0 +1,11 @@
+.code {
+    background: $colorCodeBG;
+    font-size: $fontCode;
+    margin: 51px auto 51px auto;
+    padding: 27px 18px;
+
+    code {
+        margin: 0;
+        padding: 0;
+    }
+}

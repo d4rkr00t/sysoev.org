@@ -1,0 +1,45 @@
+/**
+*
+* Global
+*
+**/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+button {
+    -moz-osx-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+body {
+    font-weight: 300;
+    font-family: $fontDefault;
+    font-size: $fontBase;
+    line-height: $lineHeight;
+    color: $colorText;
+    letter-spacing: 0.01rem;
+}
+
+.main-cont {
+    max-width: $mainContMaxWidth;
+    min-width: $mainContMinWidth;
+    margin: 0 auto;
+    padding: 0 27px;
+}
+
+a, a:visited {
+    color: $colorLink;
+    transition: color .3s;
+
+    &:hover {
+        color: $colorLinkHover;
+        text-decoration: none;
+    }
+}
