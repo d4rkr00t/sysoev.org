@@ -12,7 +12,12 @@
     {
         display: inline-block;
 
-        margin-right: 12px;
+        margin-left: 12px;
+
+        &:first-child
+        {
+            margin-left: 0;
+        }
 
         &-link, &-link:visited
         {

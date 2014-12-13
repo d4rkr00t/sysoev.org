@@ -170,8 +170,8 @@
 
             display: inline-block;
 
-            width: $vR * 6;
-            height: $vR * 6;
+            width: $vR * 5;
+            height: $vR * 5;
             margin-right: 27px;
             margin-bottom: 0;
 
@@ -181,7 +181,7 @@
                 top: 0;
                 right: -18px;
 
-                height: $vR * 6;
+                height: $vR * 5;
 
                 content: '';
 
@@ -190,7 +190,7 @@
 
             img
             {
-                width: $vR * 6;
+                width: $vR * 5;
             }
         }
 
@@ -209,7 +209,7 @@
 
     .nav
     {
-        top: 6px;
+        top: 2px;
         float: right;
     }
 }
@@ -248,7 +248,7 @@
 
     .header__post-info
     {
-        padding-bottom: $vR / 4;
+        padding-top: $vR;
 
         text-transform: uppercase;
 

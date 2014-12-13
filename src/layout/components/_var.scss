@@ -17,6 +17,8 @@ $lineHeight: $vR * 4; // 32
  * COLORS
  */
 $golden: #F7C04F;
+$fuscousGrey: #3C373D;
+$liver: #514753;
 
 $colorText: darken(#69606B, 3);
 $colorLightText: #69606B;
@@ -26,7 +28,8 @@ $colorLink: $colorLightText;
 $colorLinkHover: $golden;
 
 $colorCodeBG: #f5f2f0;
-$liver: #514753;
+
+$colorFooterBg: $fuscousGrey;
 
 /**
  * CONT

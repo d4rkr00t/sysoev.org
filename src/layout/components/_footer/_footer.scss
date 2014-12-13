@@ -1,0 +1,26 @@
+.footer
+{
+    margin-top: $vR * 7;
+
+    color: rgba(#fff, .4);
+    background: $colorFooterBg;
+
+    font-family: $fontTitle;
+
+    &__nav
+    {
+        padding: $vR * 4 0 $vR * 2;
+
+        text-align: center;
+    }
+
+    &__copyright
+    {
+        padding: 0 0 $vR * 4 0;
+
+        text-align: center;
+
+        font-size: $fontTiny;
+        font-weight: normal;
+    }
+}
