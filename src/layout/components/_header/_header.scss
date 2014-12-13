@@ -4,6 +4,7 @@
 
     min-width: $mainContMinWidth;
     padding: 0 0 $vR * 5;
+    margin-bottom: $vR * 7;
 
     background: darken($liver, 12);
     background-size: cover;
@@ -219,7 +220,6 @@
 {
     position: relative;
 
-    margin-bottom: $vR * 7;
     padding: 0;
 
     .header__content

@@ -1,0 +1,101 @@
+.posts-list
+{
+    &__item
+    {
+        position: relative;
+
+        &:before
+        {
+            display: block;
+
+            width: 144px;
+            margin: $vR * 8 auto $vR * 7 auto;
+
+            content: '';
+
+            border: 0;
+            border-top: 1px solid rgba(0, 0, 0, .15);
+        }
+
+        &:first-child
+        {
+            &:before
+            {
+                display: none;
+            }
+        }
+
+        &-title
+        {
+            font-weight: 400;
+        }
+
+        &-info
+        {
+            text-transform: uppercase;
+
+            color: $colorSubTitle;
+
+            font-family: $fontTitle;
+            font-size: $fontTiny;
+            font-weight: normal;
+
+            &-date
+            {
+                margin-right: 16px;
+
+                &:after {
+                    position: absolute;
+
+                    display: inline-block;
+
+                    box-sizing: border-box;
+                    width: 16px;
+                    margin-right: 0;
+                    padding-top: 0;
+                    padding-right: 0;
+
+                    content: '•';
+                    text-align: right;
+
+                    font-size: $fontBase * 1.3;
+                }
+            }
+
+            &-tags
+            {
+                position: relative;
+
+                display: inline-block;
+
+                margin: 0;
+                padding: 0;
+
+                list-style: none;
+
+                li
+                {
+                    display: inline-block;
+
+                    margin: 0 4px;
+
+                    a, a:visited
+                    {
+                        color: $colorSubTitle;
+
+                        &:hover
+                        {
+                            color: $colorLinkHover;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-desc
+        {
+            font-size: $fontMiddle;
+            line-height: $vR * 3;
+        }
+    }
+}
