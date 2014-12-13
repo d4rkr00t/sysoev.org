@@ -3,7 +3,7 @@
     position: relative;
 
     min-width: $mainContMinWidth;
-    padding: $vR * 7 0 $vR * 5;
+    padding: 0 0 $vR * 5;
 
     background: darken($liver, 12);
     background-size: cover;
@@ -162,7 +162,7 @@
         position: relative;
         z-index: 2;
 
-        padding: $vR * 2;
+        padding: $vR * 2 $vR * 2 $vR * 3;
 
         .header__logo
         {
@@ -206,6 +206,12 @@
             font-size: $fontSmall;
         }
     }
+
+    .nav
+    {
+        top: 6px;
+        float: right;
+    }
 }
 
 
@@ -213,7 +219,7 @@
 {
     position: relative;
 
-    margin-bottom: $vR * 6;
+    margin-bottom: $vR * 7;
     padding: 0;
 
     .header__content
@@ -222,7 +228,7 @@
 
         max-width: $mainContMaxWidth;
         margin: 0 auto;
-        padding: $vR * 6 21px $vR * 3;
+        padding: $vR * 7 21px $vR * 6;
 
         text-align: center;
 

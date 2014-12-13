@@ -1,0 +1,29 @@
+.nav
+{
+    display: inline-block;
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    &__item
+    {
+        display: inline-block;
+
+        margin-right: 12px;
+
+        &-link, &-link:visited
+        {
+            text-decoration: none;
+            text-transform: uppercase;
+
+            color: rgba(#fff, .4);
+
+            font-family: $fontTitle;
+            font-size: $fontTiniest;
+            font-weight: normal;
+        }
+    }
+}
