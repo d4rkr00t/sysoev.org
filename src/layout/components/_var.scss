@@ -4,11 +4,13 @@
 $fontDefault: Georgia, Cambria, 'Times New Roman', Times, serif;
 $fontTitle: 'Helvetica Neue' Helvetica Arial sans-serif;
 
-$fontBase: 22px;
-$fontMiddle: 20px;
-$fontSmall: 18px;
+$fontBase: 21px;
+$fontMiddle: 18px;
+$fontSmall: 16px;
+$fontTiny: 14px;
 $fontCode: 16px;
-$lineHeight: 32px;
+$vR: 8px;
+$lineHeight: $vR * 4; // 32
 
 /**
  * COLORS

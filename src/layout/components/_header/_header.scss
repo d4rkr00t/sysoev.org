@@ -2,7 +2,8 @@
 {
     position: relative;
 
-    padding: 60px 0 40px;
+    min-width: $mainContMinWidth;
+    padding: $vR * 7 0 $vR * 5;
 
     background: darken($liver, 12);
     background-size: cover;
@@ -32,8 +33,8 @@
     {
         display: block;
 
-        width: 110px;
-        margin: 0 auto 54px;
+        width: $vR * 14;
+        margin: 0 auto $vR * 7;
 
         text-align: center;
         text-decoration: none;
@@ -54,8 +55,8 @@
 
         &-img
         {
-            width: 70px;
-            margin-bottom: 6px;
+            width: $vR * 9;
+            margin-bottom: $vR;
 
             border-radius: 50%;
         }
@@ -81,6 +82,8 @@
 
             font-size: $fontBase * 1.5;
             font-weight: 500;
+
+            padding-bottom: 6px;
         }
 
         &-sep
@@ -88,7 +91,7 @@
             position: relative;
 
             width: 100px;
-            margin: 30px auto 33px;
+            margin: $vR * 4 - 2 auto $vR * 4;
 
             border-top: 2px solid rgba(#fff, .2);
 
@@ -116,12 +119,12 @@
 
     &__place
     {
-        margin-top: 9px;
+        margin-top: $vR;
     }
 
     &__contacts
     {
-        margin: 24px 0 0 0;
+        margin: $vR * 3 0 0 0;
         padding: 0;
 
         list-style: none;
@@ -159,7 +162,7 @@
         position: relative;
         z-index: 2;
 
-        padding: 18px;
+        padding: $vR * 2;
 
         .header__logo
         {
@@ -167,8 +170,10 @@
 
             display: inline-block;
 
-            width: 42px;
+            width: $vR * 6;
+            height: $vR * 6;
             margin-right: 27px;
+            margin-bottom: 0;
 
             &:after
             {
@@ -176,7 +181,7 @@
                 top: 0;
                 right: -18px;
 
-                height: 42px;
+                height: $vR * 6;
 
                 content: '';
 
@@ -185,12 +190,15 @@
 
             img
             {
-                width: 42px;
+                width: $vR * 6;
             }
         }
 
         .header__contacts
         {
+            position: relative;
+            top: -2px;
+
             display: inline-block;
 
             margin: 0;
@@ -205,37 +213,20 @@
 {
     position: relative;
 
-    margin-bottom: 50px;
+    margin-bottom: $vR * 6;
     padding: 0;
-
-    .header__bg
-    {
-        opacity: .3;
-
-        &:after
-        {
-            position: absolute;
-
-            width: 100%;
-            height: 100%;
-
-            content: '';
-
-            background: rgba($liver, .9);
-        }
-    }
 
     .header__content
     {
+        position: relative;
+
         max-width: $mainContMaxWidth;
         margin: 0 auto;
-        padding: 21px 0;
+        padding: $vR * 6 21px $vR * 3;
 
         text-align: center;
 
-        color: rgba(#fff, .7);
-
-        position: relative;
+        color: rgba(#fff, .8);
         text-shadow: 0 0 1px rgba($colorText, .1);
 
         .title
@@ -245,7 +236,71 @@
 
         &-desc
         {
-            margin-bottom: 60px;
+            margin-bottom: $vR * 6;
+        }
+    }
+
+    .header__post-info
+    {
+        padding-bottom: $vR / 4;
+
+        text-transform: uppercase;
+
+        color: rgba(#fff, .5);
+
+        font-family: $fontTitle;
+        font-size: $fontTiny;
+        font-weight: normal;
+
+        &-date
+        {
+            margin-right: 16px;
+
+            &:after {
+                position: absolute;
+
+                display: inline-block;
+
+                box-sizing: border-box;
+                width: 16px;
+                margin-right: 0;
+                padding-top: 0;
+                padding-right: 0;
+
+                content: '•';
+                text-align: right;
+
+                font-size: $fontBase * 1.3;
+            }
+        }
+
+        &-tags
+        {
+            position: relative;
+
+            display: inline-block;
+
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+
+            li
+            {
+                display: inline-block;
+
+                margin: 0 4px;
+
+                a, a:visited
+                {
+                    color: rgba(#fff, .5);
+
+                    &:hover
+                    {
+                        color: $colorLinkHover;
+                    }
+                }
+            }
         }
     }
 }
