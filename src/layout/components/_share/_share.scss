@@ -1,0 +1,23 @@
+.share
+{
+    padding: $vR 0 $vR * 3;
+
+    text-align: right;
+    text-transform: uppercase;
+
+    font-family: $fontTitle;
+    font-size: $fontTiny;
+
+    &__item
+    {
+        text-decoration: none;
+
+        .icon
+        {
+            position: relative;
+            top: 1px;
+
+            font-size: $fontMiddle;
+        }
+    }
+}

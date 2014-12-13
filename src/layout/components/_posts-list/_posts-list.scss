@@ -1,5 +1,7 @@
 .posts-list
 {
+    text-align: center;
+
     &__item
     {
         position: relative;
@@ -9,7 +11,7 @@
             display: block;
 
             width: 144px;
-            margin: $vR * 8 auto $vR * 7 auto;
+            margin: $vR * 8 auto $vR * 6 auto;
 
             content: '';
 
@@ -39,6 +41,9 @@
             font-family: $fontTitle;
             font-size: $fontTiny;
             font-weight: normal;
+
+            margin-bottom: $vR * 2;
+            line-height: $vR * 5;
 
             &-date
             {
@@ -97,5 +102,10 @@
             font-size: $fontMiddle;
             line-height: $vR * 3;
         }
+    }
+
+    .quote
+    {
+        margin: 0;
     }
 }
