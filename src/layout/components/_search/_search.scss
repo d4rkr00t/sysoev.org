@@ -1,0 +1,91 @@
+.search
+{
+    position: fixed;
+
+    overflow: hidden;
+
+    width: 0;
+    height: 0;
+
+    top: 0;
+    right: 0;
+
+    transition: all .3s;
+    text-align: center;
+
+    font-family: $fontTitle;
+
+    &.-active {
+        z-index: 10;
+
+        width: 100%;
+        height: 100%;
+
+        background: rgba(mix($colorLightText, #fff, 20%), .97);
+    }
+
+    &__container
+    {
+        position: relative;
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        color: $colorText;
+
+        font-size: $fontBase * 2;
+    }
+
+    &__input
+    {
+        width: 70%;
+
+        border: 0;
+        border-bottom: 1px solid rgba($fuscousGrey, .15);
+        background: transparent;
+
+        &:focus
+        {
+            outline: 0;
+        }
+    }
+
+    button
+    {
+        border: 0;
+        background: transparent;
+
+        &:focus
+        {
+            outline: 0;
+        }
+    }
+
+    &__icon
+    {
+        color: rgba($fuscousGrey, .15);
+    }
+
+    &__close
+    {
+        position: absolute;
+        top: $vR * 2;
+        right: $vR * 2;
+
+        color: rgba($fuscousGrey, .5);
+
+        i
+        {
+            transition: transform .5s;
+        }
+
+        &:hover, &:visited:hover
+        {
+            color: rgba($fuscousGrey, .5);
+
+            i {
+                transform: rotate(360deg);
+            }
+        }
+    }
+}
