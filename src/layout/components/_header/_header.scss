@@ -92,7 +92,7 @@
             position: relative;
 
             width: 100px;
-            margin: $vR * 4 - 2 auto $vR * 4;
+            margin: $vR * 4 auto $vR * 4 - 1;
 
             border-top: 2px solid rgba(#fff, .2);
 
@@ -208,6 +208,11 @@
         }
     }
 
+    &__tag-title
+    {
+        text-transform: uppercase;
+    }
+
     .nav
     {
         top: 2px;
@@ -216,7 +221,7 @@
 }
 
 
-.header.-post.-with-image
+.header.-post
 {
     position: relative;
 
@@ -228,7 +233,7 @@
 
         max-width: $mainContMaxWidth;
         margin: 0 auto;
-        padding: $vR * 7 21px $vR * 6;
+        padding: $vR * 9 21px $vR * 14 + 4;
 
         text-align: center;
 
@@ -238,11 +243,12 @@
         .title
         {
             margin-top: 0;
+            margin-bottom: $vR * 5 - 2;
         }
 
         &-desc
         {
-            margin-bottom: $vR * 6;
+            padding-bottom: $vR;
         }
     }
 

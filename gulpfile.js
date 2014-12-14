@@ -50,6 +50,21 @@ gulp.task('serve', function() {
 });
 
 /**
+ * Style
+ */
+gulp.task('style:dev', function() {
+    return gulp.src(paths.mainStyle)
+        .pipe($.sass({
+            errLogToConsole: true,
+            sourceComments: 'map'
+        }))
+        .on('error', console.error.bind(console))
+        .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+        .pipe(gulp.dest(paths.styleguide.dest.styles))
+        .pipe(reload({ stream: true }));
+});
+
+/**
  * Style Guide Styles
  */
 gulp.task('styleguide:styles', function() {
@@ -148,6 +163,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('dev', [
+    'style:dev',
     'styleguide:styles',
     'styleguide:main',
     'styleguide:pages',
