@@ -5,7 +5,7 @@
     font-style: normal;
     line-height: 1.2;
     margin-top: $vR * 5;
-    margin-bottom: $vR / 2;
+    margin-bottom: $vR / 2 - 1;
 
     &.-size-1 {
         font-size: $fontBase * 2.7272727;
@@ -23,5 +23,6 @@
         font-size: $fontBase * 1.4545454;
         font-weight: 300;
         margin-left: -1.6px;
+        padding-top: 3px;
     }
 }

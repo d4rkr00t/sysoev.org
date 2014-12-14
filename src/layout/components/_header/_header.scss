@@ -92,7 +92,7 @@
             position: relative;
 
             width: 100px;
-            margin: $vR * 4 auto $vR * 4 - 1;
+            margin: $vR * 4 + 2 auto $vR * 4;
 
             border-top: 2px solid rgba(#fff, .2);
 
@@ -198,7 +198,7 @@
         .header__contacts
         {
             position: relative;
-            top: -2px;
+            top: -3px;
 
             display: inline-block;
 
@@ -215,7 +215,7 @@
 
     .nav
     {
-        top: 2px;
+        top: 1px;
         float: right;
     }
 }
@@ -233,7 +233,7 @@
 
         max-width: $mainContMaxWidth;
         margin: 0 auto;
-        padding: $vR * 9 21px $vR * 14 + 4;
+        padding: $vR * 10 21px $vR * 14 + 6;
 
         text-align: center;
 
@@ -243,7 +243,7 @@
         .title
         {
             margin-top: 0;
-            margin-bottom: $vR * 5 - 2;
+            margin-bottom: $vR * 5 - 3;
         }
 
         &-desc
@@ -254,7 +254,7 @@
 
     .header__post-info
     {
-        padding-top: $vR;
+        padding-top: $vR - 2;
 
         text-transform: uppercase;
 

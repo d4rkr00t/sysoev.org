@@ -31,6 +31,7 @@
     }
 
     ul, ol {
+        margin-top: -1px;
         margin-bottom: ($vR * 4) - 1;
         padding: 0;
 
@@ -84,7 +85,7 @@
     display: block;
 
     width: 144px;
-    margin: $vR * 8 auto $vR * 8 auto;
+    margin: $vR * 8 - 1 auto $vR * 8 - 2 auto;
 
     border: 0;
     border-top: 1px solid rgba(0, 0, 0, .15);
