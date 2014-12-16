@@ -1,0 +1,50 @@
+---
+title: 'Мысли в статике | sysoev.org'
+layout: "layout"
+isPaged: true
+pagedCollection: 'posts'
+pageSize: 1
+---
+
+<%- partial('header_main') %>
+
+<div class="posts-list">
+    <% getPageCollection('posts').toJSON().forEach(function(post) { %>
+
+    <div class="posts-list__item">
+        <a href="<%= post.url %>" class="posts-list__item-title title -size-2"><%= post.title %></a>
+        <div class="posts-list__item-info">
+            <span class="posts-list__item-info-date">21th DECEMBER 2014</span>
+            <ul class="posts-list__item-info-tags">
+                <li><a href="#">#javascript</a></li>
+                <li><a href="#">#react</a></li>
+                <li><a href="#">#d3</a></li>
+                <li><a href="#">#dataviz</a></li>
+            </ul>
+        </div>
+        <div class="posts-list__item-desc">
+            <%- post.description %>
+        </div>
+    </div>
+
+    <% }); %>
+</div>
+
+<!-- Page Listing -->
+<div class="pagination">
+    <ul>
+        <!-- Previous Page Button -->
+        <% if (!hasPrevPage()) { %>
+            <li class="disabled"><span>Prev</span></li>
+        <% } else { %>
+            <li><a href="<%= getPrevPage() %>">Prev</a></li>
+        <% } %>
+
+        <!-- Next Page Button -->
+        <% if (!hasNextPage()) { %>
+            <li class="disabled"><span>Next</span></li>
+        <% } else { %>
+            <li><a href="<%= getNextPage() %>">Next</a></li>
+        <% } %>
+    </ul>
+</div>
