@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')()
+    $ = require('gulp-load-plugins')(),
+
+    minifyCSS = require('gulp-minify-css'),
 
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
@@ -36,6 +38,14 @@ var gulp = require('gulp'),
                 svg: 'styleguide/svg',
                 js: 'styleguide/js',
             }
+        },
+        prod: {
+            dest: {
+                styles: 'docpad/src/files/css',
+                font: 'docpad/src/files/font',
+                svg: 'docpad/src/files/svg',
+                js: 'docpad/src/files/js',
+            }
         }
     };
 
@@ -62,6 +72,17 @@ gulp.task('style:dev', function() {
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
         .pipe(gulp.dest(paths.styleguide.dest.styles))
         .pipe(reload({ stream: true }));
+});
+
+gulp.task('style:prod', function() {
+    return gulp.src(paths.mainStyle)
+        .pipe($.sass({
+            errLogToConsole: true,
+        }))
+        .on('error', console.error.bind(console))
+        .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+        .pipe(minifyCSS())
+        .pipe(gulp.dest(paths.prod.dest.styles));
 });
 
 /**
@@ -122,6 +143,15 @@ gulp.task('font:dev', function() {
         .pipe(reload({ stream: true }));
 });
 
+gulp.task('font:prod', function() {
+    return gulp.src(paths.font)
+        .pipe($.copy(paths.prod.dest.font, {
+            prefix: paths.font.split('/').reduce(function(prev) {
+                return prev + 1;
+            }, 0)
+        }));
+});
+
 /**
  * SVG
  */
@@ -133,6 +163,15 @@ gulp.task('svg:dev', function() {
             }, 0) - 2
         }))
         .pipe(reload({ stream: true }));
+});
+
+gulp.task('svg:prod', function() {
+    return gulp.src(paths.svg)
+        .pipe($.copy(paths.prod.dest.svg, {
+            prefix: paths.svg.split('/').reduce(function(prev) {
+                return prev + 1;
+            }, 0) - 2
+        }));
 });
 
 /**
@@ -148,6 +187,18 @@ gulp.task('js:dev', function() {
         .on('error', console.error.bind(console))
         .pipe(gulp.dest(paths.styleguide.dest.js))
         .pipe(reload({ stream: true }));
+});
+
+gulp.task('js:prod', function() {
+    // Single entry point to browserify
+    gulp.src(paths.js)
+        .pipe($.browserify({
+            insertGlobals: false,
+            debug: false
+        }))
+        .pipe($.uglify())
+        .on('error', console.error.bind(console))
+        .pipe(gulp.dest(paths.prod.dest.js));
 });
 
 /**
@@ -171,4 +222,10 @@ gulp.task('dev', [
     'svg:dev',
     'watch',
     'serve'
+]);
+
+gulp.task('prod', [
+    'style:prod',
+    'font:prod',
+    'js:prod'
 ]);

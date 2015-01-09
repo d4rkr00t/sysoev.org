@@ -9,6 +9,9 @@
   "dependencies": {
     "docpad": "~6.69.1",
     "docpad-plugin-ejs": "~2.0.2",
+    "docpad-plugin-highlightjs": "~2.3.0",
+    "docpad-plugin-marked": "~2.2.1",
+    "docpad-plugin-moment": "~2.0.2",
     "docpad-plugin-paged": "~2.2.5",
     "docpad-plugin-partials": "~2.9.1",
     "docpad-plugin-tags": "~2.0.7"

@@ -2,3 +2,7 @@ styleguide/
 !styleguide/img/*
 !src/styleguide
 node_modules
+docpad/out/*
+docpad/src/files/js/*
+docpad/src/files/css/*
+docpad/src/files/font/*

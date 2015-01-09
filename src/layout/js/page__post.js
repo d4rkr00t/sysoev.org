@@ -1,8 +1,7 @@
 require('../components/_search/_search.js')();
 
-var
-    // PhotoSwipe = require('../components/_photoswipe/photoswipe.min.js'),
-    // PhotoSwipeUI_Default = require('../components/_photoswipe/photoswipe-ui-default.min.js'),
+var PhotoSwipe = require('../components/_photoswipe/photoswipe.min.js'),
+    PhotoSwipeUI_Default = require('../components/_photoswipe/photoswipe-ui-default.min.js'),
     delegateEvent = require('../components/_delegate-event/_delegate-event.js'),
 
     pswpElement = document.querySelector('.pswp'),
