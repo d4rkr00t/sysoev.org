@@ -14,7 +14,9 @@
     "docpad-plugin-moment": "~2.0.2",
     "docpad-plugin-paged": "~2.2.5",
     "docpad-plugin-partials": "~2.9.1",
-    "docpad-plugin-tags": "~2.0.7"
+    "docpad-plugin-sitemap": "~2.2.0",
+    "docpad-plugin-tags": "~2.0.7",
+    "docpad-plugin-text": "~2.3.2"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

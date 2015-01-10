@@ -1,7 +1,7 @@
 <header class="header clearfix -post -no-desc">
 
     <% if (document.img) { %>
-        <div class="header__bg" style="background-image: url(/img/<%= document.img %>)"></div>
+        <div class="header__bg" style="background-image: url(<%= document.img %>)"></div>
     <% } else { %>
         <div class="header__bg" style="background-image: url(/img/header.jpg)"></div>
     <% } %>
@@ -19,9 +19,12 @@
     <div class="header__content">
 
         <h1 class="title -size-1"><%= document.title %></h1>
-        <p class="header__content-desc">
-            <%= document.description %>
-        </p>
+
+        <% if (document.description) { %>
+            <p class="header__content-desc">
+                <%= document.description %>
+            </p>
+        <% } %>
 
         <div class="header__intro-sep"></div>
 

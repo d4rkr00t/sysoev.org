@@ -1,0 +1,13 @@
+<div class="posts-list__item">
+    <div class="posts-list__item-info">
+        <span class="posts-list__item-info-date"><%= post.humanDate %></span>
+        <ul class="posts-list__item-info-tags">
+            <% post.tags.forEach(function(tag) { %>
+                <li><a href="/tags/<%= tag %>.html">#<%= tag %></a></li>
+            <% }); %>
+        </ul>
+    </div>
+    <div class="posts-list__item-desc">
+        <%- post.content %>
+    </div>
+</div>

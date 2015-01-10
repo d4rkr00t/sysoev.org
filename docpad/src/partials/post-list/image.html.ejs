@@ -1,0 +1,14 @@
+<div class="posts-list__item">
+    <h2 class="posts-list__item-title title -size-2"><%= post.title %></h2>
+    <div class="posts-list__item-info">
+        <span class="posts-list__item-info-date"><%= post.humanDate %></span>
+        <ul class="posts-list__item-info-tags">
+            <% post.tags.forEach(function(tag) { %>
+                <li><a href="/tags/<%= tag %>.html">#<%= tag %></a></li>
+            <% }); %>
+        </ul>
+    </div>
+    <div class="posts-list__item-desc">
+        <a href="<%- post.link %>"><img src="<%- post.img %>" alt="<%= post.title %>"></a>
+    </div>
+</div>

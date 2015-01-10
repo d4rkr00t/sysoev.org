@@ -1,0 +1,23 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    min-width: 460px;
+    background: $mainBg;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    // color: $green3;
+
+    &:hover {
+        // color: $green2;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}

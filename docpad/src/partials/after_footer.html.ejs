@@ -1,4 +1,4 @@
-  <script src="/js/<%= document.js || 'page__main.js' %>"></script>
+  <script src="/js/<%= document.js ? document.js : document.layout === 'post' ? 'page__post.js' : 'page__main.js' %>"></script>
 
 </body>
 

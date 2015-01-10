@@ -1,4 +1,4 @@
-.title {
+@mixin title {
     font-family: $fontTitle;
     letter-spacing: -0.02em;
     font-weight: 700;
@@ -6,23 +6,29 @@
     line-height: 1.2;
     margin-top: $vR * 5;
     margin-bottom: $vR / 2 - 1;
+}
 
-    &.-size-1 {
-        font-size: $fontBase * 2.7272727;
-        margin-left: -3px;
-        letter-spacing: 0.01em;
-    }
+.title.-size-1, .post h1 {
+    @include title;
 
-    &.-size-2 {
-        font-size: $fontBase * 1.6363636;
-        margin-left: -1.8px;
-    }
+    font-size: $fontBase * 2.7272727;
+    margin-left: -3px;
+    letter-spacing: 0.01em;
+}
 
-    &.-size-3 {
-        color: $colorSubTitle;
-        font-size: $fontBase * 1.4545454;
-        font-weight: 300;
-        margin-left: -1.6px;
-        padding-top: 3px;
-    }
+.title.-size-2, .post h2 {
+    @include title;
+
+    font-size: $fontBase * 1.6363636;
+    margin-left: -1.8px;
+}
+
+.title.-size-3, .post h3 {
+    @include title;
+
+    color: $colorSubTitle;
+    font-size: $fontBase * 1.4545454;
+    font-weight: 300;
+    margin-left: -1.6px;
+    padding-top: 3px;
 }

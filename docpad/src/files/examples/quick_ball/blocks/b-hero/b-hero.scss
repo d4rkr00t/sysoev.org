@@ -1,0 +1,140 @@
+.b-hero {
+    @include background-size(cover);
+    position: relative;
+    overflow: hidden;
+    height: 92%;
+    background: $mainBg url('../blocks/b-hero/img/b-hero.jpg') center no-repeat;
+    background-attachment: fixed;
+
+    .e-hero-text {
+        position: absolute;
+        color: #fff;
+        font-size: 2.2em;
+        line-height: 1.6em;
+        width: 100%;
+        text-align: center;
+        bottom: 200px;
+        background: rgba(28, 28, 25, 0.5);
+        padding: 18px 0;
+        font-family: $headingFF;
+        font-weight: 900;
+
+        .m-red {
+            color: $red;
+        }
+
+        .b-button {
+            position: absolute;
+            bottom: -90px;
+            left: 50%;
+            display: block;
+            margin-left: -156px;
+            width: 240px;
+            font-weight: normal;
+        }
+    }
+
+    .e-move-down {
+        @include border-radius(50%);
+        @include transition(transform ease-out 0.1s, background 0.2s);
+
+        position: absolute;
+        bottom: -105px;
+        left: 50%;
+        z-index: 10;
+        display: block;
+        margin-left: -34px;
+        width: 68px;
+        height: 68px;
+        border: 3px solid $red;
+        color: $red;
+        text-align: center;
+        font-size: 43px;
+        line-height: 70px;
+
+        &:after {
+            @include box-sizing(content-box);
+            @include box-shadow(0 0 0 2px rgba(219,31,42,0.1));
+            @include opacity(0);
+            @include transform(scale(0.9));
+            @include border-radius(50%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
+            pointer-events: none;
+        }
+
+        &:hover {
+            background: $red;
+            color: #fff;
+            @include transform(scale(0.93));
+
+            &:after {
+                -webkit-animation: sonarEffect 1s ease-out 75ms;
+                   -moz-animation: sonarEffect 1s ease-out 75ms;
+                        animation: sonarEffect 1s ease-out 75ms;
+            }
+        }
+    }
+
+    &.m-product {
+        height: 88%;
+
+        .e-hero-text {
+            bottom: 190px;
+        }
+    }
+
+    &.m-product-1 {
+        background: $mainBg url('../placeholders/nike1_big.jpg') center no-repeat;
+        max-height: 1080px;
+    }
+} /* .b-hero */
+
+@-webkit-keyframes sonarEffect {
+    0% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.5;
+        box-shadow: 0 0 0 2px rgba(219,31,42,0.1), 0 0 10px 10px $red, 0 0 0 10px rgba(219,31,42,0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 2px rgba(219,31,42,0.1), 0 0 10px 10px $red, 0 0 0 10px rgba(219,31,42,0.5);
+        -webkit-transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@-moz-keyframes sonarEffect {
+    0% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.5;
+        box-shadow: 0 0 0 2px rgba(219,31,42,0.1), 0 0 10px 10px $red, 0 0 0 10px rgba(219,31,42,0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 2px rgba(219,31,42,0.1), 0 0 10px 10px $red, 0 0 0 10px rgba(219,31,42,0.5);
+        -moz-transform: scale(1.5);
+        opacity: 0;
+    }
+}
+@keyframes sonarEffect {
+    0% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.5;
+        box-shadow: 0 0 0 2px rgba(219,31,42,0.1), 0 0 10px 10px $red, 0 0 0 10px rgba(219,31,42,0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 2px rgba(219,31,42,0.1), 0 0 10px 10px $red, 0 0 0 10px rgba(219,31,42,0.5);
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}

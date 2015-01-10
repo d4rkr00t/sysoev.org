@@ -3,6 +3,8 @@
 
     margin: $vR * 8 auto $vR * 8 auto;
 
+    text-align: center;
+
     img {
         max-width: 100%;
     }
@@ -15,6 +17,7 @@
         position: absolute;
         top: $vR * 2;
         right: 0;
+        text-align: left;
 
         width: 300 - 18px;
 

@@ -23,10 +23,15 @@ var docpadConfig = {
             formats: [
               { raw: 'date', format: 'Do MMMM YYYY', formatted: 'humanDate' }
             ]
+        },
+        sitemap: {
+            collectionName: 'posts'
         }
     },
 
     templateData: {
+        siteUrl: 'http://sysoev.org',
+
         getDocIndex: function(document) {
             var posts = this.getCollection('html').findAllLive({
                 relativeOutDirPath: 'posts',
