@@ -318,7 +318,7 @@
 }
 
 @media screen and (max-width: 479px) {
-    .header
+    .header.-post
     {
         &__top
         {
@@ -337,13 +337,10 @@
             }
         }
 
-        &.-post
+        &__content
         {
-            .header__content
-            {
-                padding-top: $vR * 6;
-                padding-bottom: $vR * 9 + 6;
-            }
+            padding-top: $vR * 6;
+            padding-bottom: $vR * 9 + 6;
         }
     }
 }
