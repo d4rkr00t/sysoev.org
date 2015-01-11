@@ -19,18 +19,28 @@ var docpadConfig = {
                 });
             }
         },
+
         moment: {
             formats: [
               { raw: 'date', format: 'Do MMMM YYYY', formatted: 'humanDate' }
             ]
         },
+
         sitemap: {
             collectionName: 'posts'
+        },
+
+        rss: {
+            default: {
+                collection: 'posts'
+            }
         }
     },
 
     templateData: {
-        siteUrl: 'http://sysoev.org',
+        site: {
+            url: 'http://sysoev.org'
+        },
 
         getDocIndex: function(document) {
             var posts = this.getCollection('html').findAllLive({

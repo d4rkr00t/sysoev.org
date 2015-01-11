@@ -227,5 +227,6 @@ gulp.task('dev', [
 gulp.task('prod', [
     'style:prod',
     'font:prod',
+    'svg:prod',
     'js:prod'
 ]);
