@@ -1,23 +1,24 @@
-var $_searchTrigger = document.querySelector('.search-trigger'),
+var delegateEvent = require('../_delegate-event/_delegate-event.js'),
+
     $_searchPanel = document.querySelector('.search'),
     $_searchForm = document.querySelector('.search__form'),
     $_searchInput = document.querySelector('.search__input'),
-    $_searchClose = document.querySelector('.search__close');
+    $_searchClose = document.querySelector('.search__close'),
 
-var _close = function() {
-    $_searchPanel.classList.remove('-active');
-    $_searchInput.blur();
-    $_searchInput.value = '';
-};
+    _close = function() {
+        $_searchPanel.classList.remove('-active');
+        $_searchInput.blur();
+        $_searchInput.value = '';
+    };
 
 module.exports = function() {
 
-    $_searchTrigger.addEventListener('click', function(e) {
+    delegateEvent(document, '.search-trigger', 'click', function(e) {
         e.preventDefault();
 
         $_searchPanel.classList.add('-active');
         $_searchInput.focus();
-    }, false);
+    });
 
     $_searchForm.addEventListener('submit', function(e) {
         $_searchInput.value = 'site:sysoev.org ' + $_searchInput.value;
