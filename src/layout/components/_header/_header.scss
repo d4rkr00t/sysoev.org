@@ -316,3 +316,34 @@
         }
     }
 }
+
+@media screen and (max-width: 479px) {
+    .header
+    {
+        &__top
+        {
+            .header__contacts
+            {
+                float: right;
+                top: 3px;
+            }
+
+            .nav
+            {
+                display: block;
+                float: none;
+                margin-top: $vR * 3;
+                text-align: center;
+            }
+        }
+
+        &.-post
+        {
+            .header__content
+            {
+                padding-top: $vR * 6;
+                padding-bottom: $vR * 9 + 6;
+            }
+        }
+    }
+}
