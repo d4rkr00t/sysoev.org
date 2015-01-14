@@ -5,8 +5,9 @@
 
 .clearfix::before,
 .clearfix::after {
-    content: "";
     display: table;
+
+    content: "";
 }
 
 .clearfix::after {
@@ -27,14 +28,17 @@
  */
 
 .visuallyhidden {
-    border: 0;
+    position: absolute;
+
+    overflow: hidden;
     clip: rect(0 0 0 0);
+
+    width: 1px;
     height: 1px;
     margin: -1px;
-    overflow: hidden;
     padding: 0;
-    position: absolute;
-    width: 1px;
+
+    border: 0;
 }
 
 /*
@@ -44,12 +48,14 @@
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
+    position: static;
+
+    overflow: visible;
     clip: auto;
+
+    width: auto;
     height: auto;
     margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
 }
 
 /*

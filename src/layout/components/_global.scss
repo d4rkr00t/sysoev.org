@@ -19,27 +19,31 @@ button {
 }
 
 body {
-    font-weight: 300;
+    letter-spacing: 0.01rem;
+
+    color: $colorText;
+
     font-family: $fontDefault;
     font-size: $fontBase;
+    font-weight: 300;
     line-height: $lineHeight;
-    color: $colorText;
-    letter-spacing: 0.01rem;
 }
 
 .main-cont {
-    max-width: $mainContMaxWidth;
     min-width: $mainContMinWidth;
+    max-width: $mainContMaxWidth;
     margin: 0 auto;
     padding: 0 27px;
 }
 
 a, a:visited {
-    color: $colorLink;
     transition: color .3s;
 
+    color: $colorLink;
+
     &:hover {
-        color: $colorLinkHover;
         text-decoration: none;
+
+        color: $colorLinkHover;
     }
 }

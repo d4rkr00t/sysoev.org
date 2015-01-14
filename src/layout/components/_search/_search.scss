@@ -1,14 +1,12 @@
-.search
-{
+.search {
     position: fixed;
+    top: 0;
+    right: 0;
 
     overflow: hidden;
 
     width: 0;
     height: 0;
-
-    top: 0;
-    right: 0;
 
     transition: all .3s;
     text-align: center;
@@ -24,8 +22,7 @@
         background: rgba(mix($colorLightText, #fff, 20%), .97);
     }
 
-    &__container
-    {
+    &__container {
         position: relative;
         top: 50%;
 
@@ -36,51 +33,43 @@
         font-size: $fontBase * 2;
     }
 
-    &__input
-    {
+    &__input {
         width: 70%;
 
         border: 0;
         border-bottom: 1px solid rgba($fuscousGrey, .15);
         background: transparent;
 
-        &:focus
-        {
+        &:focus {
             outline: 0;
         }
     }
 
-    button
-    {
+    button {
         border: 0;
         background: transparent;
 
-        &:focus
-        {
+        &:focus {
             outline: 0;
         }
     }
 
-    &__icon
-    {
+    &__icon {
         color: rgba($fuscousGrey, .15);
     }
 
-    &__close
-    {
+    &__close {
         position: absolute;
         top: $vR * 2;
         right: $vR * 2;
 
         color: rgba($fuscousGrey, .5);
 
-        i
-        {
+        i {
             transition: transform .5s;
         }
 
-        &:hover, &:visited:hover
-        {
+        &:hover, &:visited:hover {
             color: rgba($fuscousGrey, .5);
 
             i {

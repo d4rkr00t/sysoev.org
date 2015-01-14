@@ -1,5 +1,4 @@
-.nav
-{
+.nav {
     position: relative;
 
     display: inline-block;
@@ -9,8 +8,7 @@
 
     list-style: none;
 
-    &__item
-    {
+    &__item {
         display: inline-block;
 
         margin-left: 12px;
@@ -19,33 +17,27 @@
         font-size: $fontTiniest;
         font-weight: normal;
 
-        &.-icon
-        {
+        &.-icon {
             font-size: $fontSmall;
         }
 
-        &:first-child
-        {
+        &:first-child {
             margin-left: 0;
         }
 
-        &-link, &-link:visited
-        {
+        &-link, &-link:visited {
             text-decoration: none;
             text-transform: uppercase;
 
             color: rgba(#fff, .4);
 
-            &:hover
-            {
+            &:hover {
                 text-decoration: underline;
             }
         }
 
-        &.-active
-        {
-            .nav__item-link, .nav__item-link:visited
-            {
+        &.-active {
+            .nav__item-link, .nav__item-link:visited {
                 color: $colorLinkHover;
             }
         }

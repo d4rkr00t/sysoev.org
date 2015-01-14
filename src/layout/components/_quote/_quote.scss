@@ -1,12 +1,12 @@
 .quote, .post blockquote {
     margin: $vR * 8 auto $vR * 8 auto;
 
+    text-align: center;
+
     color: $colorLightText;
 
     font-size: $fontBase * 1.2;
     font-style: italic;
-
-    text-align: center;
 
     &.-before-header {
         margin-bottom: $vR * 5;

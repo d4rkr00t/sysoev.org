@@ -8,9 +8,12 @@ based on dark.css by Ivan Sagalaev
 .hljs {
   display: block;
   overflow-x: auto;
+
   padding: 0.5em;
-  background: #3f3f3f;
+
   color: #dcdcdc;
+  background: #3f3f3f;
+
   -webkit-text-size-adjust: none;
 }
 
@@ -115,4 +118,3 @@ based on dark.css by Ivan Sagalaev
 .xml .hljs-cdata {
   opacity: 0.5;
 }
-
