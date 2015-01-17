@@ -28,6 +28,8 @@
     <% } else { %>
       <link rel="prefetch" href="/js/page__post.js">
 
+      <link rel="subresources" href="/img/header.jpg">
+
       <% getPageCollection('posts').toJSON().slice(0,3).forEach(function(post) { %>
         <link rel="prerender" href="<%= post.url %>">
       <% }); %>
@@ -61,7 +63,12 @@
     <meta property="og:image" content="<%= site.url %><%= document.img %>" />
     <% } %>
 
-    <!-- Page styles -->
-    <link rel="stylesheet" href="/css/style.css">
+    <% if (document.layout === 'layout') { %>
+      <%- partial('critical_css/main') %>
+    <% } else if (document.layout === 'post') { %>
+      <%- partial('critical_css/post') %>
+    <% } else if (document.layout === 'tag') { %>
+      <%- partial('critical_css/tag') %>
+    <% } %>
   </head>
   <body>

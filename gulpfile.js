@@ -4,19 +4,22 @@ var gulp = require('gulp'),
     minifyCSS = require('gulp-minify-css'),
     htmlmin = require('gulp-html-minifier'),
 
+    critical = require('critical'),
+    fs = require('fs'),
+
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
 
     AUTOPREFIXER_BROWSERS = [
-      'ie >= 10',
-      'ie_mob >= 10',
-      'ff >= 30',
-      'chrome >= 34',
-      'safari >= 7',
-      'opera >= 23',
-      'ios >= 7',
-      'android >= 4.4',
-      'bb >= 10'
+        'ie >= 10',
+        'ie_mob >= 10',
+        'ff >= 30',
+        'chrome >= 34',
+        'safari >= 7',
+        'opera >= 23',
+        'ios >= 7',
+        'android >= 4.4',
+        'bb >= 10'
     ],
 
     HTML_MINIFY_OPTS = {
@@ -25,6 +28,20 @@ var gulp = require('gulp'),
         removeRedundantAttributes: true,
         useShortDoctype: true,
         removeScriptTypeAttributes: true
+    },
+
+    UNCSS_CONFIG = {
+        html: ['./styleguide/pages/index.html', './styleguide/pages/post.html', './styleguide/pages/tag.html'],
+        ignore: [
+            /\.hljs.+/,
+            /\.pswp.+/,
+            '.diff',
+            '.method',
+            '.css',
+            '.highlight',
+            '.search',
+            '.search.-active'
+        ]
     },
 
     paths = {
@@ -92,6 +109,7 @@ gulp.task('style:prod', function() {
         }))
         .on('error', console.error.bind(console))
         .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+        .pipe($.uncss(UNCSS_CONFIG))
         .pipe(minifyCSS())
         .pipe(gulp.dest(paths.prod.dest.styles));
 });
@@ -233,6 +251,44 @@ gulp.task('html:tags:post', function() {
 });
 
 /**
+ * Performance
+ */
+gulp.task('critical:prod', function(cb) {
+    critical.generate({
+        base: './',
+        src: 'styleguide/pages/index.html',
+        css: ['docpad/src/files/css/style.css'],
+        width: 320,
+        height: 480,
+        minify: true
+    }, function(err, output){
+        fs.writeFile('docpad/src/partials/critical_css/main.html', '<style>' + output + '</style>');
+    });
+
+    critical.generate({
+        base: './',
+        src: 'styleguide/pages/post.html',
+        css: ['docpad/src/files/css/style.css'],
+        width: 320,
+        height: 480,
+        minify: true
+    }, function(err, output){
+        fs.writeFile('docpad/src/partials/critical_css/post.html', '<style>' + output + '</style>');
+    });
+
+    critical.generate({
+        base: './',
+        src: 'styleguide/pages/tag.html',
+        css: ['docpad/src/files/css/style.css'],
+        width: 320,
+        height: 480,
+        minify: true
+    }, function(err, output){
+        fs.writeFile('docpad/src/partials/critical_css/tag.html', '<style>' + output + '</style>');
+    });
+});
+
+/**
  * Watchers
  */
 gulp.task('watch', function() {
@@ -243,6 +299,10 @@ gulp.task('watch', function() {
     gulp.watch(paths.partials, ['styleguide:pages']);
     gulp.watch([paths.js, paths.compJs], ['js:dev']);
 });
+
+/**
+ * Tasks
+ */
 
 gulp.task('dev', [
     'style:dev',
@@ -259,7 +319,7 @@ gulp.task('prod', [
     'style:prod',
     'font:prod',
     'svg:prod',
-    'js:prod'
+    'js:prod',
 ]);
 
 gulp.task('post', [
