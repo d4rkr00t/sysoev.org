@@ -253,7 +253,7 @@ gulp.task('html:tags:post', function() {
 /**
  * Performance
  */
-gulp.task('critical:prod', function(cb) {
+gulp.task('critical:perf', function(cb) {
     critical.generate({
         base: './',
         src: 'styleguide/pages/index.html',

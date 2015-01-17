@@ -4,6 +4,9 @@
   "description": "Personal blog sysoev.org",
   "author": "Stanislav Sysoev @d4rkr00t",
   "license": "ISC",
+  "scripts": {
+    "build": "start_time=`date +%s` && gulp prod && gulp critical:perf && cd docpad && docpad generate --env production && cd .. && gulp post && echo '==========================================' && echo run time is $(expr `date +%s` - $start_time)s"
+  },
   "devDependencies": {
     "browser-sync": "^1.7.2",
     "critical": "^0.5.3",
