@@ -217,6 +217,8 @@
         .title {
             margin-top: 0;
             margin-bottom: $vR * 5 - 3;
+
+            word-break: break-all;
         }
 
         &-desc {
@@ -287,7 +289,7 @@
     .header.-post {
 
         &__top {
-            
+
             .header__contacts {
                 top: 3px;
 
