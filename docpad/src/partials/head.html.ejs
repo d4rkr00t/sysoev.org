@@ -1,6 +1,38 @@
 <!doctype html>
 <html lang="">
   <head>
+
+    <link rel="subresources" href="/css/style.css">
+    <link rel="subresources" href="/js/<%= document.js ? document.js : document.layout === 'post' ? 'page__post.js' : 'page__main.js' %>">
+
+    <link rel="dns-prefetch" href="mc.yandex.ru">
+    <link rel="dns-prefetch" href="w.soundcloud.com">
+    <link rel="dns-prefetch" href="disqus.com">
+    <link rel="dns-prefetch" href="a.disquscdn.com">
+
+    <% if (document.layout === 'post') { %>
+      <link rel="prefetch" href="/js/page__main.js">
+
+      <% prevPost = getPrevPost() %>
+      <% nextPost = getNextPost() %>
+
+      <% if (prevPost) { %>
+        <link rel="prerender" href="<%= prevPost.url %>">
+      <% } %>
+
+      <% if (nextPost) { %>
+        <link rel="prerender" href="<%= nextPost.url %>">
+      <% } %>
+
+      <link rel="prerender" href="<%= site.url %>">
+    <% } else { %>
+      <link rel="prefetch" href="/js/page__post.js">
+
+      <% getPageCollection('posts').toJSON().slice(0,3).forEach(function(post) { %>
+        <link rel="prerender" href="<%= post.url %>">
+      <% }); %>
+    <% } %>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="<%= document.description %>">

@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
 
     minifyCSS = require('gulp-minify-css'),
+    htmlmin = require('gulp-html-minifier'),
 
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
@@ -17,6 +18,14 @@ var gulp = require('gulp'),
       'android >= 4.4',
       'bb >= 10'
     ],
+
+    HTML_MINIFY_OPTS = {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeScriptTypeAttributes: true
+    },
 
     paths = {
         mainStyle: 'src/layout/css/style.scss',
@@ -45,7 +54,9 @@ var gulp = require('gulp'),
                 font: 'docpad/src/files/font',
                 svg: 'docpad/src/files/svg',
                 js: 'docpad/src/files/js',
-            }
+                html: ['docpad/out', 'docpad/out/posts', 'docpad/out/tags']
+            },
+            html: ['docpad/out/*.html', 'docpad/out/posts/*.html', 'docpad/out/tags/*.html']
         }
     };
 
@@ -190,7 +201,6 @@ gulp.task('js:dev', function() {
 });
 
 gulp.task('js:prod', function() {
-    // Single entry point to browserify
     gulp.src(paths.js)
         .pipe($.browserify({
             insertGlobals: false,
@@ -199,6 +209,27 @@ gulp.task('js:prod', function() {
         .pipe($.uglify())
         .on('error', console.error.bind(console))
         .pipe(gulp.dest(paths.prod.dest.js));
+});
+
+gulp.task('html:out:post', function() {
+    gulp.src(paths.prod.html[0])
+        .pipe(htmlmin(HTML_MINIFY_OPTS))
+        .on('error', console.error.bind(console))
+        .pipe(gulp.dest(paths.prod.dest.html[0]));
+});
+
+gulp.task('html:posts:post', function() {
+    gulp.src(paths.prod.html[1])
+        .pipe(htmlmin(HTML_MINIFY_OPTS))
+        .on('error', console.error.bind(console))
+        .pipe(gulp.dest(paths.prod.dest.html[1]));
+});
+
+gulp.task('html:tags:post', function() {
+    gulp.src(paths.prod.html[2])
+        .pipe(htmlmin(HTML_MINIFY_OPTS))
+        .on('error', console.error.bind(console))
+        .pipe(gulp.dest(paths.prod.dest.html[2]));
 });
 
 /**
@@ -229,4 +260,10 @@ gulp.task('prod', [
     'font:prod',
     'svg:prod',
     'js:prod'
+]);
+
+gulp.task('post', [
+    'html:out:post',
+    'html:posts:post',
+    'html:tags:post'
 ]);
