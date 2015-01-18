@@ -14,14 +14,20 @@
 <body>
 
   {% include '../../../src/layout/components/_search/_search.html' %}
-  {% include "../../../src/layout/components/_header/_header-tag.html" %}
 
-  <div class="main-cont">
-    Small content...
+  <div class="page-row">
+    {% include "../../../src/layout/components/_header/_header-tag.html" %}
   </div>
-  <!-- /.main-cont -->
 
-  {% include "../../../src/layout/components/_footer/_footer.html" %}
+  <div class="page-row-expanded">
+    <div class="main-cont">
+      Small content...
+    </div>
+  </div>
+
+  <div class="page-row">
+    {% include "../../../src/layout/components/_footer/_footer-without-nav.html" %}
+  </div>
 
   <script src="/js/page__main.js"></script>
 </body>

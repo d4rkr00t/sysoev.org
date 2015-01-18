@@ -1,21 +1,23 @@
-<header class="header clearfix -post -no-desc">
+<div class="page-row">
+    <header class="header clearfix -post -no-desc">
 
-    <div class="header__bg" style="background-image: url(/img/header.jpg)"></div>
+        <div class="header__bg" style="background-image: url(/img/header.jpg)"></div>
 
-    <div class="header__top clearfix">
-        <a href="/" class="header__logo">
-            <img src="/img/avatar.png" alt="" class="header__logo-img">
-        </a>
+        <div class="header__top clearfix">
+            <a href="/" class="header__logo">
+                <img src="/img/avatar.png" alt="" class="header__logo-img">
+            </a>
 
-        <%- partial('nav') %>
+            <%- partial('nav') %>
 
-        <%- partial('header/header__contacts') %>
-    </div>
+            <%- partial('header/header__contacts') %>
+        </div>
 
-    <div class="header__content">
+        <div class="header__content">
 
-        <h1 class="title -size-1 header__tag-title">#<%= document.tag %></h1>
+            <h1 class="title -size-1 header__tag-title">#<%= document.tag %></h1>
 
-    </div>
+        </div>
 
-</header>
+    </header>
+</div>

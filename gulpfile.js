@@ -31,7 +31,12 @@ var gulp = require('gulp'),
     },
 
     UNCSS_CONFIG = {
-        html: ['./styleguide/pages/index.html', './styleguide/pages/post.html', './styleguide/pages/tag.html'],
+        html: [
+            './styleguide/pages/index.html',
+            './styleguide/pages/post.html',
+            './styleguide/pages/tag.html',
+            './styleguide/pages/tag-small.html'
+        ],
         ignore: [
             /\.hljs.+/,
             /\.pswp.+/,

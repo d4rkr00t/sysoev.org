@@ -8,11 +8,13 @@ pageSize: 12
 
 <%- partial('header/header_main') %>
 
-<div class="main-cont">
-    <div class="posts-list">
-        <% getPageCollection('posts').toJSON().forEach(function(post) { %>
-            <%- partial('post-list/' + post.type, { post: post }) %>
-        <% }); %>
+<div class="page-row-expanded">
+    <div class="main-cont">
+        <div class="posts-list">
+            <% getPageCollection('posts').toJSON().forEach(function(post) { %>
+                <%- partial('post-list/' + post.type, { post: post }) %>
+            <% }); %>
+        </div>
     </div>
 </div>
 

@@ -1,26 +1,28 @@
-<div class="footer clearfix -main">
+<div class="page-row">
+    <div class="footer clearfix -main">
 
-    <% if (hasNextPage() || hasPrevPage()) { %>
-    <div class="footer__post-switcher">
+        <% if (hasNextPage() || hasPrevPage()) { %>
+        <div class="footer__post-switcher">
 
-        <% if (hasNextPage()) { %>
-            <a href="<%= getNextPage() %>" class="footer__post-switcher-link -prev">
-                <span class="footer__post-switcher-direction">Older</span>
-            </a>
-        <% } else { %>
-            <a class="footer__post-switcher-link -empty -prev"></a>
+            <% if (hasNextPage()) { %>
+                <a href="<%= getNextPage() %>" class="footer__post-switcher-link -prev">
+                    <span class="footer__post-switcher-direction">Older</span>
+                </a>
+            <% } else { %>
+                <a class="footer__post-switcher-link -empty -prev"></a>
+            <% } %>
+
+            <% if (hasPrevPage()) { %>
+                <a href="<%= getPrevPage() %>" class="footer__post-switcher-link -next">
+                    <span class="footer__post-switcher-direction">Newer</span>
+                </a>
+            <% } else { %>
+                <a class="footer__post-switcher-link -empty -next"></a>
+            <% } %>
+
+        </div>
         <% } %>
 
-        <% if (hasPrevPage()) { %>
-            <a href="<%= getPrevPage() %>" class="footer__post-switcher-link -next">
-                <span class="footer__post-switcher-direction">Newer</span>
-            </a>
-        <% } else { %>
-            <a class="footer__post-switcher-link -empty -next"></a>
-        <% } %>
-
+        <%- partial('footer/footer_common') %>
     </div>
-    <% } %>
-    
-    <%- partial('footer/footer_common') %>
 </div>

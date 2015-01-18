@@ -1,27 +1,29 @@
-<div class="footer clearfix">
+<div class="page-row">
+    <div class="footer clearfix">
 
-    <% prevPost = getPrevPost() %>
-    <% nextPost = getNextPost() %>
+        <% prevPost = getPrevPost() %>
+        <% nextPost = getNextPost() %>
 
-    <div class="footer__post-switcher">
-        <% if (prevPost) { %>
-            <a href="<%= prevPost.url %>" class="footer__post-switcher-link -prev">
-                <span class="footer__post-switcher-direction">Previous post</span>
-                <span class="footer__post-switcher-title"><%= prevPost.title %></span>
-            </a>
-        <% } else { %>
-            <a class="footer__post-switcher-link -empty -prev"></a>
-        <% } %>
+        <div class="footer__post-switcher">
+            <% if (prevPost) { %>
+                <a href="<%= prevPost.url %>" class="footer__post-switcher-link -prev">
+                    <span class="footer__post-switcher-direction">Previous post</span>
+                    <span class="footer__post-switcher-title"><%= prevPost.title %></span>
+                </a>
+            <% } else { %>
+                <a class="footer__post-switcher-link -empty -prev"></a>
+            <% } %>
 
-        <% if (nextPost) { %>
-            <a href="<%= nextPost.url %>" class="footer__post-switcher-link -next">
-                <span class="footer__post-switcher-direction">Next post</span>
-                <span class="footer__post-switcher-title"><%= nextPost.title %></span>
-            </a>
-        <% } else { %>
-            <a class="footer__post-switcher-link -empty -next"></a>
-        <% } %>
+            <% if (nextPost) { %>
+                <a href="<%= nextPost.url %>" class="footer__post-switcher-link -next">
+                    <span class="footer__post-switcher-direction">Next post</span>
+                    <span class="footer__post-switcher-title"><%= nextPost.title %></span>
+                </a>
+            <% } else { %>
+                <a class="footer__post-switcher-link -empty -next"></a>
+            <% } %>
+        </div>
+
+        <%- partial('footer/footer_common') %>
     </div>
-
-    <%- partial('footer/footer_common') %>
 </div>

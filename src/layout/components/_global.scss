@@ -11,22 +11,31 @@
 }
 
 html,
+body {
+    height: 100%;
+}
+
+html,
 body,
 button {
     -moz-osx-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+            font-smoothing: antialiased;
 }
 
 body {
-    letter-spacing: 0.01rem;
-
-    color: $colorText;
-
     font-family: $fontDefault;
     font-size: $fontBase;
     font-weight: 300;
     line-height: $lineHeight;
+
+    display: table;
+
+    width: 100%;
+
+    letter-spacing: .01rem;
+
+    color: $colorText;
 }
 
 .main-cont {
@@ -36,7 +45,20 @@ body {
     padding: 0 27px;
 }
 
-a, a:visited {
+.page-row {
+    display: table-row;
+
+    height: 1px;
+}
+
+.page-row-expanded {
+    display: table-row;
+
+    height: 100%;
+}
+
+a,
+a:visited {
     transition: color .3s;
 
     color: $colorLink;
