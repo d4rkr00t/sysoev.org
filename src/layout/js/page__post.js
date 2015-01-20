@@ -2,7 +2,7 @@ require('../components/_search/_search.js')();
 
 var PhotoSwipe = require('../components/_photoswipe/photoswipe.min.js'),
     PhotoSwipeUI_Default = require('../components/_photoswipe/photoswipe-ui-default.min.js'),
-    delegateEvent = require('../components/_delegate-event/_delegate-event.js'),
+    Dega = require('dega'),
 
     pswpElement = document.querySelector('.pswp'),
 
@@ -24,4 +24,4 @@ var PhotoSwipe = require('../components/_photoswipe/photoswipe.min.js'),
         gallery.init();
     };
 
-delegateEvent(document, '.lightbox-target', 'click', openPhotoSwipe);
+Dega(document).on('click', '.lightbox-target', openPhotoSwipe);

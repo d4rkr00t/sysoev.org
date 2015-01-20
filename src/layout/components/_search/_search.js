@@ -1,4 +1,4 @@
-var delegateEvent = require('../_delegate-event/_delegate-event.js'),
+var Dega = require('dega'),
 
     $_searchPanel = document.querySelector('.search'),
     $_searchForm = document.querySelector('.search__form'),
@@ -13,7 +13,7 @@ var delegateEvent = require('../_delegate-event/_delegate-event.js'),
 
 module.exports = function() {
 
-    delegateEvent(document, '.search-trigger', 'click', function(e) {
+    Dega(document).on('click', '.search-trigger', function(e) {
         e.preventDefault();
 
         $_searchPanel.classList.add('-active');
