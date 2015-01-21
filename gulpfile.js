@@ -91,7 +91,7 @@ gulp.task('serve', function() {
     });
 });
 
-require('./.gulp/styles.js')(gulp, paths, AUTOPREFIXER_BROWSERS, UNCSS_CONFIG);
+require('./.gulp/styles.js')(gulp, paths, reload, AUTOPREFIXER_BROWSERS, UNCSS_CONFIG);
 require('./.gulp/styleguide.js')(gulp, paths, AUTOPREFIXER_BROWSERS, reload);
 require('./.gulp/font.js')(gulp, paths, reload);
 require('./.gulp/svg.js')(gulp, paths, reload);
