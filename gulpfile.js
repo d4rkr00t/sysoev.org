@@ -1,12 +1,6 @@
 var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
 
-    minifyCSS = require('gulp-minify-css'),
-    htmlmin = require('gulp-html-minifier'),
-
-    critical = require('critical'),
-    fs = require('fs'),
-
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
 
@@ -70,6 +64,11 @@ var gulp = require('gulp'),
                 js: 'styleguide/js',
             }
         },
+        out: {
+            dest: {
+                styles: 'docpad/out/css'
+            }
+        },
         prod: {
             dest: {
                 styles: 'docpad/src/files/css',
@@ -92,212 +91,19 @@ gulp.task('serve', function() {
     });
 });
 
-/**
- * Style
- */
-gulp.task('style:dev', function() {
-    return gulp.src(paths.mainStyle)
-        .pipe($.sass({
-            errLogToConsole: true,
-            sourceComments: 'map'
-        }))
-        .on('error', console.error.bind(console))
-        .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe(gulp.dest(paths.styleguide.dest.styles))
-        .pipe(reload({ stream: true }));
-});
-
-gulp.task('style:prod', function() {
-    return gulp.src(paths.mainStyle)
-        .pipe($.sass({
-            errLogToConsole: true,
-        }))
-        .on('error', console.error.bind(console))
-        .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe($.uncss(UNCSS_CONFIG))
-        .pipe(minifyCSS())
-        .pipe(gulp.dest(paths.prod.dest.styles));
-});
-
-/**
- * Style Guide Styles
- */
-gulp.task('styleguide:styles', function() {
-    return gulp.src(paths.styleguide.style)
-        .pipe($.sass({
-            errLogToConsole: true,
-            sourceComments: 'map'
-        }))
-        .on('error', console.error.bind(console))
-        .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-        .pipe(gulp.dest(paths.styleguide.dest.styles))
-        .pipe(reload({ stream: true }));
-});
-
-/**
- * Style Guide Main
- */
-gulp.task('styleguide:main', function() {
-    return gulp.src(paths.styleguide.styleguide)
-        .pipe($.swig({
-            defaults: {
-                cache: false
-            }
-        }))
-        .on('error', console.error.bind(console))
-        .pipe(gulp.dest(paths.styleguide.dest.main))
-        .pipe(reload({ stream: true }));
-});
-
-/**
- * Style Guide Pages
- */
-gulp.task('styleguide:pages', function() {
-    return gulp.src(paths.styleguide.pages)
-        .pipe($.swig({
-            defaults: {
-                cache: false
-            }
-        }))
-        .on('error', console.error.bind(console))
-        .pipe(gulp.dest(paths.styleguide.dest.pages))
-        .pipe(reload({ stream: true }));
-});
-
-/**
- * FONT Dev
- */
-gulp.task('font:dev', function() {
-    return gulp.src(paths.font)
-        .pipe($.copy(paths.styleguide.dest.font, {
-            prefix: paths.font.split('/').reduce(function(prev) {
-                return prev + 1;
-            }, 0)
-        }))
-        .pipe(reload({ stream: true }));
-});
-
-gulp.task('font:prod', function() {
-    return gulp.src(paths.font)
-        .pipe($.copy(paths.prod.dest.font, {
-            prefix: paths.font.split('/').reduce(function(prev) {
-                return prev + 1;
-            }, 0)
-        }));
-});
-
-/**
- * SVG
- */
-gulp.task('svg:dev', function() {
-    return gulp.src(paths.svg)
-        .pipe($.copy(paths.styleguide.dest.svg, {
-            prefix: paths.svg.split('/').reduce(function(prev) {
-                return prev + 1;
-            }, 0) - 2
-        }))
-        .pipe(reload({ stream: true }));
-});
-
-gulp.task('svg:prod', function() {
-    return gulp.src(paths.svg)
-        .pipe($.copy(paths.prod.dest.svg, {
-            prefix: paths.svg.split('/').reduce(function(prev) {
-                return prev + 1;
-            }, 0) - 2
-        }));
-});
-
-/**
- * Scripts
- */
-gulp.task('js:dev', function() {
-    // Single entry point to browserify
-    gulp.src(paths.js)
-        .pipe($.browserify({
-            insertGlobals: false,
-            debug: true
-        }))
-        .on('error', console.error.bind(console))
-        .pipe(gulp.dest(paths.styleguide.dest.js))
-        .pipe(reload({ stream: true }));
-});
-
-gulp.task('js:prod', function() {
-    gulp.src(paths.js)
-        .pipe($.browserify({
-            insertGlobals: false,
-            debug: false
-        }))
-        .pipe($.uglify())
-        .on('error', console.error.bind(console))
-        .pipe(gulp.dest(paths.prod.dest.js));
-});
-
-gulp.task('html:out:post', function() {
-    gulp.src(paths.prod.html[0])
-        .pipe(htmlmin(HTML_MINIFY_OPTS))
-        .on('error', console.error.bind(console))
-        .pipe(gulp.dest(paths.prod.dest.html[0]));
-});
-
-gulp.task('html:posts:post', function() {
-    gulp.src(paths.prod.html[1])
-        .pipe(htmlmin(HTML_MINIFY_OPTS))
-        .on('error', console.error.bind(console))
-        .pipe(gulp.dest(paths.prod.dest.html[1]));
-});
-
-gulp.task('html:tags:post', function() {
-    gulp.src(paths.prod.html[2])
-        .pipe(htmlmin(HTML_MINIFY_OPTS))
-        .on('error', console.error.bind(console))
-        .pipe(gulp.dest(paths.prod.dest.html[2]));
-});
-
-/**
- * Performance
- */
-gulp.task('critical:perf', function(cb) {
-    critical.generate({
-        base: './',
-        src: 'styleguide/pages/index.html',
-        css: ['docpad/src/files/css/style.css'],
-        width: 320,
-        height: 480,
-        minify: true
-    }, function(err, output){
-        fs.writeFile('docpad/src/partials/critical_css/main.html', '<style>' + output + '</style>');
-    });
-
-    critical.generate({
-        base: './',
-        src: 'styleguide/pages/post.html',
-        css: ['docpad/src/files/css/style.css'],
-        width: 320,
-        height: 480,
-        minify: true
-    }, function(err, output){
-        fs.writeFile('docpad/src/partials/critical_css/post.html', '<style>' + output + '</style>');
-    });
-
-    critical.generate({
-        base: './',
-        src: 'styleguide/pages/tag.html',
-        css: ['docpad/src/files/css/style.css'],
-        width: 320,
-        height: 480,
-        minify: true
-    }, function(err, output){
-        fs.writeFile('docpad/src/partials/critical_css/tag.html', '<style>' + output + '</style>');
-    });
-});
+require('./.gulp/styles.js')(gulp, paths, AUTOPREFIXER_BROWSERS, UNCSS_CONFIG);
+require('./.gulp/styleguide.js')(gulp, paths, AUTOPREFIXER_BROWSERS, reload);
+require('./.gulp/font.js')(gulp, paths, reload);
+require('./.gulp/svg.js')(gulp, paths, reload);
+require('./.gulp/scripts.js')(gulp, paths, reload);
+require('./.gulp/html.js')(gulp, paths, HTML_MINIFY_OPTS);
+require('./.gulp/perf.js')(gulp, paths);
 
 /**
  * Watchers
  */
 gulp.task('watch', function() {
-    gulp.watch(paths.styles, ['style:dev']);
+    gulp.watch(paths.styles, ['style:dev', 'style:out']);
     gulp.watch(paths.styleguide.style, ['styleguide:styles']);
     gulp.watch(paths.styleguide.styleguide, ['styleguide:main']);
     gulp.watch(paths.styleguide.pages, ['styleguide:pages']);
