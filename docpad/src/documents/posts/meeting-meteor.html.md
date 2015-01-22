@@ -50,7 +50,7 @@ meteor
 	- views
 - models (код доступный и на клиенте и на сервере, тут будет наша модель для хранения сообщений)
 
-#### Больше структурыПереименуйте helloWorldMeteorChat.html в index.html. В папке client создайте файл chat-client.js (пока пустой).
+### Больше структурыПереименуйте helloWorldMeteorChat.html в index.html. В папке client создайте файл chat-client.js (пока пустой).
 
 Файл helloWorldMeteorChat.css переименовываем в chat.css и перемещаем в папку client/css.
 
