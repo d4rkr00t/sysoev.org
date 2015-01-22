@@ -6,6 +6,8 @@
 
     font-family: $fontTitle;
 
+    word-break: break-word;
+
     &__nav {
         padding: $vR * 4 0 $vR * 2;
 

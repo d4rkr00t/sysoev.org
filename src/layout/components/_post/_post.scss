@@ -4,6 +4,8 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 
+    word-break: break-word;
+
     p, ul, ol, h1, h2, h3, h4, h5, h6 {
         max-width: $narrowContMaxWidth;
         margin-right: auto;
@@ -79,7 +81,7 @@
         display: block;
 
         width: 144px;
-        margin: $vR * 8 - 1 auto $vR * 8 - 2 auto;
+        margin: $blockSepSpace - 1 auto $blockSepSpace - 2 auto;
 
         border: 0;
         border-top: 1px solid rgba(0, 0, 0, .15);

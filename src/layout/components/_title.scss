@@ -15,7 +15,7 @@
 
     letter-spacing: 0.01em;
 
-    font-size: $fontBase * 2.7272727;
+    font-size: $fontH1;
 
     @include title;
 }
@@ -23,7 +23,7 @@
 .title.-size-2, .post h2 {
     margin-left: -1.8px;
 
-    font-size: $fontBase * 1.6363636;
+    font-size: $fontH2;
 
     @include title;
 }
@@ -34,8 +34,30 @@
 
     color: $colorSubTitle;
 
-    font-size: $fontBase * 1.4545454;
+    font-size: $fontH3;
     font-weight: 300;
 
     @include title;
+}
+
+@media screen and (max-width: 520px) {
+    $divider: 1.1;
+
+    .title.-size-1, .post h1 {
+        margin-left: -3px;
+
+        font-size: $fontH1 / $divider;
+    }
+
+    .title.-size-2, .post h2 {
+        margin-left: -1.8px;
+
+        font-size: $fontH2 / $divider;
+    }
+
+    .title.-size-3, .post h3 {
+        margin-left: -1.6px;
+
+        font-size: $fontH3 / $divider;
+    }
 }

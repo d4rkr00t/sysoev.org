@@ -11,7 +11,7 @@
 
     &.-bottom
     {
-        margin-top: $vR * 8;
+        margin-top: $blockSepSpace;
 
         border-top: 1px solid rgba(0, 0, 0, .15);
     }
@@ -21,7 +21,7 @@
     display: block;
 
     width: 144px;
-    margin: $vR * 8 - 1 auto $vR * 8 - 2 auto;
+    margin: $blockSepSpace - 1 auto $blockSepSpace - 2 auto;
 
     border: 0;
     border-top: 1px solid rgba(0, 0, 0, .15);

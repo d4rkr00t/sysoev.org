@@ -14,6 +14,21 @@ $vR: 8px;
 $lineHeight: $vR * 4; // 32
 
 /**
+ * Titles H1 - H3
+ */
+$fontH1: $fontBase * 2.7272727;
+$fontH2: $fontBase * 1.6363636;
+$fontH3: $fontBase * 1.4545454;
+
+$titleDivider: 1.1;
+
+/**
+ * Space between blocks
+ */
+$blockSepSpace:$vR * 8;
+$blockSepSpaceDivider: 2;
+
+/**
  * COLORS
  */
 $golden: #F7C04F;
