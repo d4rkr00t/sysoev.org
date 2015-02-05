@@ -6,6 +6,12 @@
 
     word-break: break-word;
 
+    padding-top: $vR * 10;
+
+    :first-child {
+        margin-top: 0;
+    }
+
     p, ul, ol, h1, h2, h3, h4, h5, h6 {
         max-width: $narrowContMaxWidth;
         margin-right: auto;
