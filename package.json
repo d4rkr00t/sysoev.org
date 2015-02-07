@@ -5,7 +5,8 @@
   "author": "Stanislav Sysoev @d4rkr00t",
   "license": "ISC",
   "scripts": {
-    "build": "start_time=`date +%s` && gulp prod && gulp perf:critical && cd docpad && docpad generate --env production && cd .. && gulp post && echo '==========================================' && echo run time is $(expr `date +%s` - $start_time)s"
+    "build": "start_time=`date +%s` && gulp prod && gulp perf:critical && cd docpad && docpad generate --env production && cd .. && gulp post && echo '==========================================' && echo run time is $(expr `date +%s` - $start_time)s",
+    "style": "gulp style:prod && cp ./docpad/src/files/css/style.css ./docpad/out/css/style.css"
   },
   "devDependencies": {
     "browser-sync": "^1.7.2",

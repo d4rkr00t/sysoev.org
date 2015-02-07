@@ -39,7 +39,8 @@ var gulp = require('gulp'),
             '.css',
             '.highlight',
             '.search',
-            '.search.-active'
+            '.search.-active',
+            'p.-notice'
         ]
     },
 
