@@ -1,63 +1,89 @@
 @mixin title {
-    margin-top: $vR * 5;
-    margin-bottom: $vR / 2 - 1;
-
-    letter-spacing: -0.02em;
-
     font-family: $fontTitle;
     font-weight: 700;
     font-style: normal;
     line-height: 1.2;
+
+    margin-top: $vR * 5;
+    margin-bottom: $vR / 2 - 1;
+
+    letter-spacing: -.02em;
 }
 
-.title.-size-1, .post h1 {
-    margin-left: -3px;
-
-    letter-spacing: 0.01em;
-
+.title.-size-1,
+.post h1 {
     font-size: $fontH1;
 
+    margin-left: -3px;
+
+    letter-spacing: .01em;
+
     @include title;
 }
 
-.title.-size-2, .post h2 {
-    margin-left: -1.8px;
-
+.title.-size-2,
+.post h2 {
     font-size: $fontH2;
 
+    margin-left: -1.8px;
+
     @include title;
 }
 
-.title.-size-3, .post h3 {
-    margin-left: -1.6px;
-    padding-top: 3px;
-
-    color: $colorSubTitle;
+.title.-size-3,
+.post h3 {
+    @include title;
 
     font-size: $fontH3;
     font-weight: 300;
 
+    margin-left: -1.6px;
+    padding-top: 3px;
+
+    color: $colorSubTitle;
+}
+
+.title.-size-4,
+.post h4 {
     @include title;
+
+    font-size: $fontH4;
+    font-weight: 300;
+
+    margin-left: -1.2px;
+    padding-top: 3px;
+
+    color: $colorSubTitle;
 }
 
 @media screen and (max-width: 520px) {
     $divider: 1.1;
 
-    .title.-size-1, .post h1 {
-        margin-left: -3px;
-
+    .title.-size-1,
+    .post h1 {
         font-size: $fontH1 / $divider;
+
+        margin-left: -3px;
     }
 
-    .title.-size-2, .post h2 {
-        margin-left: -1.8px;
-
+    .title.-size-2,
+    .post h2 {
         font-size: $fontH2 / $divider;
+
+        margin-left: -1.8px;
     }
 
-    .title.-size-3, .post h3 {
-        margin-left: -1.6px;
-
+    .title.-size-3,
+    .post h3 {
         font-size: $fontH3 / $divider;
+
+        margin-left: -1.6px;
+    }
+
+    .title.-size-3,
+    .post h4 {
+        font-size: $fontH4 / $divider;
+
+        margin-left: -1.3px;
     }
 }

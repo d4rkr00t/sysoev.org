@@ -7,7 +7,7 @@
     "npm": "1.3"
   },
   "dependencies": {
-    "docpad": "~6.69.1",
+    "docpad": "~6.73.2",
     "docpad-plugin-ejs": "~2.0.2",
     "docpad-plugin-highlightjs": "~2.3.0",
     "docpad-plugin-marked": "~2.2.1",
