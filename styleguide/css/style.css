@@ -1015,6 +1015,11 @@ a, a:visited {
     margin: 63px auto 62px auto;
     border: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.15); }
+  /* line 100, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post-contacts {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    font-size: 18px; }
 
 /* line 1, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_quote/_quote.scss */
 .quote, .post blockquote {
@@ -1101,14 +1106,13 @@ a, a:visited {
 /* line 1, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_share/_share.scss */
 .share {
   padding: 8px 0 24px;
-  text-align: right;
   text-transform: uppercase;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px; }
-  /* line 10, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_share/_share.scss */
+  /* line 9, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_share/_share.scss */
   .share__item {
     text-decoration: none; }
-    /* line 13, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_share/_share.scss */
+    /* line 12, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_share/_share.scss */
     .share__item .icon {
       position: relative;
       top: 1px;

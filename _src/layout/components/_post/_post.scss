@@ -96,4 +96,10 @@
         border: 0;
         border-top: 1px solid rgba(0, 0, 0, .15);
     }
+
+    &-contacts {
+        font-family: $fontTitle;
+        font-weight: 200;
+        font-size: $fontMiddle;
+    }
 }
