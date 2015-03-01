@@ -1922,12 +1922,13 @@ a.pswp__share--download:hover {
 .pswp--minimal--dark .pswp__button--arrow--left, .pswp--minimal--dark .pswp__button--arrow--right {
   background: none; }
 
+/* @import "../components/_highlightjs/solarized_light"; */
 /*
 
 Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
 
 */
-/* line 7, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/solarized_light.scss */
+/* line 7, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
 .highlight {
   display: block;
   overflow-x: auto;
@@ -1941,31 +1942,31 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
   /* Solarized Orange */
   /* Solarized Red */
   /* Solarized Violet */ }
-  /* line 21, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/solarized_light.scss */
+  /* line 21, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
   .highlight .comment, .highlight .diff .header, .highlight .doctype, .highlight .pi, .highlight .lisp .string, .highlight .javadoc {
     color: #93a1a1; }
-  /* line 33, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/solarized_light.scss */
+  /* line 33, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
   .highlight .keyword, .highlight .winutils, .highlight .method, .highlight .addition, .highlight .css .tag, .highlight .request, .highlight .status, .highlight .nginx .title {
     color: #859900; }
-  /* line 48, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/solarized_light.scss */
+  /* line 48, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
   .highlight .number, .highlight .command, .highlight .string, .highlight .tag .value, .highlight .rules .value, .highlight .phpdoc, .highlight .dartdoc, .highlight .tex .formula, .highlight .regexp, .highlight .hexcolor, .highlight .link_url {
     color: #2aa198; }
-  /* line 61, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/solarized_light.scss */
+  /* line 61, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
   .highlight .title, .highlight .localvars, .highlight .chunk, .highlight .decorator, .highlight .built_in, .highlight .identifier, .highlight .vhdl .literal, .highlight .id, .highlight .css .function {
     color: #268bd2; }
-  /* line 74, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/solarized_light.scss */
+  /* line 74, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
   .highlight .attribute, .highlight .variable, .highlight .lisp .body, .highlight .smalltalk .number, .highlight .constant, .highlight .class .title, .highlight .parent, .highlight .type, .highlight .link_reference {
     color: #b58900; }
-  /* line 91, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/solarized_light.scss */
+  /* line 91, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
   .highlight .preprocessor, .highlight .preprocessor .keyword, .highlight .pragma, .highlight .shebang, .highlight .symbol, .highlight .symbol .string, .highlight .diff .change, .highlight .special, .highlight .attr_selector, .highlight .subst, .highlight .cdata, .highlight .css .pseudo, .highlight .header {
     color: #cb4b16; }
-  /* line 97, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/solarized_light.scss */
+  /* line 97, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
   .highlight .deletion, .highlight .important {
     color: #dc322f; }
-  /* line 102, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/solarized_light.scss */
+  /* line 102, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
   .highlight .link_label {
     color: #6c71c4; }
-  /* line 106, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/solarized_light.scss */
+  /* line 106, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
   .highlight .tex .formula {
     background: #eee8d5; }
 
