@@ -1,0 +1,24 @@
+.b-button {
+    @include border-radius(3px);
+    @include transition(background 0.3s);
+
+    position: relative;
+    display: inline-block;
+    padding: 12px 27px;
+    border: 0px;
+    border-bottom: 2px solid shade($red, 45);
+    background: $red;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1em;
+
+    &:hover {
+        color: #fff;
+        background: shade($red, 25);
+    }
+
+    &.m-big {
+        padding: 14px 36px;
+    } /* &.m-big */
+} /* .b-button */

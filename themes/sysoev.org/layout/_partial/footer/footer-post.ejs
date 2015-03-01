@@ -1,0 +1,25 @@
+<div class="page-row">
+    <div class="footer clearfix">
+        <div class="footer__post-switcher">
+            <% if (page.next) { %>
+                <a href="/<%= page.next.path %>" class="footer__post-switcher-link -prev">
+                    <span class="footer__post-switcher-direction">Previous post</span>
+                    <span class="footer__post-switcher-title"><%= page.next.title %></span>
+                </a>
+            <% } else { %>
+                <a class="footer__post-switcher-link -empty -prev"></a>
+            <% } %>
+
+            <% if (page.prev) { %>
+                <a href="/<%= page.prev.path %>" class="footer__post-switcher-link -next">
+                    <span class="footer__post-switcher-direction">Next post</span>
+                    <span class="footer__post-switcher-title"><%= page.prev.title %></span>
+                </a>
+            <% } else { %>
+                <a class="footer__post-switcher-link -empty -next"></a>
+            <% } %>
+        </div>
+
+        <%- partial('_partial/footer/footer-common') %>
+    </div>
+</div>

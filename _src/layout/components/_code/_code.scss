@@ -1,0 +1,31 @@
+.highlight {
+    line-height: 24px;
+
+    margin: $vR * 5 auto $vR * 5 - 1 auto;
+    padding: $vR * 2 - 2px $vR * 2 $vR + 2;
+
+    figcaption {
+        font-size: $fontCode;
+
+        margin-bottom: $vR * 2;
+        padding: 0 0 $vR + 4 0;
+
+        opacity: .8;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+}
+
+.highlight pre {
+    font-size: $fontCode;
+
+    margin: 0;
+
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 520px) {
+    .highlight {
+        margin: ($vR * 4) auto ($vR * 4 - 1) auto;
+    }
+}

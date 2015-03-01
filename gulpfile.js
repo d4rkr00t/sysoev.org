@@ -32,7 +32,6 @@ var gulp = require('gulp'),
             './styleguide/pages/tag-small.html'
         ],
         ignore: [
-            /\.hljs.+/,
             /\.pswp.+/,
             '.diff',
             '.method',
@@ -45,17 +44,17 @@ var gulp = require('gulp'),
     },
 
     paths = {
-        mainStyle: 'src/layout/css/style.scss',
-        styles: ['src/layout/components/*.scss', 'src/layout/components/**/*.scss'],
-        partials: 'src/layout/components/**/*.html',
-        font: 'src/layout/components/_icon/font/*',
-        svg: 'src/layout/components/**/*.svg',
-        js: 'src/layout/js/*.js',
-        compJs: 'src/layout/components/**/*.js',
+        mainStyle: '_src/layout/css/style.scss',
+        styles: ['_src/layout/components/*.scss', '_src/layout/components/**/*.scss'],
+        partials: '_src/layout/components/**/*.html',
+        font: '_src/layout/components/_icon/font/*',
+        svg: '_src/layout/components/**/*.svg',
+        js: '_src/layout/js/*.js',
+        compJs: '_src/layout/components/**/*.js',
         styleguide: {
-            pages: 'src/styleguide/pages/*.html',
-            styleguide: 'src/styleguide/index.html',
-            style: 'src/styleguide/styleguide.scss',
+            pages: '_src/styleguide/pages/*.html',
+            styleguide: '_src/styleguide/index.html',
+            style: '_src/styleguide/styleguide.scss',
             dest: {
                 main: 'styleguide',
                 pages: 'styleguide/pages',
@@ -65,20 +64,15 @@ var gulp = require('gulp'),
                 js: 'styleguide/js',
             }
         },
-        out: {
-            dest: {
-                styles: 'docpad/out/css'
-            }
-        },
         prod: {
             dest: {
-                styles: 'docpad/src/files/css',
-                font: 'docpad/src/files/font',
-                svg: 'docpad/src/files/svg',
-                js: 'docpad/src/files/js',
-                html: ['docpad/out', 'docpad/out/posts', 'docpad/out/tags']
+                styles: 'themes/sysoev.org/source/css',
+                font: 'themes/sysoev.org/source/font',
+                svg: 'themes/sysoev.org/source/svg',
+                js: 'themes/sysoev.org/source/js',
+                html: 'public'
             },
-            html: ['docpad/out/*.html', 'docpad/out/posts/*.html', 'docpad/out/tags/*.html']
+            html: ['public/*.html', 'public/**/*.html', 'public/**/**/*.html']
         }
     };
 
@@ -135,7 +129,5 @@ gulp.task('prod', [
 ]);
 
 gulp.task('post', [
-    'html:out:post',
-    'html:posts:post',
-    'html:tags:post'
+    'post:html'
 ]);

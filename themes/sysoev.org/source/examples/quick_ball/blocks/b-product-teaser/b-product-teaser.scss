@@ -1,0 +1,50 @@
+.b-product-teaser {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0 auto 18px auto;
+    width: 364px;
+    height: 364px;
+    text-decoration: none;
+
+    .e-image {
+        @include border-radius(4px);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        margin: 0 auto;
+        width: 360px;
+        border: 2px solid tint($mainBg, 4);
+
+        img {
+            @include transition(transform 1s);
+            position: relative;
+        }
+    }
+
+    .e-caption {
+        position: absolute;
+        bottom: 2px;
+        z-index: 4;
+        padding: 18px 0;
+        width: 360px;
+        left: 2px;
+        background: url(../images/black.png);
+        color: #fff;
+        text-align: center;
+        font-size: 1.3em;
+        font-family: $headingFF;
+        @include transition(bottom 0.8s);
+    }
+
+    &:hover {
+        img {
+            @include transform(scale(1.4));
+        }
+
+        .e-caption {
+            bottom: -65px;
+            @include transition(bottom 0.8s);
+        }
+    }
+} /* .b-product-teaser */

@@ -1,0 +1,28 @@
+.section {
+    letter-spacing: 0.159999996423721px;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    &.-narrow {
+        max-width: $narrowContMaxWidth;
+        margin: 0 auto;
+    }
+
+    &.-bottom
+    {
+        margin-top: $blockSepSpace;
+
+        border-top: 1px solid rgba(0, 0, 0, .15);
+    }
+}
+
+.section-divider {
+    display: block;
+
+    width: 144px;
+    margin: $blockSepSpace - 1 auto $blockSepSpace - 2 auto;
+
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .15);
+}

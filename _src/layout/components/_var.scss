@@ -1,0 +1,56 @@
+/**
+ * FONT
+ */
+$fontDefault: Georgia, Cambria, 'Times New Roman', Times, serif;
+$fontTitle: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$fontBase: 21px;
+$fontMiddle: 18px;
+$fontSmall: 16px;
+$fontTiny: 14px;
+$fontTiniest: 12px;
+$fontCode: 16px;
+$vR: 8px;
+$lineHeight: $vR * 4; // 32
+
+/**
+ * Titles H1 - H3
+ */
+$fontH1: $fontBase * 2.7272727;
+$fontH2: $fontBase * 1.6363636;
+$fontH3: $fontBase * 1.4545454;
+$fontH4: $fontBase * 1.2;
+
+$titleDivider: 1.1;
+
+/**
+ * Space between blocks
+ */
+$blockSepSpace:$vR * 8;
+$blockSepSpaceDivider: 2;
+
+/**
+ * COLORS
+ */
+$golden: #F7C04F;
+$fuscousGrey: #3C373D;
+$liver: #514753;
+
+$colorText: darken(#69606B, 3);
+$colorLightText: #69606B;
+$colorSubTitle: rgba(0, 0, 0, .44);
+
+$colorLink: $colorLightText;
+$colorLinkHover: $golden;
+
+/* $colorCodeBG: #fdf6e3; */
+$colorCodeBG: #FAFAFA;
+
+$colorFooterBg: $fuscousGrey;
+
+/**
+ * CONT
+ */
+$mainContMaxWidth: 1120px;
+$mainContMinWidth: 320px;
+$narrowContMaxWidth: 700px;

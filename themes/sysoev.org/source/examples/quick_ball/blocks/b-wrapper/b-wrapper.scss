@@ -1,0 +1,10 @@
+.b-wrapper {
+    max-width: $contWidth;
+    min-width: 460px;
+    margin: 0 auto;
+    border: 1px solid transparent;
+
+    &.m-small {
+        max-width: $contWidthSmall;
+    }
+} /* .b-wrapper */

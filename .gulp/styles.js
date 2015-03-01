@@ -22,7 +22,7 @@ module.exports = function(gulp, paths, reload, autoprefixerConf, uncssConf) {
             }))
             .on('error', console.error.bind(console))
             .pipe($.autoprefixer(autoprefixerConf))
-            .pipe(gulp.dest(paths.out.dest.styles))
+            .pipe(gulp.dest(paths.prod.dest.styles))
             .pipe(reload({ stream: true }));
     });
 
