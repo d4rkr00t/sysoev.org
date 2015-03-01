@@ -1138,8 +1138,9 @@ a, a:visited {
       display: none; }
     /* line 27, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
     .posts-list__item-title {
-      font-weight: 400; }
-    /* line 31, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+      font-weight: 400;
+      word-break: break-word; }
+    /* line 32, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
     .posts-list__item-info {
       margin-bottom: 16px;
       text-transform: uppercase;
@@ -1148,10 +1149,10 @@ a, a:visited {
       font-size: 14px;
       font-weight: normal;
       line-height: 40px; }
-      /* line 43, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+      /* line 44, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
       .posts-list__item-info-date {
         margin-right: 16px; }
-        /* line 46, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+        /* line 47, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
         .posts-list__item-info-date:after {
           position: absolute;
           display: inline-block;
@@ -1163,28 +1164,28 @@ a, a:visited {
           content: '•';
           text-align: right;
           font-size: 27.3px; }
-      /* line 64, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+      /* line 65, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
       .posts-list__item-info-tags {
         position: relative;
         display: inline-block;
         margin: 0;
         padding: 0;
         list-style: none; }
-        /* line 74, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+        /* line 75, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
         .posts-list__item-info-tags li {
           display: inline-block;
           margin: 0 4px; }
-          /* line 79, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+          /* line 80, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
           .posts-list__item-info-tags li a, .posts-list__item-info-tags li a:visited {
             color: rgba(0, 0, 0, 0.44); }
-            /* line 82, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+            /* line 83, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
             .posts-list__item-info-tags li a:hover, .posts-list__item-info-tags li a:visited:hover {
               color: #F7C04F; }
-    /* line 90, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+    /* line 91, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
     .posts-list__item-desc {
       font-size: 18px;
       line-height: 24px; }
-  /* line 96, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+  /* line 97, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
   .posts-list .quote {
     margin: 0; }
 
