@@ -5,7 +5,7 @@ description: "5-ть простых оптимизаций для мобильн
 tags:
 - html
 - css
-- перевод
+- translation
 img: /easy-tablet-optimizations-you-can-make-on-your-website-right-now/teaser.jpg
 ---
 

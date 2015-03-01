@@ -5,7 +5,7 @@ description: "Решения часто возникающих проблем в
 tags:
 - html
 - css
-- перевод
+- translation
 img: /css-troubleshooting/css.jpg
 ---
 

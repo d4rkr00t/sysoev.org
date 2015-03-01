@@ -4,7 +4,7 @@ date: 2013-06-25 17:50
 description: "Простенький счетчик для игры Манчкин"
 tags:
 - javascript
-- разное
+- games
 img: /munchkin-counter/munchkin.jpg
 ---
 
