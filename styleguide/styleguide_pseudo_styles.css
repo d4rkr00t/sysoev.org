@@ -1,0 +1,161 @@
+a.pseudo-class-visited {
+  color: #551a8b;
+}
+
+a.pseudo-class-hover {
+  color: #06e;
+}
+
+a.pseudo-class-active,
+a.pseudo-class-hover {
+  outline: 0;
+}
+
+a.pseudo-class-visited {
+  -webkit-transition: color .3s;
+  transition: color .3s;
+  color: #69606B;
+}
+
+a.pseudo-class-hover,
+a.pseudo-class-visited.pseudo-class-hover {
+  text-decoration: none;
+  color: #F7C04F;
+}
+
+.header__logo.pseudo-class-visited {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.header__logo.pseudo-class-hover,
+.header__logo.pseudo-class-hover.pseudo-class-visited {
+  color: #F7C04F;
+}
+
+.header__contacts li a.pseudo-class-hover {
+  color: #F7C04F;
+}
+
+.header.-post .header__post-info-tags li a.pseudo-class-visited {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.header.-post .header__post-info-tags li a.pseudo-class-hover,
+.header.-post .header__post-info-tags li a.pseudo-class-visited.pseudo-class-hover {
+  color: #F7C04F;
+}
+
+.nav__item.pseudo-class-first-child {
+  margin-left: 0;
+}
+
+.nav__item-link.pseudo-class-visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.nav__item-link.pseudo-class-hover,
+.nav__item-link.pseudo-class-visited.pseudo-class-hover {
+  text-decoration: underline;
+}
+
+.nav__item.-active .nav__item-link.pseudo-class-visited {
+  color: #F7C04F;
+}
+
+.search__input.pseudo-class-focus {
+  outline: 0;
+}
+
+.search button.pseudo-class-focus {
+  outline: 0;
+}
+
+.search__close.pseudo-class-hover,
+.search__close.pseudo-class-visited.pseudo-class-hover {
+  color: rgba(60, 55, 61, 0.5);
+}
+
+.search__close.pseudo-class-hover i,
+.search__close.pseudo-class-visited.pseudo-class-hover i {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.post .pseudo-class-first-child {
+  margin-top: 0;
+}
+
+.posts-list__item.pseudo-class-first-child:before {
+  display: none;
+}
+
+.posts-list__item-info-tags li a.pseudo-class-visited {
+  color: rgba(0, 0, 0, 0.44);
+}
+
+.posts-list__item-info-tags li a.pseudo-class-hover,
+.posts-list__item-info-tags li a.pseudo-class-visited.pseudo-class-hover {
+  color: #F7C04F;
+}
+
+.footer__post-switcher-link.pseudo-class-hover {
+  -webkit-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+.footer__post-switcher-link.-empty.pseudo-class-hover {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.pswp__button.pseudo-class-focus,
+.pswp__button.pseudo-class-hover {
+  opacity: 1;
+}
+
+.pswp__button.pseudo-class-active {
+  opacity: 0.9;
+}
+
+.pswp__share-tooltip a.pseudo-class-hover {
+  text-decoration: none;
+  color: black;
+}
+
+a.pswp__share--facebook.pseudo-class-hover {
+  background: #3e5c9a;
+  color: white;
+}
+
+a.pswp__share--facebook.pseudo-class-hover:before {
+  border-bottom-color: #3e5c9a;
+}
+
+a.pswp__share--twitter.pseudo-class-hover {
+  background: #55acee;
+  color: white;
+}
+
+a.pswp__share--pinterest.pseudo-class-hover {
+  background: #cccccc;
+  color: #ce272d;
+}
+
+a.pswp__share--download.pseudo-class-hover {
+  background: #dddddd;
+}
+
+.visuallyhidden.focusable.pseudo-class-active,
+.visuallyhidden.focusable.pseudo-class-focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+}

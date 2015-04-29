@@ -1,8 +1,4 @@
 var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')(),
-
-    browserSync = require('browser-sync'),
-    reload = browserSync.reload,
 
     AUTOPREFIXER_BROWSERS = [
         'ie >= 10',
@@ -24,44 +20,23 @@ var gulp = require('gulp'),
         removeScriptTypeAttributes: true
     },
 
-    UNCSS_CONFIG = {
-        html: [
-            './styleguide/pages/index.html',
-            './styleguide/pages/post.html',
-            './styleguide/pages/tag.html',
-            './styleguide/pages/tag-small.html'
-        ],
-        ignore: [
-            /\.pswp.+/,
-            '.diff',
-            '.method',
-            '.css',
-            '.highlight',
-            '.search',
-            '.search.-active',
-            'p.-notice'
-        ]
-    },
-
     paths = {
-        mainStyle: '_src/layout/css/style.scss',
-        styles: ['_src/layout/components/*.scss', '_src/layout/components/**/*.scss'],
-        partials: '_src/layout/components/**/*.html',
-        font: '_src/layout/components/_icon/font/*',
-        svg: '_src/layout/components/**/*.svg',
-        js: '_src/layout/js/*.js',
-        compJs: '_src/layout/components/**/*.js',
+        mainStyle: '_layout-src/css/style.scss',
+        styles: ['_layout-src/components/*.scss', '_layout-src/components/**/*.scss'],
+        font: '_layout-src/components/_icon/font/*',
+        svg: '_layout-src/components/**/*.svg',
+        js: '_layout-src/js/*.js',
+        compJs: '_layout-src/components/**/*.js',
         styleguide: {
-            pages: '_src/styleguide/pages/*.html',
-            styleguide: '_src/styleguide/index.html',
-            style: '_src/styleguide/styleguide.scss',
+            publicImg: 'public/img/**/*.*',
+            styleVars: '_layout-src/components/_var.scss',
+            style: '_layout-src/css/style_styleguide.scss',
             dest: {
                 main: 'styleguide',
-                pages: 'styleguide/pages',
-                styles: 'styleguide/css',
                 font: 'styleguide/font',
+                img: 'styleguide/img',
                 svg: 'styleguide/svg',
-                js: 'styleguide/js',
+                js: 'styleguide/js'
             }
         },
         prod: {
@@ -76,56 +51,39 @@ var gulp = require('gulp'),
         }
     };
 
-/**
- * Browser Sync
- */
-gulp.task('serve', function() {
-    browserSync({
-        notify: false,
-        server: 'styleguide'
-    });
-});
-
-require('./.gulp/styles.js')(gulp, paths, reload, AUTOPREFIXER_BROWSERS, UNCSS_CONFIG);
-require('./.gulp/styleguide.js')(gulp, paths, AUTOPREFIXER_BROWSERS, reload);
-require('./.gulp/font.js')(gulp, paths, reload);
-require('./.gulp/svg.js')(gulp, paths, reload);
-require('./.gulp/scripts.js')(gulp, paths, reload);
+require('./.gulp/styles.js')(gulp, paths, AUTOPREFIXER_BROWSERS);
+require('./.gulp/styleguide.js')(gulp, paths, AUTOPREFIXER_BROWSERS);
+require('./.gulp/font.js')(gulp, paths);
+require('./.gulp/svg.js')(gulp, paths);
+require('./.gulp/scripts.js')(gulp, paths);
 require('./.gulp/html.js')(gulp, paths, HTML_MINIFY_OPTS);
 require('./.gulp/perf.js')(gulp, paths);
 
 /**
  * Watchers
  */
-gulp.task('watch', function() {
-    gulp.watch(paths.styles, ['style:dev', 'style:out']);
-    gulp.watch(paths.styleguide.style, ['styleguide:styles']);
-    gulp.watch(paths.styleguide.styleguide, ['styleguide:main']);
-    gulp.watch(paths.styleguide.pages, ['styleguide:pages']);
-    gulp.watch(paths.partials, ['styleguide:pages']);
+gulp.task('watch', function () {
+    gulp.watch(paths.styles, ['style:out', 'styleguide']);
     gulp.watch([paths.js, paths.compJs], ['js:dev']);
 });
 
 /**
  * Tasks
  */
-
 gulp.task('dev', [
-    'style:dev',
-    'styleguide:styles',
-    'styleguide:main',
-    'styleguide:pages',
+    'js:dev',
+    'styleguide:img',
+    'styleguide',
     'font:dev',
     'svg:dev',
-    'watch',
-    'serve'
+    'watch'
 ]);
 
 gulp.task('prod', [
     'style:prod',
     'font:prod',
     'svg:prod',
-    'js:prod',
+    'js:prod'
 ]);
 
 gulp.task('post', [

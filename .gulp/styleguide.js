@@ -1,48 +1,36 @@
-module.exports = function(gulp, paths, autoprefixerConf, reload) {
-    var $ = require('gulp-load-plugins')();
+module.exports = function (gulp, paths, autoprefixerConf) {
+    var $ = require('gulp-load-plugins')(),
+        styleguide = require('sc5-styleguide');
 
-    /**
-     * Style Guide Styles
-     */
-    gulp.task('styleguide:styles', function() {
+    gulp.task('styleguide:img', function () {
+        return gulp.src(paths.styleguide.publicImg)
+            .on('error', console.trace.bind(console))
+            .pipe(gulp.dest(paths.styleguide.dest.img));
+    });
+
+    gulp.task('styleguide:generate', function () {
+        return gulp.src(paths.styles)
+            .pipe(styleguide.generate({
+                title: 'sysoev.org — Style Guide',
+                server: true,
+                rootPath: paths.styleguide.dest.output,
+                styleVariables: paths.styleguide.styleVars
+            }))
+            .on('error', console.trace.bind(console))
+            .pipe(gulp.dest(paths.styleguide.dest.main));
+    });
+
+    gulp.task('styleguide:applystyles', function () {
         return gulp.src(paths.styleguide.style)
             .pipe($.sass({
                 errLogToConsole: true,
                 sourceComments: 'map'
             }))
-            .on('error', console.error.bind(console))
             .pipe($.autoprefixer(autoprefixerConf))
-            .pipe(gulp.dest(paths.styleguide.dest.styles))
-            .pipe(reload({ stream: true }));
+            .pipe(styleguide.applyStyles())
+            .on('error', console.error.bind(console))
+            .pipe(gulp.dest(paths.styleguide.dest.main));
     });
 
-    /**
-     * Style Guide Main
-     */
-    gulp.task('styleguide:main', function() {
-        return gulp.src(paths.styleguide.styleguide)
-            .pipe($.swig({
-                defaults: {
-                    cache: false
-                }
-            }))
-            .on('error', console.error.bind(console))
-            .pipe(gulp.dest(paths.styleguide.dest.main))
-            .pipe(reload({ stream: true }));
-    });
-
-    /**
-     * Style Guide Pages
-     */
-    gulp.task('styleguide:pages', function() {
-        return gulp.src(paths.styleguide.pages)
-            .pipe($.swig({
-                defaults: {
-                    cache: false
-                }
-            }))
-            .on('error', console.error.bind(console))
-            .pipe(gulp.dest(paths.styleguide.dest.pages))
-            .pipe(reload({ stream: true }));
-    });
+    gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
 };

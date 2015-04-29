@@ -1,0 +1,2052 @@
+@charset "UTF-8";
+/* line 27, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/styleguide_helper_elements.scss */
+.styleguide-color {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #222;
+  font-weight: 400;
+  font-weight: 300;
+  display: block;
+  width: 100%;
+  height: 5em;
+  margin-bottom: .5em;
+  padding: 2em;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  text-shadow: #000 0 0 2px; }
+
+/* line 58, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/styleguide_helper_elements.scss */
+.styleguide-grid-unit {
+  min-height: 3em;
+  padding: 1em;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.1); }
+
+/* line 66, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/styleguide_helper_elements.scss */
+sg-common-class-wrapper {
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/*  =========================================================================
+    Base styles: opinionated defaults
+    ========================================================================== */
+/* line 17, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_h5bp.scss */
+html, button, input, select, textarea {
+  color: #222; }
+
+/* line 21, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_h5bp.scss */
+body {
+  font-size: 1em;
+  line-height: 1.4; }
+
+/* line 26, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_h5bp.scss */
+a {
+  color: #00e; }
+
+/* line 30, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_h5bp.scss */
+a:visited {
+  color: #551a8b; }
+
+/* line 34, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_h5bp.scss */
+a:hover {
+  color: #06e; }
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+/* line 42, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_h5bp.scss */
+img {
+  vertical-align: middle; }
+
+/*
+ * Remove default fieldset styles.
+ */
+/* line 50, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_h5bp.scss */
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+/* line 61, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_h5bp.scss */
+textarea {
+  resize: vertical; }
+
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 9, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+/* line 20, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 43, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+article, aside, details, figcaption, figure, footer, header, main, nav, section, summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 55, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+audio, canvas, progress, video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 66, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+/* line 78, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+[hidden], template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 89, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+a {
+  background: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 98, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+a:active, a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 109, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 118, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 126, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 135, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+mark {
+  color: #000;
+  background: #ff0; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 146, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+sub, sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0; }
+
+/* line 155, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+sup {
+  top: -0.5em; }
+
+/* line 159, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 170, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 178, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Remove margin
+ */
+/* line 189, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+figure {
+  margin: 0; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 197, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 207, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 218, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 242, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+button, input, optgroup, select, textarea {
+  margin: 0;
+  /* 3 */
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 254, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 266, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 281, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  /* 3 */
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 292, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 301, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 312, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 325, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 337, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 347, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+input[type="search"] {
+  /* 2 */
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+  /* 1 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 362, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 371, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+legend {
+  padding: 0;
+  /* 2 */
+  border: 0;
+  /* 1 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 381, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 390, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 401, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+table {
+  border-spacing: 0;
+  border-collapse: collapse; }
+
+/* line 408, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+td, th {
+  padding: 0; }
+
+/* Blockquote
+   ========================================================================== */
+/* line 415, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_normalize.scss */
+blockquote {
+  margin: 0; }
+
+/**
+ * Titles H1 - H3
+ */
+/**
+ * Space between blocks
+ */
+/**
+*
+* Global
+*
+**/
+/* line 9, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_global.scss */
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+/* line 15, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_global.scss */
+html, body, .main-wrp {
+  height: 100%; }
+
+/* line 22, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_global.scss */
+html, body, button, .main-wrp {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased; }
+
+/* line 28, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_global.scss */
+body, .main-wrp {
+  font-family: Georgia, Cambria, 'Times New Roman', Times, serif;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 32px;
+  display: table;
+  width: 100%;
+  letter-spacing: .01rem;
+  color: #615963; }
+
+/* line 43, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_global.scss */
+.main-cont {
+  min-width: 320px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 27px; }
+
+/* line 50, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_global.scss */
+.page-row {
+  display: table-row;
+  height: 1px; }
+
+/* line 56, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_global.scss */
+.page-row-expanded {
+  display: table-row;
+  height: 100%; }
+
+/* line 63, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_global.scss */
+a, a:visited {
+  -webkit-transition: color .3s;
+          transition: color .3s;
+  color: #69606B; }
+  /* line 68, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_global.scss */
+  a:hover, a:visited:hover {
+    text-decoration: none;
+    color: #F7C04F; }
+
+@font-face {
+  font-family: 'fontello';
+  src: url('/font/fontello.eot?66738560');
+  src: url('/font/fontello.eot?66738560#iefix') format('embedded-opentype'), url('/font/fontello.woff?66738560') format('woff'), url('/font/fontello.ttf?66738560') format('truetype'), url('/font/fontello.svg?66738560#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 25, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_icon/_icon.scss */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em; }
+
+/* line 45, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_icon/_icon.scss */
+.icon-ios-location:before {
+  content: '\e800'; }
+
+/* '' */
+/* line 46, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_icon/_icon.scss */
+.icon-social-github:before {
+  content: '\e801'; }
+
+/* '' */
+/* line 47, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_icon/_icon.scss */
+.icon-social-twitter-outline:before {
+  content: '\e802'; }
+
+/* '' */
+/* line 48, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_icon/_icon.scss */
+.icon-ios-email-outline:before {
+  content: '\e803'; }
+
+/* '' */
+/* line 49, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_icon/_icon.scss */
+.icon-ios-search-strong:before {
+  content: '\e804'; }
+
+/* '' */
+/* line 50, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_icon/_icon.scss */
+.icon-social-linkedin-outline:before {
+  content: '\e805'; }
+
+/* '' */
+/* line 51, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_icon/_icon.scss */
+.icon-close:before {
+  content: '\e806'; }
+
+/* '' */
+/* line 134, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+.header {
+  position: relative;
+  min-width: 320px;
+  margin-bottom: 0;
+  padding: 0 0 40px;
+  background: #312b32;
+  background-size: cover; }
+  /* line 144, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header__bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .07;
+    background: #514753 no-repeat 50% 50%;
+    background-size: cover; }
+  /* line 158, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header__content {
+    position: relative;
+    z-index: 2; }
+  /* line 163, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header__logo {
+    display: block;
+    width: 112px;
+    margin: 0 auto 56px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 300; }
+    /* line 176, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header__logo, .header__logo:visited {
+      color: rgba(255, 255, 255, 0.5); }
+    /* line 180, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header__logo:hover, .header__logo:hover:visited {
+      color: #F7C04F; }
+    /* line 184, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header__logo-img {
+      width: 72px;
+      margin-bottom: 8px;
+      border-radius: 50%; }
+    /* line 191, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header__logo-text {
+      letter-spacing: 1px; }
+  /* line 196, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header__intro {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16.8px; }
+    /* line 204, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header__intro-main {
+      padding-bottom: 6px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 31.5px;
+      font-weight: 500; }
+    /* line 213, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header__intro-sep {
+      position: relative;
+      width: 100px;
+      margin: 34px auto 32px;
+      border-top: 2px solid rgba(255, 255, 255, 0.2); }
+      /* line 221, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+      .header__intro-sep:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 4px;
+        height: 13px;
+        margin-top: -7px;
+        margin-left: -2px;
+        content: '';
+        -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+        border-left: 1px solid rgba(255, 255, 255, 0.3); }
+  /* line 242, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header__place {
+    margin-top: 8px; }
+  /* line 246, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header__contacts {
+    margin: 24px 0 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 21px; }
+    /* line 254, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header__contacts li {
+      display: inline-block; }
+      /* line 257, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+      .header__contacts li a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 25.2px; }
+        /* line 264, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+        .header__contacts li a:hover {
+          color: #F7C04F; }
+        /* line 268, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+        .header__contacts li a i {
+          position: relative;
+          top: 2px; }
+  /* line 276, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header__top {
+    position: relative;
+    z-index: 2;
+    padding: 16px 16px 24px; }
+    /* line 282, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header__top .header__logo {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-right: 27px;
+      margin-bottom: 0; }
+      /* line 292, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+      .header__top .header__logo:after {
+        position: absolute;
+        top: 0;
+        right: -18px;
+        height: 40px;
+        content: '';
+        border-right: 1px solid rgba(255, 255, 255, 0.3); }
+      /* line 304, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+      .header__top .header__logo img {
+        width: 40px; }
+    /* line 309, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header__top .header__contacts {
+      position: relative;
+      top: -3px;
+      display: inline-block;
+      margin: 0;
+      font-size: 16px; }
+  /* line 321, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header__tag-title {
+    text-transform: uppercase; }
+  /* line 325, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header .nav {
+    top: 1px;
+    float: right; }
+
+/* line 333, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+.header.-post {
+  position: relative;
+  padding: 0; }
+  /* line 338, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header.-post .header__content {
+    position: relative;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 80px 21px 118px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 1px rgba(97, 89, 99, 0.1); }
+    /* line 350, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header.-post .header__content .title {
+      margin-top: 0;
+      margin-bottom: 37px;
+      word-break: break-word; }
+    /* line 357, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header.-post .header__content-desc {
+      padding-bottom: 8px; }
+  /* line 362, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header.-post .header__post-info {
+    padding-top: 6px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal; }
+    /* line 373, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header.-post .header__post-info-date {
+      margin-right: 16px; }
+      /* line 376, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+      .header.-post .header__post-info-date:after {
+        position: absolute;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 16px;
+        margin-right: 0;
+        padding-top: 0;
+        padding-right: 0;
+        content: '•';
+        text-align: right;
+        font-size: 27.3px; }
+    /* line 394, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+    .header.-post .header__post-info-tags {
+      position: relative;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      /* line 404, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+      .header.-post .header__post-info-tags li {
+        display: inline-block;
+        margin: 0 4px; }
+        /* line 409, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+        .header.-post .header__post-info-tags li a, .header.-post .header__post-info-tags li a:visited {
+          color: rgba(255, 255, 255, 0.5); }
+          /* line 412, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+          .header.-post .header__post-info-tags li a:hover, .header.-post .header__post-info-tags li a:visited:hover {
+            color: #F7C04F; }
+
+@media screen and (max-width: 479px) {
+  /* line 426, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header.-post__top .header__contacts {
+    top: 3px;
+    float: right; }
+  /* line 432, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header.-post__top .nav {
+    display: block;
+    float: none;
+    margin-top: 24px;
+    text-align: center; }
+  /* line 442, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header.-post__content {
+    padding-top: 48px;
+    padding-bottom: 78px; } }
+
+@media screen and (max-width: 520px) {
+  /* line 454, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header.-post .header__content .title {
+    margin-bottom: 40px;
+    font-size: 35.7px; }
+  /* line 460, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_header/_header.scss */
+  .header.-post .header__content-desc {
+    padding-bottom: 8px; } }
+
+/* line 1, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_nav/_nav.scss */
+.nav {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  /* line 11, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_nav/_nav.scss */
+  .nav__item {
+    display: inline-block;
+    margin-left: 12px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal; }
+    /* line 20, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_nav/_nav.scss */
+    .nav__item.-icon {
+      font-size: 16px; }
+    /* line 24, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_nav/_nav.scss */
+    .nav__item:first-child {
+      margin-left: 0; }
+    /* line 28, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_nav/_nav.scss */
+    .nav__item-link, .nav__item-link:visited {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4); }
+      /* line 34, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_nav/_nav.scss */
+      .nav__item-link:hover, .nav__item-link:visited:hover {
+        text-decoration: underline; }
+    /* line 40, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_nav/_nav.scss */
+    .nav__item.-active .nav__item-link, .nav__item.-active .nav__item-link:visited {
+      color: #F7C04F; }
+
+/* line 23, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+.search {
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  -webkit-transition: all .3s;
+          transition: all .3s;
+  text-align: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  /* line 38, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+  .search.-active {
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: rgba(225, 223, 225, 0.97); }
+  /* line 47, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+  .search__container {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    color: #615963;
+    font-size: 42px; }
+  /* line 58, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+  .search__input {
+    width: 70%;
+    border: 0;
+    border-bottom: 1px solid rgba(60, 55, 61, 0.15);
+    background: transparent; }
+    /* line 65, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+    .search__input:focus {
+      outline: 0; }
+  /* line 70, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+  .search button {
+    border: 0;
+    background: transparent; }
+    /* line 74, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+    .search button:focus {
+      outline: 0; }
+  /* line 79, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+  .search__icon {
+    color: rgba(60, 55, 61, 0.15); }
+  /* line 83, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+  .search__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: rgba(60, 55, 61, 0.5); }
+    /* line 90, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+    .search__close i {
+      -webkit-transition: -webkit-transform .5s;
+              transition: transform .5s; }
+    /* line 94, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+    .search__close:hover, .search__close:visited:hover {
+      color: rgba(60, 55, 61, 0.5); }
+      /* line 97, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_search/_search.scss */
+      .search__close:hover i, .search__close:visited:hover i {
+        -webkit-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+                transform: rotate(360deg); }
+
+/* line 14, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_title.scss */
+.title.-size-1, .post h1 {
+  font-size: 57.27273px;
+  margin-left: -3px;
+  letter-spacing: .01em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.2;
+  margin-top: 40px;
+  margin-bottom: 3px;
+  letter-spacing: -.02em; }
+
+/* line 25, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_title.scss */
+.title.-size-2, .post h2 {
+  font-size: 34.36364px;
+  margin-left: -1.8px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.2;
+  margin-top: 40px;
+  margin-bottom: 3px;
+  letter-spacing: -.02em; }
+
+/* line 34, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_title.scss */
+.title.-size-3, .post h3 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.2;
+  margin-top: 40px;
+  margin-bottom: 3px;
+  letter-spacing: -.02em;
+  font-size: 30.54545px;
+  font-weight: 300;
+  margin-left: -1.6px;
+  padding-top: 3px;
+  color: rgba(0, 0, 0, 0.44); }
+
+/* line 47, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_title.scss */
+.title.-size-4, .post h4 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.2;
+  margin-top: 40px;
+  margin-bottom: 3px;
+  letter-spacing: -.02em;
+  font-size: 25.2px;
+  font-weight: 300;
+  margin-left: -1.2px;
+  padding-top: 3px;
+  color: rgba(0, 0, 0, 0.44); }
+
+@media screen and (max-width: 520px) {
+  /* line 63, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_title.scss */
+  .title.-size-1, .post h1 {
+    font-size: 52.06612px;
+    margin-left: -3px; }
+  /* line 70, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_title.scss */
+  .title.-size-2, .post h2 {
+    font-size: 31.23967px;
+    margin-left: -1.8px; }
+  /* line 77, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_title.scss */
+  .title.-size-3, .post h3 {
+    font-size: 27.76859px;
+    margin-left: -1.6px; }
+  /* line 84, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_title.scss */
+  .title.-size-3, .post h4 {
+    font-size: 22.90909px;
+    margin-left: -1.3px; } }
+
+/* line 28, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_section.scss */
+.section {
+  letter-spacing: 0.16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
+  /* line 34, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_section.scss */
+  .section.-narrow {
+    max-width: 700px;
+    margin: 0 auto; }
+  /* line 39, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_section.scss */
+  .section.-bottom {
+    margin-top: 64px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15); }
+
+/* line 47, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_section.scss */
+.section-divider {
+  display: block;
+  width: 144px;
+  margin: 63px auto 62px auto;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15); }
+
+/* line 153, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+.post {
+  letter-spacing: 0.16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  word-break: break-word;
+  padding-top: 80px; }
+  /* line 163, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post :first-child {
+    margin-top: 0; }
+  /* line 167, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post.-no-padding-top {
+    padding-top: 0; }
+  /* line 171, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post p, .post ul, .post ol, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto; }
+  /* line 178, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post p.-notice {
+    position: relative;
+    left: -27px;
+    display: block;
+    padding: 0 0 0 24px;
+    border-left: 3px solid rgba(60, 55, 61, 0.4); }
+  /* line 190, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post ul, .post ol {
+    margin-bottom: 31px;
+    padding: 0;
+    list-style: none;
+    list-style-image: none;
+    counter-reset: post; }
+    /* line 199, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+    .post ul li, .post ol li {
+      margin-bottom: 12px;
+      margin-left: 30px;
+      font-size: 21px; }
+  /* line 207, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post ul li:before {
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 58px;
+    margin-left: -58px;
+    padding-right: 12px;
+    content: '•';
+    text-align: right;
+    font-size: 21px; }
+  /* line 223, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post ol li:before {
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 58px;
+    margin-left: -58px;
+    padding-right: 12px;
+    content: counter(post) ".";
+    counter-increment: post;
+    text-align: right; }
+  /* line 238, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post h3 + ul, .post h3 + ol {
+    margin-top: 24px; }
+  /* line 242, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post h3 + h4, .post h3 + h4 {
+    margin-top: 8px; }
+  /* line 246, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post hr {
+    display: block;
+    width: 144px;
+    margin: 63px auto 62px auto;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.15); }
+  /* line 256, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_post/_post.scss */
+  .post-contacts {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    font-size: 18px; }
+
+/* line 15, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_quote/_quote.scss */
+.quote, .post blockquote {
+  margin: 64px auto 64px auto;
+  text-align: center;
+  color: #69606B;
+  font-size: 25.2px;
+  font-style: italic; }
+  /* line 25, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_quote/_quote.scss */
+  .quote.-before-header, .post blockquote.-before-header {
+    margin-bottom: 40px; }
+
+/* line 17, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_code/_code.scss */
+.highlight {
+  line-height: 24px;
+  margin: 40px auto 39px auto;
+  padding: 14px 16px 10px; }
+  /* line 23, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_code/_code.scss */
+  .highlight figcaption {
+    font-size: 16px;
+    margin-bottom: 16px;
+    padding: 0 0 12px 0;
+    opacity: .8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+
+/* line 34, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_code/_code.scss */
+.highlight pre {
+  font-size: 16px;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+@media screen and (max-width: 520px) {
+  /* line 44, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_code/_code.scss */
+  .highlight {
+    margin: 32px auto 31px auto; } }
+
+/* line 44, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_img/_img.scss */
+.img {
+  position: relative;
+  margin: 64px auto 64px auto;
+  text-align: center; }
+  /* line 51, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_img/_img.scss */
+  .img img {
+    max-width: 100%; }
+  /* line 55, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_img/_img.scss */
+  .img__img-cont {
+    padding-right: 300px; }
+  /* line 59, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_img/_img.scss */
+  .img__desc {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    width: 282px;
+    text-align: left;
+    color: #69606B;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px; }
+    /* line 74, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_img/_img.scss */
+    .img__desc:before {
+      position: absolute;
+      top: -16px;
+      left: 0;
+      width: 80px;
+      content: "";
+      border-top: 1px solid rgba(0, 0, 0, 0.15); }
+
+@media screen and (max-width: 940px) {
+  /* line 91, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_img/_img.scss */
+  .img__img-cont {
+    padding-right: 0; }
+  /* line 95, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_img/_img.scss */
+  .img__desc {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    margin: 8px auto 0; }
+    /* line 103, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_img/_img.scss */
+    .img__desc:before {
+      display: none; } }
+
+/* line 19, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_share/_share.scss */
+.share {
+  padding: 8px 0 24px;
+  text-transform: uppercase;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px; }
+  /* line 27, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_share/_share.scss */
+  .share__item {
+    text-decoration: none; }
+    /* line 30, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_share/_share.scss */
+    .share__item .icon {
+      position: relative;
+      top: 1px;
+      font-size: 18px; }
+
+/* line 120, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+.posts-list {
+  text-align: center;
+  padding-top: 64px; }
+  /* line 125, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+  .posts-list__item {
+    position: relative; }
+    /* line 128, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+    .posts-list__item:before {
+      display: block;
+      width: 144px;
+      margin: 64px auto 56px auto;
+      content: '';
+      border: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.15); }
+    /* line 141, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+    .posts-list__item:first-child:before {
+      display: none; }
+    /* line 146, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+    .posts-list__item-title {
+      font-weight: 400;
+      word-break: break-word; }
+    /* line 151, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+    .posts-list__item-info {
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.44);
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 40px; }
+      /* line 163, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+      .posts-list__item-info-date {
+        margin-right: 16px; }
+        /* line 166, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+        .posts-list__item-info-date:after {
+          position: absolute;
+          display: inline-block;
+          box-sizing: border-box;
+          width: 16px;
+          margin-right: 0;
+          padding-top: 0;
+          padding-right: 0;
+          content: '•';
+          text-align: right;
+          font-size: 27.3px; }
+      /* line 184, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+      .posts-list__item-info-tags {
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        list-style: none; }
+        /* line 194, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+        .posts-list__item-info-tags li {
+          display: inline-block;
+          margin: 0 4px; }
+          /* line 199, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+          .posts-list__item-info-tags li a, .posts-list__item-info-tags li a:visited {
+            color: rgba(0, 0, 0, 0.44); }
+            /* line 202, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+            .posts-list__item-info-tags li a:hover, .posts-list__item-info-tags li a:visited:hover {
+              color: #F7C04F; }
+    /* line 210, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+    .posts-list__item-desc {
+      font-size: 18px;
+      line-height: 24px; }
+  /* line 216, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_posts-list/_posts-list.scss */
+  .posts-list .quote {
+    margin: 0; }
+
+/* line 110, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+.footer {
+  margin-top: 56px;
+  color: rgba(255, 255, 255, 0.4);
+  background: #3C373D;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  word-break: break-word; }
+  /* line 120, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+  .footer__nav {
+    padding: 32px 0 16px;
+    text-align: center; }
+  /* line 126, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+  .footer__copyright {
+    padding: 0 0 32px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal; }
+  /* line 135, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+  .footer__post-switcher {
+    display: table;
+    width: 100%;
+    min-width: 160px;
+    border-spacing: 0;
+    border: 0;
+    border-collapse: collapse;
+    background: #fff; }
+    /* line 147, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+    .footer__post-switcher-link {
+      display: table-cell;
+      width: 50%;
+      padding: 48px;
+      -webkit-transition: -webkit-transform .1s;
+              transition: transform .1s;
+      text-decoration: none;
+      border-collapse: collapse;
+      background: #3C373D; }
+      /* line 159, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+      .footer__post-switcher-link span {
+        display: block; }
+      /* line 163, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+      .footer__post-switcher-link:hover {
+        -webkit-transform: translateY(-8px);
+            -ms-transform: translateY(-8px);
+                transform: translateY(-8px); }
+      /* line 167, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+      .footer__post-switcher-link.-prev {
+        border-right: 1px solid #564f58; }
+      /* line 172, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+      .footer__post-switcher-link.-empty:hover {
+        -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+                transform: translateY(0); }
+    /* line 178, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+    .footer__post-switcher-direction {
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 14px; }
+    /* line 186, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+    .footer__post-switcher-title {
+      margin-top: 24px;
+      font-size: 25.2px; }
+  /* line 194, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+  .footer.-main .footer__post-switcher-direction {
+    font-size: 18px; }
+
+@media screen and (max-width: 750px) {
+  /* line 205, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+  .footer__post-switcher-link {
+    padding: 24px; } }
+
+@media screen and (max-width: 480px) {
+  /* line 217, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_footer/_footer.scss */
+  .footer__post-switcher-link {
+    padding: 16px; } }
+
+/**
+ * Core PhotoSwipe CSS file, http://photoswipe.com
+ * @author Dmitry Semenov
+ */
+/* line 5, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  -ms-touch-action: none;
+  z-index: 500;
+  -webkit-text-size-adjust: 100%;
+  -webkit-backface-visibility: hidden;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  outline: none; }
+
+/* line 19, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp * {
+  box-sizing: border-box; }
+
+/* line 23, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp img {
+  max-width: none; }
+
+/* line 26, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp--animate_opacity {
+  opacity: 0;
+  will-change: opacity;
+  -webkit-transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+  transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1); }
+
+/* line 32, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp--open {
+  display: block; }
+
+/* line 35, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp--zoom-allowed .pswp__img {
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in; }
+
+/* line 40, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp--zoomed-in .pswp__img {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grap; }
+
+/* line 45, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp--dragging .pswp__img {
+  cursor: -webkit-grabbing;
+  cursor: grabbing; }
+
+/* line 50, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 31, 34, 0.96);
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  will-change: opacity; }
+
+/* line 61, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp__scroll-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  will-change: transform; }
+
+/* line 70, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp__container, .pswp__zoom-wrap {
+  -ms-touch-action: none;
+  touch-action: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+/* line 79, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp__container, .pswp__img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; }
+
+/* line 87, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp__zoom-wrap {
+  position: absolute;
+  width: 100%;
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transition: -webkit-transform 333ms cubic-bezier(0.4, 0, 0.22, 1);
+  transition: transform 333ms cubic-bezier(0.4, 0, 0.22, 1); }
+
+/* line 97, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp__container, .pswp__zoom-wrap {
+  -webkit-backface-visibility: hidden;
+  will-change: transform; }
+
+/* line 101, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp__item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden; }
+
+/* line 109, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp__img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s; }
+
+/* line 116, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp__img--placeholder {
+  -webkit-backface-visibility: hidden; }
+
+/* line 119, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp__img--placeholder--blank {
+  background: #222222; }
+
+/* line 122, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/_photoswipe.scss */
+.pswp--ie .pswp__img {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0; }
+
+/**
+ * Default PhotoSwipe UI CSS file, http://photoswipe.com
+ * @author Dmitry Semenov
+ */
+/* line 5, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__ui {
+  -webkit-font-smoothing: auto;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1050; }
+
+/* line 11, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__top-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 44px;
+  width: 100%; }
+
+/**
+ * Loading indicator, aka preloader.
+ * You can play with preloader is here: http://codepen.io/dimsemenov/pen/yyBWoR
+ */
+/* line 22, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__preloader {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -22px;
+  z-index: 20;
+  opacity: 0;
+  position: relative;
+  -webkit-transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease-out;
+  will-change: opacity; }
+
+/* line 36, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__preloader__icn {
+  width: 20px;
+  height: 20px;
+  margin: 12px; }
+
+/* line 41, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--css_animation .pswp__preloader--active {
+  opacity: 1; }
+
+/* line 43, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--css_animation .pswp__preloader--active .pswp__preloader__icn {
+  -webkit-animation: clockwise 500ms linear infinite;
+  animation: clockwise 500ms linear infinite; }
+
+/* line 46, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--css_animation .pswp__preloader--active .pswp__preloader__donut {
+  -webkit-animation: donut-rotate 1000ms cubic-bezier(0.4, 0, 0.22, 1) infinite;
+  animation: donut-rotate 1000ms cubic-bezier(0.4, 0, 0.22, 1) infinite; }
+
+/* line 49, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--css_animation .pswp__preloader__icn {
+  background: none;
+  opacity: 0.75;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  margin: 0; }
+
+/* line 58, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--css_animation .pswp__preloader__cut {
+  position: relative;
+  width: 7px;
+  height: 14px;
+  overflow: hidden; }
+
+/* line 63, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--css_animation .pswp__preloader__donut {
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+  margin: 0; }
+
+@-webkit-keyframes clockwise {
+  /* line 78, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  0% {
+    -webkit-transform: rotate(0deg); }
+
+  /* line 81, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes clockwise {
+  /* line 85, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+
+  /* line 88, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes donut-rotate {
+  /* line 92, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  0% {
+    -webkit-transform: rotate(0); }
+
+  /* line 95, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  50% {
+    -webkit-transform: rotate(-140deg); }
+
+  /* line 98, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  100% {
+    -webkit-transform: rotate(0); } }
+
+@keyframes donut-rotate {
+  /* line 102, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+
+  /* line 105, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  50% {
+    -webkit-transform: rotate(-140deg);
+            transform: rotate(-140deg); }
+
+  /* line 108, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); } }
+
+/* line 111, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__error-msg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: -8px;
+  color: white;
+  opacity: 0.7; }
+
+/* line 124, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__error-msg a {
+  color: white;
+  text-decoration: underline; }
+
+/* line 128, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button {
+  width: 44px;
+  height: 44px;
+  position: relative;
+  background: none;
+  cursor: pointer;
+  overflow: visible;
+  border: 0;
+  -webkit-appearance: none;
+  display: block;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  float: right;
+  opacity: 0.75;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s; }
+
+/* line 147, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button:focus, .pswp__button:hover {
+  opacity: 1; }
+
+/* line 149, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button:active {
+  opacity: 0.9; }
+
+/* line 151, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+/* line 155, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--animated-in .pswp__button {
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s; }
+
+/* line 159, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__ui--over-close .pswp__button--close {
+  opacity: 1; }
+
+/* line 162, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button, .pswp__button--arrow--left:before, .pswp__button--arrow--right:before {
+  background: url(/svg/_photoswipe/default-skin.svg) 0 0 no-repeat;
+  background-size: 264px 88px;
+  width: 44px;
+  height: 44px; }
+
+/* line 168, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--svg .pswp__button--arrow--left, .pswp--svg .pswp__button--arrow--right {
+  background: none; }
+
+/* line 171, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__counter, .pswp__share-modal {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+      user-select: none; }
+
+/* line 176, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__share-modal {
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  position: absolute;
+  z-index: 1450;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease-out;
+  will-change: opacity;
+  -webkit-backface-visibility: hidden; }
+
+/* line 192, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__share-modal--hidden {
+  display: none; }
+
+/* line 195, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__share-tooltip {
+  z-index: 1550;
+  position: absolute;
+  background: white;
+  top: 56px;
+  border-radius: 2px;
+  display: block;
+  width: auto;
+  right: 44px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  -webkit-transform: translateY(6px);
+  -ms-transform: translateY(6px);
+      transform: translateY(6px);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  will-change: transform;
+  -webkit-backface-visibility: hidden; }
+
+/* line 212, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__share-tooltip a {
+  display: block;
+  padding: 8px 12px;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 18px; }
+
+/* line 219, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__share-tooltip a:hover {
+  text-decoration: none;
+  color: black; }
+
+/* line 223, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__share-modal--fade-in {
+  opacity: 1; }
+
+/* line 225, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__share-modal--fade-in .pswp__share-tooltip {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+      transform: translateY(0); }
+
+/* line 229, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--touch .pswp__share-tooltip a {
+  padding: 16px 12px; }
+
+/* line 232, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+a.pswp__share--facebook:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -12px;
+  right: 15px;
+  border: 6px solid transparent;
+  border-bottom-color: white;
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  pointer-events: none; }
+
+/* line 245, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+a.pswp__share--facebook:hover {
+  background: #3e5c9a;
+  color: white; }
+
+/* line 248, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+a.pswp__share--facebook:hover:before {
+  border-bottom-color: #3e5c9a; }
+
+/* line 251, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+a.pswp__share--twitter:hover {
+  background: #55acee;
+  color: white; }
+
+/* line 255, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+a.pswp__share--pinterest:hover {
+  background: #cccccc;
+  color: #ce272d; }
+
+/* line 259, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+a.pswp__share--download:hover {
+  background: #dddddd; }
+
+/* line 262, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button--close {
+  background-position: 0 -44px; }
+
+/* line 265, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button--share {
+  background-position: -44px -44px; }
+
+/* line 268, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button--fs {
+  display: none; }
+
+/* line 271, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--supports-fs .pswp__button--fs {
+  display: block; }
+
+/* line 274, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--fs .pswp__button--fs {
+  background-position: -44px 0; }
+
+/* line 277, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button--zoom {
+  display: none;
+  background-position: -88px 0; }
+
+/* line 281, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--zoom-allowed .pswp__button--zoom {
+  display: block; }
+
+/* line 284, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--zoomed-in .pswp__button--zoom {
+  background-position: -132px 0; }
+
+/* line 287, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button--arrow--left, .pswp__button--arrow--right {
+  background: none;
+  top: 50%;
+  margin-top: -50px;
+  width: 70px;
+  height: 100px;
+  position: absolute; }
+
+/* line 295, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__top-bar, .pswp__button--arrow--left, .pswp__button--arrow--right {
+  -webkit-backface-visibility: hidden;
+  will-change: opacity; }
+
+/* line 299, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--touch .pswp__button--arrow--left, .pswp--touch .pswp__button--arrow--right {
+  visibility: hidden; }
+
+/* line 302, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button--arrow--left {
+  left: 0; }
+
+/* line 305, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button--arrow--right {
+  right: 0; }
+
+/* line 308, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button--arrow--left:before, .pswp__button--arrow--right:before {
+  content: '';
+  top: 35px;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 30px;
+  width: 32px;
+  position: absolute; }
+
+/* line 316, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button--arrow--left:before {
+  left: 6px;
+  background-position: -138px -44px; }
+
+/* line 320, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__button--arrow--right:before {
+  right: 6px;
+  background-position: -94px -44px; }
+
+/* line 324, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__counter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 44px;
+  font-size: 13px;
+  line-height: 44px;
+  color: white;
+  opacity: 0.75;
+  padding: 0 10px; }
+
+@media screen and (max-width: 1024px) {
+  /* line 336, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  .pswp_scroll-wrap {
+    top: 0;
+    bottom: 0; }
+  /* line 339, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  .pswp__caption {
+    margin-top: 0; }
+  /* line 341, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+  .pswp__preloader {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0;
+    float: right; } }
+
+/* line 348, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: white;
+  width: 100%;
+  min-height: 44px; }
+
+/* line 355, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__caption small {
+  font-size: 11px;
+  color: #bbbbbb; }
+
+/* line 359, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__caption__center {
+  text-align: left;
+  max-width: 420px;
+  margin: 0 auto;
+  color: white;
+  font-size: 13px;
+  padding: 10px;
+  line-height: 20px;
+  color: #cccccc; }
+
+/* line 369, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__caption--empty {
+  display: none; }
+
+/* line 372, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__caption--fake {
+  visibility: hidden; }
+
+/* line 375, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__bg, .pswp__caption, .pswp__top-bar, .pswp--has_mouse .pswp__button--arrow--left, .pswp--has_mouse .pswp__button--arrow--right {
+  will-change: opacity;
+  -webkit-transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+  transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1); }
+
+/* line 380, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--animated-in .pswp__bg, .pswp--animated-in .pswp__zoom-wrap {
+  -webkit-transition: none;
+  transition: none; }
+
+/* line 384, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--has_mouse .pswp__button--arrow--left, .pswp--has_mouse .pswp__button--arrow--right {
+  visibility: visible; }
+
+/* line 387, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__top-bar, .pswp__caption {
+  background-color: rgba(0, 0, 0, 0.5); }
+
+/* line 390, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__ui--fit .pswp__top-bar, .pswp__ui--fit .pswp__caption {
+  background-color: rgba(0, 0, 0, 0.3); }
+
+/* line 393, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__ui--hidden .pswp__top-bar, .pswp__ui--hidden .pswp__caption, .pswp__ui--hidden .pswp__button--arrow--left, .pswp__ui--hidden .pswp__button--arrow--right {
+  opacity: 0; }
+
+/* line 396, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__ui--idle .pswp__top-bar {
+  opacity: 0; }
+
+/* line 398, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__ui--idle .pswp__button--arrow--left, .pswp__ui--idle .pswp__button--arrow--right {
+  opacity: 0; }
+
+/* line 401, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__ui--hidden .pswp__top-bar, .pswp__ui--hidden .pswp__caption, .pswp__ui--hidden .pswp__bg, .pswp__ui--hidden .pswp__button--arrow--left, .pswp__ui--hidden .pswp__button--arrow--right {
+  opacity: 0.001; }
+
+/* line 404, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp__element--disabled {
+  display: none !important; }
+
+/* line 407, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--minimal--dark .pswp__top-bar {
+  background: none; }
+
+/* line 409, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_photoswipe/default-skin.scss */
+.pswp--minimal--dark .pswp__button--arrow--left, .pswp--minimal--dark .pswp__button--arrow--right {
+  background: none; }
+
+/* @import "../components/_highlightjs/solarized_light"; */
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+/* line 7, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
+.highlight {
+  display: block;
+  overflow-x: auto;
+  color: #657b83;
+  background: #FAFAFA;
+  -webkit-text-size-adjust: none;
+  /* Solarized Green */
+  /* Solarized Cyan */
+  /* Solarized Blue */
+  /* Solarized Yellow */
+  /* Solarized Orange */
+  /* Solarized Red */
+  /* Solarized Violet */ }
+  /* line 21, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
+  .highlight .comment, .highlight .diff .header, .highlight .doctype, .highlight .pi, .highlight .lisp .string, .highlight .javadoc {
+    color: #93a1a1; }
+  /* line 33, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
+  .highlight .keyword, .highlight .winutils, .highlight .method, .highlight .addition, .highlight .css .tag, .highlight .request, .highlight .status, .highlight .nginx .title {
+    color: #859900; }
+  /* line 48, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
+  .highlight .number, .highlight .command, .highlight .string, .highlight .tag .value, .highlight .rules .value, .highlight .phpdoc, .highlight .dartdoc, .highlight .tex .formula, .highlight .regexp, .highlight .hexcolor, .highlight .link_url {
+    color: #2aa198; }
+  /* line 61, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
+  .highlight .title, .highlight .localvars, .highlight .chunk, .highlight .decorator, .highlight .built_in, .highlight .identifier, .highlight .vhdl .literal, .highlight .id, .highlight .css .function {
+    color: #268bd2; }
+  /* line 74, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
+  .highlight .attribute, .highlight .variable, .highlight .lisp .body, .highlight .smalltalk .number, .highlight .constant, .highlight .class .title, .highlight .parent, .highlight .type, .highlight .link_reference {
+    color: #b58900; }
+  /* line 91, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
+  .highlight .preprocessor, .highlight .preprocessor .keyword, .highlight .pragma, .highlight .shebang, .highlight .symbol, .highlight .symbol .string, .highlight .diff .change, .highlight .special, .highlight .attr_selector, .highlight .subst, .highlight .cdata, .highlight .css .pseudo, .highlight .header {
+    color: #cb4b16; }
+  /* line 97, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
+  .highlight .deletion, .highlight .important {
+    color: #dc322f; }
+  /* line 102, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
+  .highlight .link_label {
+    color: #6c71c4; }
+  /* line 106, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_highlightjs/highlight.scss */
+  .highlight .tex .formula {
+    background: #eee8d5; }
+
+/**
+ * Clearfix helper
+ * Used to contain floats: h5bp.com/q
+ */
+/* line 7, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_helper.scss */
+.clearfix::before, .clearfix::after {
+  display: table;
+  content: ""; }
+
+/* line 13, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_helper.scss */
+.clearfix::after {
+  clear: both; }
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+/* line 21, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_helper.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+/* line 30, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_helper.scss */
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0; }
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+/* line 50, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_helper.scss */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  width: auto;
+  height: auto;
+  margin: 0; }
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+/* line 65, /Users/sysoev/Development/JavaScript/sysoev.org/_src/layout/components/_helper.scss */
+.invisible {
+  visibility: hidden; }

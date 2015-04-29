@@ -6,7 +6,7 @@ module.exports = function(gulp, paths) {
     gulp.task('perf:critical', function(cb) {
         critical.generate({
             base: './',
-            src: 'styleguide/pages/index.html',
+            src: 'public/index.html',
             css: [paths.prod.dest.styles + '/style.css'],
             width: 320,
             height: 480,
@@ -19,7 +19,7 @@ module.exports = function(gulp, paths) {
 
         critical.generate({
             base: './',
-            src: 'styleguide/pages/post.html',
+            src: 'public/dega-event-delegation/index.html',
             css: [paths.prod.dest.styles + '/style.css'],
             width: 320,
             height: 480,
@@ -32,7 +32,7 @@ module.exports = function(gulp, paths) {
 
         critical.generate({
             base: './',
-            src: 'styleguide/pages/tag.html',
+            src: 'public/tags/javascript/index.html',
             css: [paths.prod.dest.styles + '/style.css'],
             width: 320,
             height: 480,
