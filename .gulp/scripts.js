@@ -1,4 +1,4 @@
-module.exports = function(gulp, paths, reload) {
+module.exports = function(gulp, paths) {
     var $ = require('gulp-load-plugins')();
 
     gulp.task('js:dev', function() {
@@ -9,8 +9,7 @@ module.exports = function(gulp, paths, reload) {
                 debug: true
             }))
             .on('error', console.error.bind(console))
-            .pipe(gulp.dest(paths.styleguide.dest.js))
-            .pipe(reload({ stream: true }));
+            .pipe(gulp.dest(paths.styleguide.dest.js));
     });
 
     gulp.task('js:prod', function() {

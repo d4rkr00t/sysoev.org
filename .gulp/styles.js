@@ -1,4 +1,4 @@
-module.exports = function(gulp, paths, reload, autoprefixerConf, uncssConf) {
+module.exports = function(gulp, paths, autoprefixerConf) {
     var $ = require('gulp-load-plugins')(),
         minifyCSS = require('gulp-minify-css');
 

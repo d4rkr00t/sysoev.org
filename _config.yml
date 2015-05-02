@@ -82,5 +82,5 @@ theme: sysoev.org
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/d4rkr00t/sysoev-gh-pages
+  repo: git@github.com:d4rkr00t/sysoev-gh-pages.git
   branch: gh-pages

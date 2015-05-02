@@ -1,4 +1,4 @@
-module.exports = function(gulp, paths, reload) {
+module.exports = function(gulp, paths) {
     var $ = require('gulp-load-plugins')();
 
     gulp.task('svg:dev', function() {
@@ -7,8 +7,7 @@ module.exports = function(gulp, paths, reload) {
                 prefix: paths.svg.split('/').reduce(function(prev) {
                     return prev + 1;
                 }, 0) - 2
-            }))
-            .pipe(reload({ stream: true }));
+            }));
     });
 
     gulp.task('svg:prod', function() {

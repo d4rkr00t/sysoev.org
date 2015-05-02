@@ -1,4 +1,4 @@
-module.exports = function (gulp, paths, reload) {
+module.exports = function (gulp, paths) {
     var $ = require('gulp-load-plugins')();
 
     gulp.task('font:dev', function () {
@@ -7,8 +7,7 @@ module.exports = function (gulp, paths, reload) {
                 prefix: paths.font.split('/').reduce(function (prev) {
                     return prev + 1;
                 }, 0)
-            }))
-            .pipe(reload({ stream: true }));
+            }));
     });
 
     gulp.task('font:prod', function () {
