@@ -1,3 +1,8 @@
 node_modules
 public
 .deploy_git
+themes/sysoev.org/layout/_partial/critical-css/main.ejs
+themes/sysoev.org/layout/_partial/critical-css/post.ejs
+themes/sysoev.org/layout/_partial/critical-css/tag.ejs
+themes/sysoev.org/source/css/style.css
+db.json
