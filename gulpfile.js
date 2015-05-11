@@ -72,8 +72,7 @@ gulp.task('watch', function () {
  */
 gulp.task('dev', [
     'js:dev',
-    'styleguide:img',
-    'styleguide',
+    'styleguide:dev',
     'font:dev',
     'svg:dev',
     'watch'

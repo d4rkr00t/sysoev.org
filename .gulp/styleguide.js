@@ -2,6 +2,20 @@ module.exports = function (gulp, paths, autoprefixerConf) {
     var $ = require('gulp-load-plugins')(),
         styleguide = require('sc5-styleguide');
 
+    function generateStyleguideGenerate(server) {
+        return gulp.src(paths.styles)
+            .pipe(styleguide.generate({
+                title: 'sysoev.org — Style Guide',
+                server: server,
+                rootPath: paths.styleguide.dest.main,
+                overviewPath: '_layout-src/README.md',
+                styleVariables: paths.styleguide.styleVars,
+                appRoot: server ? undefined : '/styleguide/'
+            }))
+            .on('error', console.trace.bind(console))
+            .pipe(gulp.dest(paths.styleguide.dest.main));
+    }
+
     gulp.task('styleguide:img', function () {
         return gulp.src(paths.styleguide.publicImg)
             .on('error', console.trace.bind(console))
@@ -9,16 +23,11 @@ module.exports = function (gulp, paths, autoprefixerConf) {
     });
 
     gulp.task('styleguide:generate', function () {
-        return gulp.src(paths.styles)
-            .pipe(styleguide.generate({
-                title: 'sysoev.org — Style Guide',
-                server: true,
-                rootPath: paths.styleguide.dest.main,
-                overviewPath: '_layout-src/README.md',
-                styleVariables: paths.styleguide.styleVars
-            }))
-            .on('error', console.trace.bind(console))
-            .pipe(gulp.dest(paths.styleguide.dest.main));
+        return generateStyleguideGenerate(true);
+    });
+
+    gulp.task('styleguide:generate:prod', function () {
+        return generateStyleguideGenerate(false);
     });
 
     gulp.task('styleguide:applystyles', function () {
@@ -33,5 +42,6 @@ module.exports = function (gulp, paths, autoprefixerConf) {
             .pipe(gulp.dest(paths.styleguide.dest.main));
     });
 
-    gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
+    gulp.task('styleguide:dev', ['styleguide:img', 'styleguide:generate', 'styleguide:applystyles']);
+    gulp.task('styleguide:prod', ['styleguide:img', 'styleguide:generate:prod', 'styleguide:applystyles']);
 };
