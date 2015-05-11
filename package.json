@@ -5,7 +5,8 @@
   "author": "Stanislav Sysoev @d4rkr00t",
   "license": "ISC",
   "scripts": {
-    "build": "start_time=`date +%s` && gulp prod && gulp perf:critical && ./node_modules/.bin/hexo generate && gulp post && echo '==========================================' && echo run time is $(expr `date +%s` - $start_time)s"
+    "build": "start_time=`date +%s` && gulp styleguide && gulp prod && gulp perf:critical && ./node_modules/.bin/hexo generate && gulp post && cp -r styleguide ./public/styleguide && echo '==========================================' && echo run time is $(expr `date +%s` - $start_time)s",
+    "styles": "gulp style:out && ./node_modules/.bin/hexo generate"
   },
   "private": true,
   "hexo": {

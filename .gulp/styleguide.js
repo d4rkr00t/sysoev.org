@@ -13,7 +13,8 @@ module.exports = function (gulp, paths, autoprefixerConf) {
             .pipe(styleguide.generate({
                 title: 'sysoev.org — Style Guide',
                 server: true,
-                rootPath: paths.styleguide.dest.output,
+                rootPath: paths.styleguide.dest.main,
+                overviewPath: '_layout-src/README.md',
                 styleVariables: paths.styleguide.styleVars
             }))
             .on('error', console.trace.bind(console))

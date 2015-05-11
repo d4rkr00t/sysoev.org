@@ -1,8 +1,8 @@
-module.exports = function(gulp, paths, autoprefixerConf) {
+module.exports = function (gulp, paths, autoprefixerConf) {
     var $ = require('gulp-load-plugins')(),
         minifyCSS = require('gulp-minify-css');
 
-    gulp.task('style:out', function() {
+    gulp.task('style:out', function () {
         return gulp.src(paths.mainStyle)
             .pipe($.sass({
                 errLogToConsole: true,
@@ -10,14 +10,13 @@ module.exports = function(gulp, paths, autoprefixerConf) {
             }))
             .on('error', console.error.bind(console))
             .pipe($.autoprefixer(autoprefixerConf))
-            .pipe(gulp.dest(paths.prod.dest.styles))
-            .pipe(reload({ stream: true }));
+            .pipe(gulp.dest(paths.prod.dest.styles));
     });
 
-    gulp.task('style:prod', function() {
+    gulp.task('style:prod', function () {
         return gulp.src(paths.mainStyle)
             .pipe($.sass({
-                errLogToConsole: true,
+                errLogToConsole: true
             }))
             .on('error', console.error.bind(console))
             .pipe($.autoprefixer(autoprefixerConf))
