@@ -63,7 +63,7 @@ require('./.gulp/perf.js')(gulp, paths);
  * Watchers
  */
 gulp.task('watch', function () {
-    gulp.watch(paths.styles, ['style:out', 'styleguide']);
+    gulp.watch(paths.styles, ['style:out', 'styleguide:dev']);
     gulp.watch([paths.js, paths.compJs], ['js:dev']);
 });
 
