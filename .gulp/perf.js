@@ -1,9 +1,8 @@
-module.exports = function(gulp, paths) {
-    var $ = require('gulp-load-plugins')(),
-        critical = require('critical'),
+module.exports = function (gulp, paths) {
+    var critical = require('critical'),
         fs = require('fs');
 
-    gulp.task('perf:critical', function(cb) {
+    gulp.task('perf:critical', function () {
         critical.generate({
             base: './',
             src: 'public/index.html',
@@ -11,7 +10,7 @@ module.exports = function(gulp, paths) {
             width: 320,
             height: 480,
             minify: true
-        }, function(err, output){
+        }, function (err, output) {
             fs.writeFile(
                 'themes/sysoev.org/layout/_partial/critical-css/main.ejs', '<style>' + output + '</style>'
             );
@@ -24,7 +23,7 @@ module.exports = function(gulp, paths) {
             width: 320,
             height: 480,
             minify: true
-        }, function(err, output){
+        }, function (err, output) {
             fs.writeFile(
                 'themes/sysoev.org/layout/_partial/critical-css/post.ejs', '<style>' + output + '</style>'
             );
@@ -37,7 +36,7 @@ module.exports = function(gulp, paths) {
             width: 320,
             height: 480,
             minify: true
-        }, function(err, output){
+        }, function (err, output) {
             fs.writeFile(
                 'themes/sysoev.org/layout/_partial/critical-css/tag.ejs', '<style>' + output + '</style>'
             );
