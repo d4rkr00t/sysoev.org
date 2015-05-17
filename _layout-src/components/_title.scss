@@ -23,11 +23,12 @@
 
 .title.-size-2,
 .post h2 {
+    @include title;
+
     font-size: $fontH2;
+    font-weight: 500;
 
     margin-left: -1.8px;
-
-    @include title;
 }
 
 .title.-size-3,
