@@ -2,7 +2,6 @@ title: Task Manager из Evernote
 type: simple
 date: 2012-06-25 08:24:14
 description: Использование Evernote как инструмента для GTD
-type: simple
 tags:
 - evernote
 - gtd
