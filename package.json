@@ -4,5 +4,12 @@
   "description": "Personal blog sysoev.org",
   "author": "Stanislav Sysoev @d4rkr00t",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "start": "aik src/index.js",
+    "build": "aik src/index.js --build"
+  },
+  "devDependencies": {
+    "aik": "d4rkr00t/aik"
+  }
 }
