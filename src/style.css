@@ -94,10 +94,36 @@ a:hover {
     opacity: .7;
 
     will-change: opacity;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
 }
 
 .icon:hover {
     opacity: 1;
+}
+
+.icon.-email {
+    background-image: url(assets/icons/email.svg);
+}
+
+.icon.-linkedin {
+    background-image: url(assets/icons/linkedin.svg);
+}
+
+.icon.-github {
+    background-image: url(assets/icons/github.svg);
+}
+
+.icon.-twitter {
+    background-image: url(assets/icons/twitter.svg);
+}
+
+.icon.-medium {
+    background-image: url(assets/icons/medium.svg);
+}
+
+.icon.-soundcloud {
+    background-image: url(assets/icons/soundcloud.svg);
 }
 
 @media screen and (max-width: 659px) {
