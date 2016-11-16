@@ -25,6 +25,18 @@ a:hover {
 }
 
 .logo {
+    display: block;
+
+    width: 47px;
+    height: 18px;
+
+    background: url('./assets/logo.svg') no-repeat 50% 50%;
+    background-size: 100% 100%;
+}
+
+.logo-container {
+    display: block;
+
     padding: 0 2rem;
 }
 
@@ -32,15 +44,19 @@ a:hover {
     position: relative;
 
     height: 100%;
-    padding: 3rem 7rem;
+    padding: 3rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
 }
 
 .main-info {
     position: absolute;
     top: 50%;
 
-    transform: translateY(-50%);
     padding: 2rem;
+
+    transform: translateY(-50%);
 }
 
 .main-info__title {
@@ -92,10 +108,10 @@ a:hover {
     vertical-align: middle;
 
     opacity: .7;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 
     will-change: opacity;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
 }
 
 .icon:hover {
@@ -126,26 +142,20 @@ a:hover {
     background-image: url(assets/icons/soundcloud.svg);
 }
 
-@media screen and (max-width: 659px) {
-    .container {
-        padding: 3rem 5rem;
-    }
-}
-
 @media screen and (max-width: 619px) {
     .container {
-        padding: 3rem 4rem;
-    }
-}
-
-@media screen and (max-width: 579px) {
-    .container {
-        padding: 3rem 2rem;
+        padding: 3rem 1rem;
     }
 }
 
 @media screen and (max-width: 519px) {
     .container {
         padding: 3rem 0;
+    }
+}
+
+@media screen and (max-height: 579px) {
+    .main-info {
+        margin-top: 2em;
     }
 }
