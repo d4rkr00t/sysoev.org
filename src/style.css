@@ -7,6 +7,7 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 13px;
 
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -20,11 +21,18 @@ a:visited {
 }
 
 a:hover {
-    color: #512da8;
+    color: black;
+}
+
+.logo {
+    padding: 0 2rem;
 }
 
 .container {
-    padding: 50px 100px;
+    position: relative;
+
+    height: 100%;
+    padding: 3rem 7rem;
 }
 
 .main-info {
@@ -32,6 +40,7 @@ a:hover {
     top: 50%;
 
     transform: translateY(-50%);
+    padding: 2rem;
 }
 
 .main-info__title {
@@ -50,8 +59,8 @@ a:hover {
     font-weight: 200;
     line-height: 1.6rem;
 
-    width: 500px;
-    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-bottom: 3.5rem;
 
     color: #757575;
 }
@@ -80,6 +89,7 @@ a:hover {
     height: 2rem;
 
     transition: opacity .2s ease-in;
+    vertical-align: middle;
 
     opacity: .7;
 
@@ -88,4 +98,28 @@ a:hover {
 
 .icon:hover {
     opacity: 1;
+}
+
+@media screen and (max-width: 659px) {
+    .container {
+        padding: 3rem 5rem;
+    }
+}
+
+@media screen and (max-width: 619px) {
+    .container {
+        padding: 3rem 4rem;
+    }
+}
+
+@media screen and (max-width: 579px) {
+    .container {
+        padding: 3rem 2rem;
+    }
+}
+
+@media screen and (max-width: 519px) {
+    .container {
+        padding: 3rem 0;
+    }
 }
