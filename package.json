@@ -1,41 +1,25 @@
 {
   "name": "sysoev.org",
-  "version": "2.0.0",
-  "description": "Personal blog sysoev.org",
+  "version": "3.0.0",
+  "description": "Personal site sysoev.org",
   "author": "Stanislav Sysoev @d4rkr00t",
-  "license": "ISC",
-  "scripts": {
-    "build": "start_time=`date +%s` && gulp prod && hexo generate && gulp post && rm -rf ./public/styleguide && gulp styleguide:prod &&  cp -r ./styleguide ./public/styleguide && echo '==========================================' && echo run time is $(expr `date +%s` - $start_time)s",
-    "styles": "gulp style:out && hexo generate"
-  },
+  "license": "MIT",
   "private": true,
-  "hexo": {
-    "version": "3.2.2"
-  },
-  "dependencies": {
-    "dega": "^0.1.3",
-    "hexo": "^3.0.1",
-    "hexo-deployer-git": "0.2.0",
-    "hexo-generator-feed": "^1.0.1",
-    "hexo-generator-index": "^0.2.0",
-    "hexo-generator-sitemap": "^1.0.1",
-    "hexo-generator-tag": "^0.2.0",
-    "hexo-renderer-ejs": "^0.2.0",
-    "hexo-renderer-markdown-it": "^3.4.1",
-    "hexo-renderer-stylus": "^0.3.1",
-    "hexo-server": "^0.2.0"
+  "scripts": {
+    "start": "aik src/index.js",
+    "build": "aik src/index.js --build docs",
+    "postbuild": "npm run copy:manifest && npm run copy:ico && npm run copy:cname && npm run service-worker",
+    "copy:manifest": "cp ./manifest.json ./docs/",
+    "copy:ico": "cp ./favicon.ico ./docs/",
+    "copy:cname": "cp ./CNAME ./docs/",
+    "service-worker": "node ./service-worker/service-worker-generator.js"
   },
   "devDependencies": {
-    "critical": "^0.8.0",
-    "gulp": "^3.8.11",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-browserify": "^0.5.1",
-    "gulp-copy": "0.0.2",
-    "gulp-html-minifier": "^0.1.6",
-    "gulp-load-plugins": "^1.3.0",
-    "gulp-minify-css": "^1.1.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0",
-    "sc5-styleguide": "^1.2.0"
+    "aik": "d4rkr00t/aik",
+    "glob": "^7.1.1",
+    "uglify-js": "^2.7.4"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/aik/lib/eslint-config.js"
   }
 }
