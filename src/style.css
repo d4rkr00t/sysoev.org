@@ -14,7 +14,7 @@ body {
 
 a,
 a:visited {
-    transition: color .3s ease-in;
+    transition: color .2s ease-in;
     text-decoration: underline;
 
     color: inherit;
@@ -43,11 +43,10 @@ a:hover {
 .container {
     position: relative;
 
-    height: 100%;
-    padding: 3rem 4rem;
     max-width: 1200px;
+    height: 100%;
     margin: 0 auto;
-
+    padding: 3rem 4rem;
 }
 
 .main-info {
@@ -71,14 +70,14 @@ a:hover {
 }
 
 .main-info__text {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 200;
-    line-height: 1.6rem;
+    line-height: 1.7rem;
 
     max-width: 500px;
     margin-bottom: 3.5rem;
 
-    color: #757575;
+    color: #616161;
 }
 
 .main-info__text b {
