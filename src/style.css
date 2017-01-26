@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+$accentColor: #7E57C2;
+
 html,
 body {
     font-family: 'Helvetica Neue', 'Calibri Light', Roboto, sans-serif;
@@ -80,13 +82,13 @@ a {
 
     text-decoration: none;
 
-    color: #7E57C2;
+    color: $accentColor;
 }
 
 a:hover {
     color: #fff;
-    background: #7E57C2;
-    box-shadow: 0 .045rem 0 .3rem #7E57C2;
+    background: $accentColor;
+    box-shadow: 0 .045rem 0 .3rem $accentColor;
 }
 
 @media screen and (max-width: 619px) {

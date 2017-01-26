@@ -8,10 +8,11 @@
   "scripts": {
     "start": "aik src/index.js",
     "build": "aik src/index.js --build docs",
-    "postbuild": "npm run copy:manifest && npm run copy:ico && npm run copy:cname && npm run service-worker",
+    "postbuild": "npm run copy:manifest && npm run copy:ico && npm run copy:cname && npm run copy:custom && npm run service-worker",
     "copy:manifest": "cp ./manifest.json ./docs/",
     "copy:ico": "cp ./favicon.ico ./docs/",
     "copy:cname": "cp ./CNAME ./docs/",
+    "copy:custom": "cp -R custom/ ./docs/",
     "service-worker": "node ./service-worker/service-worker-generator.js"
   },
   "devDependencies": {
