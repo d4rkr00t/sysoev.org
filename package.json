@@ -16,7 +16,7 @@
     "service-worker": "node ./service-worker/service-worker-generator.js"
   },
   "devDependencies": {
-    "aik": "d4rkr00t/aik",
+    "aik": "^0.15.0",
     "glob": "^7.1.1",
     "uglify-js": "^2.7.4"
   },
