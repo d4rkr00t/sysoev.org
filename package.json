@@ -16,9 +16,9 @@
     "service-worker": "node ./service-worker/service-worker-generator.js"
   },
   "devDependencies": {
-    "aik": "^0.15.0",
-    "glob": "^7.1.1",
-    "uglify-js": "^2.7.4"
+    "aik": "^0.16.1",
+    "glob": "^7.1.2",
+    "uglify-js": "^3.0.20"
   },
   "eslintConfig": {
     "extends": "./node_modules/aik/lib/eslint-config.js"
