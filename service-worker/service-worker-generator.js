@@ -25,7 +25,7 @@ function loadTemplate(filePath) {
 }
 
 function minify(content) {
-    return UglifyJS.minify(content, { fromString: true }).code;
+    return UglifyJS.minify(content).code;
 }
 
 glob('**/*.*', { cwd: ROOT }, (e, files) => {
@@ -34,6 +34,7 @@ glob('**/*.*', { cwd: ROOT }, (e, files) => {
         .map(file => '/' + file);
 
     cacheList.push('/');
+    cacheList.push('/talks/aik/');
 
     Promise
         .all([SW_TEMPLATE, SW_INLINE_SCRIPT, PAGE].map(loadTemplate))
