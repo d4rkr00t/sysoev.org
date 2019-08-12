@@ -1,0 +1,26 @@
+{
+  "name": "sysoev.org",
+  "version": "3.0.0",
+  "description": "Personal site sysoev.org",
+  "author": "Stanislav Sysoev @d4rkr00t",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "aik src/index.js",
+    "build": "aik src/index.js --build docs",
+    "postbuild": "npm run copy:manifest && npm run copy:ico && npm run copy:cname && npm run copy:custom && npm run service-worker",
+    "copy:manifest": "cp ./manifest.json ./docs/",
+    "copy:ico": "cp ./favicon.ico ./docs/",
+    "copy:cname": "cp ./CNAME ./docs/",
+    "copy:custom": "cp -R custom/ ./docs/",
+    "service-worker": "node ./service-worker/service-worker-generator.js"
+  },
+  "devDependencies": {
+    "aik": "^0.16.1",
+    "glob": "^7.1.2",
+    "uglify-js": "^3.0.20"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/aik/lib/eslint-config.js"
+  }
+}
