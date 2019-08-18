@@ -1,10 +1,12 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import SEO from "../components/seo";
 
 export default function Post({ data: { mdx } }) {
   return (
     <article className="blog-post">
+      <SEO title={mdx.frontmatter.title} description={mdx.frontmatter.desc} />
       <div className="blog-post__top-nav">
         <Link to="/">← Back to home</Link>
       </div>
@@ -45,6 +47,7 @@ export const pageQuery = graphql`
     mdx(fields: { id: { eq: $id } }) {
       frontmatter {
         title
+        desc
         date(formatString: "MMMM DD, YYYY")
         category
       }

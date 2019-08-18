@@ -5,7 +5,7 @@ import { BlogFeed } from "../components/blog-feed";
 
 const IndexPage = ({ data: { allMdx } }) => (
   <div className="main-info-container">
-    <SEO title="Stanislav Sysoev — Frontend Developer." />
+    <SEO title="Personal Website and Blog" />
     <div className="main-info">
       <h1 className="main-info__title">
         <b>Stanislav</b> Sysoev.
