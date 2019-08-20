@@ -127,6 +127,10 @@ a:hover {
   padding: 0 2rem 2rem;
 }
 
+.blog-feed li + li {
+  margin-top: 2rem;
+}
+
 .blog-feed__item {
   margin-bottom: 0.7rem;
 }
@@ -187,6 +191,10 @@ a:hover {
   font-weight: normal;
   word-wrap: break-word;
   line-height: 1.7em;
+  font-size: 1.2rem;
+}
+
+.blog-post__body a {
   font-size: 1.2rem;
 }
 
