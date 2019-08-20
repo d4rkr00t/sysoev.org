@@ -7,6 +7,9 @@ var plugins = [{
     },{
       plugin: require('/Users/ssysoev/Development/sysoev.org/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"name":"ssysoev.org","short_name":"sysoev.org","start_url":"/","background_color":"#fff","theme_color":"#fff","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
+    },{
+      plugin: require('/Users/ssysoev/Development/sysoev.org/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
+      options: {"plugins":[],"trackingId":"UA-9621040-14","head":false,"respectDNT":true,"siteSpeedSampleRate":10},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
