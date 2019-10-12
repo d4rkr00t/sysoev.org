@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "npm run build:css",
-    "build": "npx @11ty/eleventy --input=site --output=docs",
+    "build": "npx @11ty/eleventy --input=site --output=docs && cp CNAME docs/CNAME",
     "build:css": "postcss src/styles.css > site/styles.css",
     "preserve": "cp src/styles.css site/styles.css",
     "serve": "npx @11ty/eleventy --input=site --output=docs --serve"
