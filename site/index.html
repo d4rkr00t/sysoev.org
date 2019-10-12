@@ -61,15 +61,11 @@
         <section class="blog-posts-list__group">
           <div class="blog-posts-list__year"><h3>2019</h3></div>
           <ul class="blog-posts-list__list">
-            
+            {% for post in collections.Y2019 | reverse %}
             <li>
-              <a href="/blog/algorithms-and-data-structures/intro/">Intro and Prerequisites – A&amp;DS</a>
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
             </li>
-            
-            <li>
-              <a href="/blog/algorithms-and-data-structures/plan/">Plan for Algorithms and Data Structures Series</a>
-            </li>
-            
+            {% endfor %}
           </ul>
         </section>
       </section>

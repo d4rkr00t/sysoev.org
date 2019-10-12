@@ -1,0 +1,327 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: var(--flow-space);
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+
+
+Styles
+
+
+*/
+
+:root {
+  --font-size: 18px;
+  --font-family-main: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --font-family-blog: Georgia, serif;
+  --font-family-blog: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+    Courier, monospace;
+  --default-text-color: #e2e2e2;
+  --subtle-text-color: #b7b7b7;
+  --main-bg: #2b2b2b;
+  --alt-bg: #232323;
+  --inverse-bg: #404040;
+  --inverse-hover-bg: #303030;
+  --border-color: #555;
+  --flow-space: 1rem;
+}
+
+html,
+body {
+  font-size: var(--font-size);
+  font-family: var(--font-family-main);
+  color: var(--default-text-color);
+  background: var(--main-bg);
+}
+
+a,
+a:visited {
+  color: var(--default-text-color);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* ABOUT */
+.about-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 15vh 4rem 0;
+}
+
+.about {
+  max-width: 600px;
+}
+
+.about__title {
+  font-size: 2.4rem;
+  font-weight: 100;
+}
+
+.about__title b {
+  font-weight: 400;
+}
+
+.about__title,
+.about__text {
+  margin-bottom: 1.8rem;
+}
+
+.about__text,
+.about__contacts {
+  font-size: 0.9rem;
+}
+
+.about__text {
+  line-height: 1.7rem;
+}
+
+ul.about__contacts {
+  position: relative;
+  margin-left: -1rem;
+  margin-top: -0.2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about__contact-item {
+  line-height: 1.7rem;
+  background: var(--alt-bg);
+  padding: 0.2rem 1rem 0.3rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 549px) {
+  .about-container {
+    padding-left: 1.7rem;
+    padding-right: 1.7rem;
+  }
+}
+/* END ABOUT */
+
+/* GENERIC SECTION */
+.generic-section {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 15vh 4rem 0;
+}
+
+.generic-section.-small-top-padding {
+  padding-top: 1.7rem;
+}
+
+.generic-section__title {
+  font-size: 1.8rem;
+  font-weight: 100;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 549px) {
+  .generic-section {
+    padding: 15vh 1.7rem 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .generic-section {
+    padding: 15vh 1rem 0;
+  }
+}
+/* END GENERIC SECTION */
+
+/* BLOG POSTS LIST */
+.blog-posts-list__group {
+  display: flex;
+}
+
+.blog-posts-list__year {
+  width: 25%;
+}
+
+.blog-posts-list__list li {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 719px) {
+  .blog-posts-list__group {
+    flex-direction: column;
+  }
+
+  .blog-posts-list__year {
+    margin-bottom: 1rem;
+  }
+}
+/* END BLOG POSTS LIST */
+
+/* BLOG POST */
+.blog-post {
+  font-family: var(--font-family-blog);
+  font-size: 1.2rem;
+  line-height: 1.7;
+  --flow-space: 3rem;
+  padding-bottom: 3rem;
+}
+
+.blog-post > * {
+  max-width: 880px;
+}
+
+.blog-post h1 {
+  font-size: 2.441rem;
+  font-weight: 400;
+  word-break: break-word;
+}
+
+.blog-post ul li + li,
+.blog-post ul li ul {
+  margin-top: 0.6rem;
+}
+
+.blog-post blockquote {
+  background: var(--inverse-bg);
+  padding: 1rem;
+  max-width: 100%;
+}
+
+.blog-post code {
+  background-color: var(--inverse-bg);
+  border-radius: 3px;
+  padding: 0.2em 0;
+}
+
+.blog-post code:before,
+.blog-post code:after {
+  letter-spacing: -0.2em;
+  content: " ";
+}
+
+.blog-post-links {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  display: flex;
+}
+
+.blog-post-links__button,
+.blog-post-nav__back {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
+  border: 1px dotted var(--border-color);
+  background: var(--inverse-hover-bg);
+  transition: background 0.1s ease-in;
+}
+
+.blog-post-links__button:hover,
+.blog-post-nav__back:hover {
+  background: var(--inverse-bg);
+}
+
+.blog-post-links__button + .blog-post-links__button {
+  margin-left: 2rem;
+}
+
+.blog-post-nav {
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 549px) {
+  .blog-post-links__button + .blog-post-links__button {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .blog-post h1 {
+    text-align: center;
+  }
+}
+/* END BLOG POST */
+
+/* UTILS */
+.inline-with-bg {
+  display: inline;
+  background: var(--alt-bg);
+  padding: 0.6rem 0;
+  box-shadow: 1rem 0 0 var(--alt-bg), -1rem 0 0 var(--alt-bg);
+  box-decoration-break: clone;
+}
+/* END UTILS */
