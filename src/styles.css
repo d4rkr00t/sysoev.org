@@ -235,7 +235,7 @@ ul.about__contacts {
 /* BLOG POST */
 .blog-post {
   font-family: var(--font-family-blog);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   --flow-space: 3rem;
   padding-bottom: 3rem;
@@ -310,6 +310,11 @@ ul.about__contacts {
 }
 
 @media screen and (max-width: 425px) {
+  .blog-post {
+    font-size: 1rem;
+    --flow-space: 2.5rem;
+  }
+
   .blog-post h1 {
     text-align: center;
   }
