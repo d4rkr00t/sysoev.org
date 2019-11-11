@@ -45,9 +45,9 @@ Enough about minimal syntax highlighting (i strongly encourage you to read [Alab
 
 > Opaline – is a high-contrast vscode theme with minimal syntax highlighting.
 
-Main goal for this theme was to have very good contrast, it must be at least `AA (4.5+)` and in a lot of places it's actually `AAA (7.0+)`. And at the same time it doesn't look to punchy and is very easy on eyes.
+Main goal for this theme was to have very good contrast, it must be at least `AA (4.5+)` and in a lot of places it's actually `AAA (7.0+)` at the same time it doesn't look to punchy and is very easy on eyes.
 
-Since my day-to-day mostly involves coding using: TypeScript, Python and Rust, these languages have the best support.
+Since my day-to-day mostly involves coding using: `TypeScript`, `Python` and `Rust`, these languages have the best support.
 
 And here are some screenshots:
 
