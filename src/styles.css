@@ -235,9 +235,9 @@ ul.about__contacts {
 /* BLOG POST */
 .blog-post {
   font-family: var(--font-family-blog);
-  font-size: 1.1rem;
-  line-height: 1.7;
-  --flow-space: 3rem;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  --flow-space: 2.8rem;
   padding-bottom: 3rem;
 }
 
@@ -251,6 +251,12 @@ ul.about__contacts {
   word-break: break-word;
 }
 
+.blog-post h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  word-break: break-word;
+}
+
 .blog-post ul li + li,
 .blog-post ul li ul {
   margin-top: 0.6rem;
@@ -259,7 +265,6 @@ ul.about__contacts {
 .blog-post blockquote {
   background: var(--inverse-bg);
   padding: 1rem;
-  max-width: 100%;
 }
 
 .blog-post code {
@@ -315,7 +320,8 @@ ul.about__contacts {
     --flow-space: 2.5rem;
   }
 
-  .blog-post h1 {
+  .blog-post h1,
+  .blog-post h2 {
     text-align: center;
   }
 }

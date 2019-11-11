@@ -3,15 +3,12 @@ title: Introduction to Arrays
 desc: TODO
 layout: post
 date: 2019-08-21
-category: "Algorithms and Data Structures"
 eleventyExcludeFromCollections: true
 tags:
   - a&ds
   - array
   - Y2019
 ---
-
-[Plan of the series.](/blog/algorithms-and-data-structures/plan/)
 
 Array is a fundamental data structure. We use it everyday in our work. A lot of other data structures leverage arrays as an underlying data storage – Stacks, Heaps, Hash Tables, multiple graph representations use arrays, Binary trees, etc...
 
