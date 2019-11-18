@@ -7,6 +7,10 @@ module.exports = function createEleventyConfig(eleventyConfig) {
     )}`;
   });
 
+  eleventyConfig.addFilter("ogImage", function([postUrl, imageUrl]) {
+    return `https://sysoev.org${postUrl}${imageUrl}`;
+  });
+
   return {
     templateFormats: ["html", "md", "css", "png", "svg"],
     htmlTemplateEngine: "njk"

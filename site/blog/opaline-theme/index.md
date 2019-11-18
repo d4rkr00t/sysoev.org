@@ -1,6 +1,7 @@
 ---
 title: Opaline VSCode Theme
 desc: High contrast, dark, vscode theme, with minimal syntax highlighting
+image: images/logo.png
 layout: post
 date: 2019-11-11
 tags:
