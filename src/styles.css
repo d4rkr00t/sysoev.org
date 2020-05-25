@@ -238,11 +238,22 @@ ul.about__contacts {
   font-size: 0.9rem;
   line-height: 1.75;
   --flow-space: 2.8rem;
+  --flow-space-half: 1.4rem;
   padding-bottom: 3rem;
 }
 
 .blog-post > * {
   max-width: 880px;
+  word-break: break-word;
+}
+
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
+  line-height: 1.4;
 }
 
 .blog-post h1 {
@@ -265,6 +276,10 @@ ul.about__contacts {
 .blog-post blockquote {
   background: var(--inverse-bg);
   padding: 1rem;
+}
+
+.blog-post blockquote > * + * {
+  margin-top: var(--flow-space-half);
 }
 
 .blog-post code {

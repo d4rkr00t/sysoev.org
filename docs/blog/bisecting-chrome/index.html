@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2b2b2b" />
+    <meta name="description" content="A short note on how to bisect chrome/chromium version to investigate browser issues." />
+
+    <meta property="og:title" content="Bisecting Chrome" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A short note on how to bisect chrome/chromium version to investigate browser issues." />
+    
+    <meta property="og:image" content="https://sysoev.org/blog/bisecting-chrome/omahaproxy.png" />
+    
+    <meta property="og:url" content="/blog/bisecting-chrome/" />
+
+    <link rel="icon" sizes="256x256" href="/favicon_256.png" />
+    <link rel="apple-touch-icon" href="/favicon_256.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Bisecting Chrome | Stanislav Sysoev</title>
+  </head>
+  <body>
+    <div class="generic-section -small-top-padding">
+      <div class="blog-post-nav">
+        <a href="/" class="blog-post-nav__back">←</a>
+      </div>
+    </div>
+    <section class="generic-section">
+      <article class="blog-post">
+        <h1>
+          <span class="inline-with-bg">Bisecting Chrome</span>
+        </h1>
+        <p>In last year or so it happened that I had to bisect Chrome/Chromium versions multiple times to verify if the issue is actually a browser bug rather than a bug in our product's code.</p>
+<p>That's why I wanted to write the process down with all relative resources, so I don't have to look it up all the time.</p>
+<blockquote>
+<p>What is bisecting?</p>
+<p>Bisecting means dividing something into two parts. And is exactly what <code>git bisect</code> and binary search do.</p>
+</blockquote>
+<h2>1. Tools</h2>
+<p>Chromium has a python script for bisecting in the repository. We just need to download it – <a href="https://chromium.googlesource.com/chromium/src/+/master/tools/bisect-builds.py">tools/bisect-build.py</a>. And it requires <strong>Python 2</strong> to work.</p>
+<p>More info and examples are in this guide: <a href="https://www.chromium.org/developers/bisect-builds-py">Bisect builds</a>.</p>
+<h2>2. Finding a version range</h2>
+<p>For any bisecting we need to have a ref of a good and a bad revision. In most cases the bad one is going to be the current stable version that we or our customers use. We can look it up in <a href="chrome://version">chrome://version</a>. For example: <code>83.0.4103.61</code>. Unfortunately this is not what the tool expects, and we need to convert semver version number into a <code>Branch Base Position</code>. And we can do it using another tool, called <a href="http://omahaproxy.appspot.com/">omahaproxy</a>.</p>
+<p><img src="./omahaproxy.png" alt="omahaproxy"></p>
+<blockquote>
+<p>IMPORTANT: Branch Base Position is not a build number.</p>
+</blockquote>
+<p>It may also be useful to refer to this Wikipedia page to find a specific version number of a chrome major release: <a href="https://en.wikipedia.org/wiki/Google_Chrome_version_history">https://en.wikipedia.org/wiki/Google_Chrome_version_history</a>. I couldn't find any better source of chrome version numbers, if you have one in mind, don't hesitate to message me.</p>
+<h2>3. Bisecting</h2>
+<p>Once we have a good and a bad <code>branch base position</code> we can go straight to bisecting:</p>
+<blockquote>
+<p><code>$ python bisect-builds.py -a platform -g good-revision -b bad-revision --use-local-cache</code></p>
+</blockquote>
+<p>After running this command <code>bisect-builds.py</code> will lunch a browser with a picked version. Quit the browser and this script will prompt you about the results of testing this particular browser build.</p>
+<p>Once finished bisect script gives a link to a range of commits included in a <a href="https://chromium.googlesource.com/chromium/src/+log/1093f7c3075a560890b1e344197c9c7a71d19de2..8129cac24ef449e6784c459d8db8bb61700a7034">broken build</a>.</p>
+<p>Unfortunately it's impossible to go to a by commit level of granularity if you are not a Google employee...</p>
+<h2>Links</h2>
+<p>All of the links mentioned above:</p>
+<ul>
+<li><a href="https://www.chromium.org/developers/bisect-builds-py">https://www.chromium.org/developers/bisect-builds-py</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Google_Chrome_version_history">Wikipedia: Google Chrome version history</a></li>
+<li><a href="http://omahaproxy.appspot.com/">Omahaproxy</a></li>
+<li><a href="http://crbug.com/">Chromium Bug Tracker</a></li>
+</ul>
+
+      </article>
+      <div class="blog-post-links">
+        <a
+          href="https://mobile.twitter.com/search?q=https%3A%2F%2Fsysoev.org%2Fblog%2Fbisecting-chrome%2F"
+          class="blog-post-links__button"
+          >Discuss on Twitter</a
+        >
+        <a
+          href="https://github.com/d4rkr00t/sysoev.org/edit/master/./site/blog/bisecting-chrome/index.md"
+          class="blog-post-links__button"
+          >Edit on GitHub</a
+        >
+      </div>
+    </section>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-9621040-14"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-9621040-14");
+    </script>
+  </body>
+</html>
