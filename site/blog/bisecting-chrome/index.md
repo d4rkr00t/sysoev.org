@@ -37,7 +37,9 @@ It may also be useful to refer to this Wikipedia page to find a specific version
 
 Once we have a good and a bad `branch base position` we can go straight to bisecting:
 
-> `$ python bisect-builds.py -a platform -g good-revision -b bad-revision --use-local-cache`
+```bash
+$ python bisect-builds.py -a platform -g good-revision -b bad-revision --use-local-cache
+```
 
 After running this command `bisect-builds.py` will lunch a browser with a picked version. Quit the browser and this script will prompt you about the results of testing this particular browser build.
 

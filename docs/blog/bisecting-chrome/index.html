@@ -20,6 +20,10 @@
 
     <link rel="icon" sizes="256x256" href="/favicon_256.png" />
     <link rel="apple-touch-icon" href="/favicon_256.png" />
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/styles.css" />
     <title>Bisecting Chrome | Stanislav Sysoev</title>
   </head>
@@ -52,9 +56,7 @@
 <p>It may also be useful to refer to this Wikipedia page to find a specific version number of a chrome major release: <a href="https://en.wikipedia.org/wiki/Google_Chrome_version_history">https://en.wikipedia.org/wiki/Google_Chrome_version_history</a>. I couldn't find any better source of chrome version numbers, if you have one in mind, don't hesitate to message me.</p>
 <h2>3. Bisecting</h2>
 <p>Once we have a good and a bad <code>branch base position</code> we can go straight to bisecting:</p>
-<blockquote>
-<p><code>$ python bisect-builds.py -a platform -g good-revision -b bad-revision --use-local-cache</code></p>
-</blockquote>
+<pre class="language-bash"><code class="language-bash">$ python bisect-builds.py -a platform -g good-revision -b bad-revision --use-local-cache</code></pre>
 <p>After running this command <code>bisect-builds.py</code> will lunch a browser with a picked version. Quit the browser and this script will prompt you about the results of testing this particular browser build.</p>
 <p>Once finished bisect script gives a link to a range of commits included in a <a href="https://chromium.googlesource.com/chromium/src/+log/1093f7c3075a560890b1e344197c9c7a71d19de2..8129cac24ef449e6784c459d8db8bb61700a7034">broken build</a>.</p>
 <p>Unfortunately it's impossible to go to a by commit level of granularity if you are not a Google employee...</p>

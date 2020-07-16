@@ -282,14 +282,14 @@ ul.about__contacts {
   margin-top: var(--flow-space-half);
 }
 
-.blog-post code {
+.blog-post pre {
+  margin: var(--flow-space) 0 0 0;
   background-color: var(--inverse-bg);
-  border-radius: 3px;
-  padding: 0.2em 0;
+  padding: 1rem 0.8rem;
 }
 
-.blog-post code:before,
-.blog-post code:after {
+.blog-post pre:before,
+.blog-post pre:after {
   letter-spacing: -0.2em;
   content: " ";
 }
