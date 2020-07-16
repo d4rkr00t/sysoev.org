@@ -12,7 +12,7 @@ tags:
 
 <div style="text-align: center">
 <a href="https://marketplace.visualstudio.com/items?itemName=sysoev.opaline-theme" style="width: 300px; display: block; margin: 0 auto;">
-  <img width="200px" src="./images/logo.png" style="margin: 0 auto 2rem;" />
+  <img width="200px" src="./images/logo.png" style="margin: 0 auto 2rem;" alt="Install opaline theme frim vscode marketplace" />
   Install Opaline Theme
 </a>
 </div>
