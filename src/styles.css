@@ -235,10 +235,12 @@ ul.about__contacts {
 /* BLOG POST */
 .blog-post {
   font-family: var(--font-family-blog);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   line-height: 1.75;
-  --flow-space: 2.8rem;
-  --flow-space-half: 1.4rem;
+  --title-space: 4.2rem;
+  --flow-space: 2.1rem;
+  --flow-space-half: 1rem;
+  --flow-space-double: 5.3rem;
   padding-bottom: 3rem;
 }
 
@@ -247,23 +249,29 @@ ul.about__contacts {
   word-break: break-word;
 }
 
-.blog-post h1,
 .blog-post h2,
 .blog-post h3,
 .blog-post h4,
 .blog-post h5,
 .blog-post h6 {
+  font-family: var(--font-family-main);
+  margin-top: var(--flow-space-double);
+  letter-spacing: 0.07rem;
   line-height: 1.4;
 }
 
 .blog-post h1 {
+  font-family: var(--font-family-blog);
   font-size: 2.441rem;
   font-weight: 400;
+  line-height: 1.4;
+  margin-bottom: var(--title-space);
+  margin-top: var(--flow-space-double);
   word-break: break-word;
 }
 
 .blog-post h2 {
-  font-size: 2rem;
+  font-size: 1.735rem;
   font-weight: 400;
   word-break: break-word;
 }
@@ -331,8 +339,11 @@ ul.about__contacts {
 
 @media screen and (max-width: 425px) {
   .blog-post {
-    font-size: 1rem;
+    /* font-size: 1rem; */
     --flow-space: 2.5rem;
+    --title-space: 5rem;
+    --flow-space-half: 1rem;
+    --flow-space-double: 5rem;
   }
 
   .blog-post h1,
