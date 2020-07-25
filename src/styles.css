@@ -92,16 +92,35 @@ Styles
   --font-family-blog: Georgia, serif;
   --font-family-blog: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
     Courier, monospace;
+  --flow-space: 1rem;
+
   --default-text-color: #d1d5da;
-  --subtle-text-color: #b7b7b7;
   --link-text-color: #79b8ff;
+  --link-text-color-hover: #c8e1ff;
+  --inline-code-bg: #2f363d;
+  --code-bg: #1f2428;
   --blockquote-color: #85e89d;
   --li-bullet-color: #ffab70;
   --main-bg: #24292e;
   --alt-bg: #1f2428;
   --hover-bg: #282e34;
   --border-color: #444d56;
-  --flow-space: 1rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --default-text-color: #24292e;
+    --link-text-color: #0366d6;
+    --link-text-color-hover: #005cc5;
+    --blockquote-color: #22863a;
+    --li-bullet-color: #e36209;
+    --main-bg: #fff;
+    --alt-bg: #f2f5f8;
+    --inline-code-bg: #f6f8fa;
+    --code-bg: #1f2428;
+    --hover-bg: #f6f8fa;
+    --border-color: #e1e4e8;
+  }
 }
 
 html,
@@ -119,7 +138,7 @@ a:visited {
 
 a:hover {
   text-decoration: none;
-  color: #c8e1ff;
+  color: var(--link-text-color-hover);
 }
 
 /* ABOUT */
@@ -297,14 +316,15 @@ ul.about__contacts {
 .blog-post pre {
   margin: var(--flow-space) 0 0 0;
   border: 1px solid var(--border-color);
-  background: var(--alt-bg);
+  background: var(--code-bg);
   padding: 1rem 0.8rem;
-  border-radius: 2px;
+  border-radius: 6px;
+  font-size: 0.85em;
 }
 
 .blog-post p code {
   border: 1px solid var(--border-color);
-  background: var(--alt-bg);
+  background: var(--inline-code-bg);
   padding: 0.1rem 0.2rem;
   word-break: keep-all;
   white-space: nowrap;
