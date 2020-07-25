@@ -332,8 +332,9 @@ ul.about__contacts {
   content: "\2022";
   color: var(--li-bullet-color);
   display: inline-block;
-  margin-left: -1em;
+  margin-left: -2em;
   margin-right: 1.5em;
+  position: absolute;
 }
 
 .blog-post ol li:before {
