@@ -92,13 +92,15 @@ Styles
   --font-family-blog: Georgia, serif;
   --font-family-blog: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
     Courier, monospace;
-  --default-text-color: #e2e2e2;
+  --default-text-color: #d1d5da;
   --subtle-text-color: #b7b7b7;
-  --main-bg: #2b2b2b;
-  --alt-bg: #232323;
-  --inverse-bg: #404040;
-  --inverse-hover-bg: #303030;
-  --border-color: #555;
+  --link-text-color: #79b8ff;
+  --blockquote-color: #85e89d;
+  --li-bullet-color: #ffab70;
+  --main-bg: #24292e;
+  --alt-bg: #1f2428;
+  --hover-bg: #282e34;
+  --border-color: #444d56;
   --flow-space: 1rem;
 }
 
@@ -112,11 +114,12 @@ body {
 
 a,
 a:visited {
-  color: var(--default-text-color);
+  color: var(--link-text-color);
 }
 
 a:hover {
   text-decoration: none;
+  color: #c8e1ff;
 }
 
 /* ABOUT */
@@ -237,10 +240,10 @@ ul.about__contacts {
   font-family: var(--font-family-blog);
   font-size: 0.88rem;
   line-height: 1.75;
-  --title-space: 4.2rem;
-  --flow-space: 2.1rem;
-  --flow-space-half: 1rem;
-  --flow-space-double: 5.3rem;
+  --title-space: 4.8rem;
+  --flow-space: 2.3rem;
+  --flow-space-half: 1.1rem;
+  --flow-space-double: 5.6rem;
   padding-bottom: 3rem;
 }
 
@@ -256,7 +259,7 @@ ul.about__contacts {
 .blog-post h6 {
   font-family: var(--font-family-main);
   margin-top: var(--flow-space-double);
-  letter-spacing: 0.07rem;
+  letter-spacing: 0.09rem;
   line-height: 1.4;
 }
 
@@ -282,8 +285,9 @@ ul.about__contacts {
 }
 
 .blog-post blockquote {
-  background: var(--inverse-bg);
-  padding: 1rem;
+  color: var(--blockquote-color);
+  border-left: 1px solid var(--blockquote-color);
+  padding: 0.6rem 1rem;
 }
 
 .blog-post blockquote > * + * {
@@ -292,14 +296,49 @@ ul.about__contacts {
 
 .blog-post pre {
   margin: var(--flow-space) 0 0 0;
-  background-color: var(--inverse-bg);
+  border: 1px solid var(--border-color);
+  background: var(--alt-bg);
   padding: 1rem 0.8rem;
+  border-radius: 2px;
+}
+
+.blog-post p code {
+  border: 1px solid var(--border-color);
+  background: var(--alt-bg);
+  padding: 0.1rem 0.2rem;
+  word-break: keep-all;
+  white-space: nowrap;
+  border-radius: 2px;
 }
 
 .blog-post pre:before,
 .blog-post pre:after {
   letter-spacing: -0.2em;
   content: " ";
+}
+
+.blog-post ul,
+.blog-post ol {
+  list-style: none;
+  counter-reset: ol-counter;
+}
+
+.blog-post ol li {
+  counter-increment: ol-counter;
+}
+
+.blog-post ul li:before,
+.blog-post ol li:before {
+  content: "\2022";
+  color: var(--li-bullet-color);
+  display: inline-block;
+  margin-left: -1em;
+  margin-right: 1.5em;
+}
+
+.blog-post ol li:before {
+  content: counter(ol-counter) ".";
+  margin-right: 1em;
 }
 
 .blog-post-links {
@@ -314,13 +353,16 @@ ul.about__contacts {
   text-decoration: none;
   padding: 0.4rem 0.8rem;
   border: 1px dotted var(--border-color);
-  background: var(--inverse-hover-bg);
+  border-radius: 2px;
+  background: var(--alt-bg);
   transition: background 0.1s ease-in;
+  color: var(--default-text-color);
 }
 
 .blog-post-links__button:hover,
 .blog-post-nav__back:hover {
-  background: var(--inverse-bg);
+  background: var(--hover-bg);
+  color: var(--link-text-color);
 }
 
 .blog-post-links__button + .blog-post-links__button {
@@ -339,7 +381,6 @@ ul.about__contacts {
 
 @media screen and (max-width: 425px) {
   .blog-post {
-    /* font-size: 1rem; */
     --flow-space: 2.5rem;
     --title-space: 5rem;
     --flow-space-half: 1rem;

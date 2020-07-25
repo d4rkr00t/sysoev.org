@@ -10,13 +10,6 @@ tags:
   - Y2019
 ---
 
-<div style="text-align: center">
-<a href="https://marketplace.visualstudio.com/items?itemName=sysoev.opaline-theme" style="width: 300px; display: block; margin: 0 auto;">
-  <img width="200px" src="./images/logo.png" style="margin: 0 auto 2rem;" alt="Install opaline theme frim vscode marketplace" />
-  Install Opaline Theme
-</a>
-</div>
-
 I'm a frequent syntax highlighting theme switcher, and my usual go to list includes a lot of vscode themes: [Dracula](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula), [Monokai Pro](https://marketplace.visualstudio.com/items?itemName=monokai.theme-monokai-pro-vscode), [Night Owl](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl), [1984](https://marketplace.visualstudio.com/items?itemName=juanmnl.vscode-theme-1984) just to name a few.
 
 But at some point I started noticing that most of the currently available themes are very highlighting intense. Almost every single token type has its uniq color, which makes it particularly difficult to recognize important parts of a program as when everything is important – nothing is...
@@ -58,6 +51,5 @@ And here are some screenshots:
 
 I've been using this theme for the past couple of month and find it very useful, the minimal syntax highlighting really works for me. Give it a try maybe it works for you too!
 
-If any issue, please report here: [d4rkr00t/opaline-theme](https://github.com/d4rkr00t/opaline-theme)
-
-[Install Opaline Theme](https://marketplace.visualstudio.com/items?itemName=sysoev.opaline-theme)
+- Github: [d4rkr00t/opaline-theme](https://github.com/d4rkr00t/opaline-theme)
+- Visual Studio Code Marketplac: [Opaline Theme](https://marketplace.visualstudio.com/items?itemName=sysoev.opaline-theme)
