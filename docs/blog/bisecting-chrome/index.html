@@ -43,12 +43,12 @@
 <p>Chromium has a python script for bisecting in the repository. We just need to download it – <a href="https://chromium.googlesource.com/chromium/src/+/master/tools/bisect-builds.py">tools/bisect-build.py</a>. And it requires <strong>Python 2</strong> to work.</p>
 <p>More info and examples are in this guide: <a href="https://www.chromium.org/developers/bisect-builds-py">Bisect builds</a>.</p>
 <h2>2. Finding a version range</h2>
-<p>For any bisecting we need to have a ref of a good and a bad revision. In most cases the bad one is going to be the current stable version that we or our customers use. We can look it up in <a href="chrome://version">chrome://version</a>. For example: <code>83.0.4103.61</code>. Unfortunately this is not what the tool expects, and we need to convert semver version number into a <code>Branch Base Position</code>. And we can do it using another tool, called <a href="http://omahaproxy.appspot.com/">omahaproxy</a>.</p>
+<p>For any bisecting we need to have a ref of a good and a bad revision. In most cases the bad one is going to be the current stable version that we or our customers use. We can look it up in <a href="chrome://version">chrome://version</a>. For example: <code>83.0.4103.61</code>. Unfortunately this is not what the tool expects, and we need to convert semver version number into a <code>Branch Base Position</code>. And we can do that by using another tool, called <a href="http://omahaproxy.appspot.com/">omahaproxy</a>.</p>
 <p><img src="./omahaproxy.png" alt="omahaproxy"></p>
 <blockquote>
 <p>IMPORTANT: Branch Base Position is not a build number.</p>
 </blockquote>
-<p>It may also be useful to refer to this Wikipedia page to find a specific version number of a chrome major release: <a href="https://en.wikipedia.org/wiki/Google_Chrome_version_history">https://en.wikipedia.org/wiki/Google_Chrome_version_history</a>. I couldn't find any better source of chrome version numbers, if you have one in mind, don't hesitate to message me.</p>
+<p>It may also be useful to refer to this Wikipedia page to find a specific version number of a chrome major release: <a href="https://en.wikipedia.org/wiki/Google_Chrome_version_history">https://en.wikipedia.org/wiki/Google_Chrome_version_history</a>. I couldn't find any better source for that, if you have one in mind, don't hesitate to message me.</p>
 <h2>3. Bisecting</h2>
 <p>Once we have a good and a bad <code>branch base position</code> we can go straight to bisecting:</p>
 <pre class="language-bash"><code class="language-bash">$ python bisect-builds.py -a platform -g good-revision -b bad-revision --use-local-cache</code></pre>
