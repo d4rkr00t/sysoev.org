@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#2b2b2b" />
+    <meta name="description" content="Breakdown of a leetcode task to find a median of two sorted arrays" />
+
+    <meta property="og:title" content="Median of Two Sorted Arrays" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Breakdown of a leetcode task to find a median of two sorted arrays" />
+    
+    <meta property="og:url" content="/blog/median-of-two-sorted-arrays/" />
+
+    <link rel="icon" sizes="256x256" href="/favicon_256.png" />
+    <link rel="apple-touch-icon" href="/favicon_256.png" />
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?4" />
+    <title>Median of Two Sorted Arrays | Stanislav Sysoev</title>
+  </head>
+  <body>
+    <main class="generic-section">
+      <article class="blog-post">
+        <h1>
+          <span class="inline-with-bg">Median of Two Sorted Arrays</span>
+        </h1>
+        <p>LeetCode Link – <a href="https://leetcode.com/problems/median-of-two-sorted-arrays/">4. Median of Two Sorted Arrays</a> [hard].</p>
+<blockquote>
+<p>There are two sorted arrays <code>A</code> and <code>B</code> of size <code>m</code> and <code>n</code> respectively.
+Find the median of the two sorted arrays. The overall run time complexity should be <code>O(log (m+n))</code>.</p>
+</blockquote>
+<p>I've been struggling to fully understand the <a href="https://leetcode.com/problems/median-of-two-sorted-arrays/solution/">solution</a> from leetcode for quite some time. And if you open the link you can probably see why. It's been hard to visualize it in my head, and this is how I understand a solution the best.</p>
+<p>So let's jump in and do a step by step break down of one of the test cases. Hoping that this time it does stick 😀.</p>
+<p>But first – it's important to understand what does &quot;median&quot; mean and what it is used for.</p>
+<blockquote>
+<p>Median — is a value separating the higher half from the lower half of a data sample. <a href="https://en.wikipedia.org/wiki/Median">Wikipedia</a></p>
+</blockquote>
+<p><img src="./median-example.png" alt="Example of a median in an array with 9 elements"></p>
+<p>With this out of the way, it's time to introduce the test case for our break down:</p>
+<pre class="language-python"><code class="language-python">A <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><br>B <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span></code></pre>
+<p>The essence of the algorithm is to keep splitting both <code>A</code> and <code>B</code> at some point, which is going to be adjusted by a slightly modified version of a <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">binary search</a>. And to put <code>left_a</code> and <code>left_b</code> into one set and <code>right_a</code> and <code>right_b</code> into another one. The split point is not random and for us to be able to find it properly we need to introduce 3 new variables:</p>
+<pre class="language-python"><code class="language-python">imin <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment"># the leftmost position in the A array, will be adjusted with binary search.</span><br>imax <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token comment"># the rightmost position in the A array, will be adjusted with binary search.</span><br>half_len <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token builtin">len</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span> <span class="token comment"># half of both A and B length combined.</span></code></pre>
+<p>Once we have these variables defined we can calculate <code>i</code> and <code>j</code> which are split points in <code>A</code> and <code>B</code> respectively:</p>
+<pre class="language-python"><code class="language-python">i <span class="token operator">=</span> <span class="token punctuation">(</span>imin <span class="token operator">+</span> imax<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span><br>j <span class="token operator">=</span> half_len <span class="token operator">-</span> i</code></pre>
+<p>This ensures that the left and the right parts have the same size:</p>
+<p><img src="./step-1.png" alt="Step 1. Splitting arrays at random point and joining them into two sets left and right"></p>
+<p>For the split to be correct it needs to satisfy the following condition:</p>
+<blockquote>
+<p>The biggest element on the left side is smaller or equals to the smallest element on the right side.</p>
+</blockquote>
+<p><img src="./step-1-verification.png" alt="Verification of step 1, sizes are correct, but max of left is bigger than min of right"></p>
+<p>After the initial split, we have the case when the biggest element on the left side is bigger than the smallest element on the right side, which means we need to adjust the split point by moving <code>imin</code> to <code>i + 1</code> position. This is the binary search approach. Where before the first split we were considering values between <code>0</code> and <code>len(A)</code> and now the set of values had been reduced and only includes the range between <code>3</code> and <code>len(A)</code>.</p>
+<p>Using the same formula from before calculate next split point:</p>
+<p><img src="./step-2-next-split-point.png" alt="Step 2. The adjusted split point"></p>
+<p>This split point satisfies all of the required conditions and there is only one step left which is to calculate a median using the following formula:</p>
+<pre class="language-python"><code class="language-python">median <span class="token operator">=</span> <span class="token punctuation">(</span>max_of_left <span class="token operator">+</span> min_of_right<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.0</span> <span class="token comment"># if combined length of A and B is even</span><br>median <span class="token operator">=</span> max_of_left <span class="token comment"># if combined length is odd</span></code></pre>
+<blockquote>
+<p>And the result is – <code>4.5</code>.</p>
+</blockquote>
+<h2>Edge Cases</h2>
+<p>Let's consider the following edge cases:</p>
+<h3>Nothing on the left side of A.</h3>
+<p>In case when <code>i = 0</code>, <code>max_of_left</code> equals to <code>B[j-1]</code>.</p>
+<p><img src="./i-0-edge-case.png" alt="Edge case 1. i = 0"></p>
+<h3>Nothing on the right side of A.</h3>
+<p>In case when <code>i = len(A)</code>, <code>min_of_right</code> equals to <code>B[j]</code>.</p>
+<p><img src="./i-len-a-edge-case.png" alt="Edge case 2. i = len(A)"></p>
+<h3>Nothing on the left side of B.</h3>
+<p>In case when <code>j = 0</code>, <code>max_of_left</code> equals to <code>A[i-1]</code>.</p>
+<p><img src="./j-0-edge-case.png" alt="Edge case 3. j = 0"></p>
+<h3>Nothing on the right side of B.</h3>
+<p>In case when <code>j = len(B)</code>, <code>min_of_right</code> equals to <code>A[i]</code>.</p>
+<p><img src="./j-len-b-edge-case.png" alt="Edge case 4. j = len(B)"></p>
+<h2>Runtime complexity</h2>
+<p>Time and space complexities are very well described in the leetcode solution, so i just copied them from there:</p>
+<blockquote>
+<p>Time complexity: <code>O(log(min(m,n)))</code>.</p>
+<p>At first, the searching range is <code>[0,m]</code>. And the length of this searching range will be reduced by half after each loop. So, we only need <code>log(m)</code> loops. Since we do constant operations in each loop, so the time complexity is <code>O(log(m))</code>. Since <code>m &lt;= n</code>, so the time complexity is <code>O(log(min(m,n)))</code>.</p>
+</blockquote>
+<blockquote>
+<p>Space complexity: <code>O(1)</code>.</p>
+<p>We only need constant memory to store 9 local variables, so the space complexity is <code>O(1)</code>.</p>
+</blockquote>
+<h2>Full source code of the solution</h2>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">findMedianSortedArrays</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">)</span><span class="token punctuation">:</span><br>    m<span class="token punctuation">,</span> n <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span><br>    <span class="token keyword">if</span> m <span class="token operator">></span> n<span class="token punctuation">:</span><br>        <span class="token keyword">return</span> findMedianSortedArrays<span class="token punctuation">(</span>B<span class="token punctuation">,</span>A<span class="token punctuation">)</span><br><br>    <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span><br>        <span class="token keyword">return</span> <span class="token boolean">None</span><br><br>    imin<span class="token punctuation">,</span> imax<span class="token punctuation">,</span> half_len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> m<span class="token punctuation">,</span> <span class="token punctuation">(</span>m<span class="token operator">+</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span><br>    <span class="token keyword">while</span> imin <span class="token operator">&lt;=</span> imax<span class="token punctuation">:</span><br>        i <span class="token operator">=</span> <span class="token punctuation">(</span>imin <span class="token operator">+</span> imax<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span><br>        j <span class="token operator">=</span> half_len <span class="token operator">-</span> i<br><br>        <span class="token keyword">if</span> i <span class="token operator">&lt;</span> m <span class="token keyword">and</span> B<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">></span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span><br>            <span class="token comment"># i is to small, must increase it</span><br>            imin <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><br>        <span class="token keyword">elif</span> i <span class="token operator">></span> <span class="token number">0</span> <span class="token keyword">and</span> A<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">></span> B<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span><br>            <span class="token comment"># i is to big, must decrease it</span><br>            imax <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span><br>        <span class="token keyword">else</span><span class="token punctuation">:</span><br>            <span class="token comment"># i is perfect</span><br>            <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> max_of_left <span class="token operator">=</span> B<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><br>            <span class="token keyword">elif</span> j <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> max_of_left <span class="token operator">=</span> A<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><br>            <span class="token keyword">else</span><span class="token punctuation">:</span> max_of_left <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>A<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> B<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><br><br>            <span class="token comment"># if cobined length is odd</span><br>            <span class="token keyword">if</span> <span class="token punctuation">(</span>m<span class="token operator">+</span>n<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span><br>                <span class="token keyword">return</span> max_of_left<br><br>            <span class="token keyword">if</span> i <span class="token operator">==</span> m<span class="token punctuation">:</span> min_of_right <span class="token operator">=</span> B<span class="token punctuation">[</span>j<span class="token punctuation">]</span><br>            <span class="token keyword">elif</span> j <span class="token operator">==</span> n<span class="token punctuation">:</span> min_of_right <span class="token operator">=</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><br>            <span class="token keyword">else</span><span class="token punctuation">:</span> min_of_right <span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span>A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> B<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><br><br>            <span class="token keyword">return</span> <span class="token punctuation">(</span>max_of_left <span class="token operator">+</span> min_of_right<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.0</span></code></pre>
+
+      </article>
+      <div class="blog-post-links">
+        <a
+          href="https://mobile.twitter.com/search?q=https%3A%2F%2Fsysoev.org%2Fblog%2Fmedian-of-two-sorted-arrays%2F"
+          class="blog-post-links__button"
+          >Discuss on Twitter</a
+        >
+        <a
+          href="https://github.com/d4rkr00t/sysoev.org/edit/master/./site/blog/median-of-two-sorted-arrays/index.md"
+          class="blog-post-links__button"
+          >Edit on GitHub</a
+        >
+      </div>
+    </main>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-9621040-14"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-9621040-14");
+    </script>
+  </body>
+</html>
