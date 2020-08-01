@@ -2,6 +2,7 @@
 title: Median of Two Sorted Arrays
 desc: Breakdown of a leetcode task to find a median of two sorted arrays
 layout: post
+image: step-2-next-split-point.png
 date: 2020-07-27
 tags:
   - leetcode
