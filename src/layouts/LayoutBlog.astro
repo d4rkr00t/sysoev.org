@@ -1,0 +1,80 @@
+---
+import "./styles.css";
+import { createDicsussOnTwitterLink } from "../utils/discuss-on-twitter";
+import { createEditOnGithubLink } from "../utils/edit-on-github";
+
+export interface Props {
+  frontmatter: {
+    image?: string;
+    title: string;
+    desc: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" sizes="256x256" href="/favicon_256.png" />
+    <link rel="apple-touch-icon" href="/favicon_256.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:title" content={frontmatter.title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={frontmatter.desc} />
+    {
+      frontmatter.image ? (
+        <meta
+          property="og:image"
+          content={"https://sysoev.org" + frontmatter.image}
+        />
+      ) : (
+        ""
+      )
+    }
+    <meta property="og:url" content={Astro.url} />
+
+    <title>{frontmatter.title} | Stanislav Sysoev</title>
+  </head>
+  <body>
+    <main class="generic-section">
+      <article class="blog-post">
+        <h1>
+          <span class="inline-with-bg">{frontmatter.title}</span>
+        </h1>
+        <slot />
+      </article>
+      <div class="blog-post-links">
+        <a
+          href={createDicsussOnTwitterLink(Astro.url.pathname)}
+          class="blog-post-links__button">Discuss on Twitter</a
+        >
+        <a
+          href={createEditOnGithubLink(Astro.url.pathname)}
+          class="blog-post-links__button">Edit on GitHub</a
+        >
+      </div>
+    </main>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-9621040-14"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-9621040-14");
+    </script>
+  </body>
+</html>
