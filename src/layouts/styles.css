@@ -437,5 +437,6 @@ ul.about__contacts {
   padding: 0.6rem 0;
   box-shadow: 1rem 0 0 var(--alt-bg), -1rem 0 0 var(--alt-bg);
   box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 /* END UTILS */
