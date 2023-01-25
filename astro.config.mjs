@@ -8,6 +8,9 @@ export default defineConfig({
   site: "https://sysoev.org/",
   outDir: "docs",
   integrations: [mdx()],
+  build: {
+    assets: "assets",
+  },
   markdown: {
     shikiConfig: {
       theme: "rose-pine",
