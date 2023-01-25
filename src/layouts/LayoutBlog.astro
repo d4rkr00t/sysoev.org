@@ -1,17 +1,15 @@
 ---
 import "./styles.css";
+import type { CollectionEntry } from "astro:content";
+
 import { createDicsussOnTwitterLink } from "../utils/discuss-on-twitter";
 import { createEditOnGithubLink } from "../utils/edit-on-github";
 
 export interface Props {
-  frontmatter: {
-    image?: string;
-    title: string;
-    desc: string;
-  };
+  entry: CollectionEntry<"blog">;
 }
 
-const { frontmatter } = Astro.props;
+const { entry } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -26,28 +24,22 @@ const { frontmatter } = Astro.props;
     <link rel="apple-touch-icon" href="/favicon_256.png" />
     <meta name="generator" content={Astro.generator} />
 
-    <meta property="og:title" content={frontmatter.title} />
+    <meta property="og:title" content={entry.data.title} />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content={frontmatter.desc} />
-    {
-      frontmatter.image ? (
-        <meta
-          property="og:image"
-          content={"https://sysoev.org" + frontmatter.image}
-        />
-      ) : (
-        ""
-      )
-    }
+    <meta property="og:description" content={entry.data.desc} />
+    <meta
+      property="og:image"
+      content={"https://sysoev.org" + entry.data.image}
+    />
     <meta property="og:url" content={Astro.url} />
 
-    <title>{frontmatter.title} | Stanislav Sysoev</title>
+    <title>{entry.data.title} | Stanislav Sysoev</title>
   </head>
   <body>
     <main class="generic-section">
       <article class="blog-post">
         <h1>
-          <span class="inline-with-bg">{frontmatter.title}</span>
+          <span class="inline-with-bg">{entry.data.title}</span>
         </h1>
         <slot />
       </article>

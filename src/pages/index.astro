@@ -1,10 +1,11 @@
 ---
+import { getCollection } from "astro:content";
+
 import Layout from "../layouts/Layout.astro";
 import { getWritingsByYear } from "../utils/writings";
-import type { Post, PostFrontmatter } from "../types";
 
-const posts = await Astro.glob<PostFrontmatter>("./blog/*.mdx");
-const writings = getWritingsByYear(posts as Post[]);
+const posts = await getCollection("blog");
+const writings = getWritingsByYear(posts);
 ---
 
 <Layout title="Personal Website | Stanislav Sysoev">
@@ -59,7 +60,7 @@ const writings = getWritingsByYear(posts as Post[]);
                 {group.writings.map((post) => {
                   return (
                     <li>
-                      <a href={post.url}>{post.title}</a>
+                      <a href={`/blog/${post.slug}`}>{post.title}</a>
                     </li>
                   );
                 })}
