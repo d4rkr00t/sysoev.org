@@ -7,6 +7,13 @@ const blogCollection = defineCollection({
       desc: z.string(),
       image: z.string(),
       date: z.date().transform((d) => new Date(d)),
+      updated: z
+        .date()
+        .optional()
+        .transform((d) => {
+          if (!d) return null;
+          return new Date(d);
+        }),
       tags: z.array(
         z.enum([
           "leetcode",

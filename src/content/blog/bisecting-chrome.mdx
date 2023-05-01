@@ -3,6 +3,7 @@ title: Bisecting Chrome
 desc: A short note on how to bisect chrome/chromium version to investigate browser issues.
 image: /blog/bisecting-chrome/omahaproxy.png
 date: 2020-05-25
+updated: 2023-05-01
 tags:
   - chrome
   - Y2020
@@ -18,24 +19,22 @@ That's why I wanted to write the process down with all relative resources, so I 
 
 ## 1. Tools
 
-Chromium has a python script for bisecting in the repository. We just need to download it – [tools/bisect-build.py](https://chromium.googlesource.com/chromium/src/+/master/tools/bisect-builds.py). And it requires **Python 2** to work.
+Chromium has a python script for bisecting in the repository. We just need to download it – [tools/bisect-build.py](https://chromium.googlesource.com/chromium/src/+/master/tools/bisect-builds.py). And it requires **Python 3** to work.
 
 More info and examples are in this guide: [Bisect builds](https://www.chromium.org/developers/bisect-builds-py).
 
 ## 2. Finding a version range
 
-For any bisecting we need to have a ref of a good and a bad revision. In most cases the bad one is going to be the current stable version that we or our customers use. We can look it up in [chrome://version](chrome://version). For example: `83.0.4103.61`. Unfortunately this is not what the tool expects, and we need to convert semver version number into a `Branch Base Position`. And we can do that by using another tool, called [omahaproxy](http://omahaproxy.appspot.com/).
+For any bisecting we need to have a ref of one good and one bad revision. In most cases the bad one is going to be the current stable version that we or our customers use. We can look it up in [chrome://version](chrome://version). For example: `83.0.4103.61`. Unfortunately this is not what the tool expects, and we need to convert semver version number into a `Branch Base Position`. And we can do that by using another tool, called [chromiumdash](https://chromiumdash.appspot.com/).
 
 <img
-  src="/blog/bisecting-chrome/omahaproxy.png"
+  src="/blog/bisecting-chrome/chromiumdash.jpg"
   alt="omahaproxy"
-  width="1452"
-  height="768"
+  width="3322"
+  height="1544"
 />
 
 > IMPORTANT: Branch Base Position is not a build number.
-
-It may also be useful to refer to this Wikipedia page to find a specific version number of a chrome major release: [https://en.wikipedia.org/wiki/Google_Chrome_version_history](https://en.wikipedia.org/wiki/Google_Chrome_version_history). I couldn't find any better source for that, if you have one in mind, don't hesitate to message me.
 
 ## 3. Bisecting
 
@@ -56,6 +55,5 @@ Unfortunately it's impossible to go to a by commit level of granularity if you a
 All of the links mentioned above:
 
 - [https://www.chromium.org/developers/bisect-builds-py](https://www.chromium.org/developers/bisect-builds-py)
-- [Wikipedia: Google Chrome version history](https://en.wikipedia.org/wiki/Google_Chrome_version_history)
-- [Omahaproxy](http://omahaproxy.appspot.com/)
+- [chromiumdash](https://chromiumdash.appspot.com/)
 - [Chromium Bug Tracker](http://crbug.com/)
