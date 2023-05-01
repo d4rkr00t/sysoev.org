@@ -10,7 +10,7 @@ tags:
 ---
 
 import { Image } from "astro:assets";
-import chromiumdashImg from "./bisecting-chrome-assets/chromiumdash.jpg";
+import chromiumdashImg from "./bisecting-chrome/chromiumdash.jpg";
 
 In last year or so it happened that I had to bisect Chrome/Chromium versions multiple times to verify if the issue is actually a browser bug rather than a bug in our product's code.
 
@@ -34,6 +34,7 @@ For any bisecting we need to have a ref of one good and one bad revision. In mos
   src={chromiumdashImg}
   quality="high"
   alt="chromiumdash — Chromium data, all in one place."
+  loading="eager"
 />
 
 > IMPORTANT: Branch Base Position is not a build number.

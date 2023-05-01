@@ -10,6 +10,16 @@ tags:
   - Y2020
 ---
 
+import { Image } from "astro:assets";
+import medianExampleImg from "./median-of-two-sorted-arrays/median-example.png";
+import step1Img from "./median-of-two-sorted-arrays/step-1.png";
+import step1VerificationImg from "./median-of-two-sorted-arrays/step-1-verification.png";
+import step2NextSplitPointImg from "./median-of-two-sorted-arrays/step-2-next-split-point.png";
+import i0EdgeCaseImg from "./median-of-two-sorted-arrays/i-0-edge-case.png";
+import iLenAEdgeCaseImg from "./median-of-two-sorted-arrays/i-len-a-edge-case.png";
+import j0EdgeCaseImg from "./median-of-two-sorted-arrays/j-0-edge-case.png";
+import jLenBEdgeCaseImg from "./median-of-two-sorted-arrays/j-len-b-edge-case.png";
+
 LeetCode Link – [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) [hard].
 
 > There are two sorted arrays `A` and `B` of size `m` and `n` respectively.
@@ -23,11 +33,11 @@ But first – it's important to understand what does "median" mean and what it i
 
 > Median — is a value separating the higher half from the lower half of a data sample. [Wikipedia](https://en.wikipedia.org/wiki/Median)
 
-<img
-  src="/blog/median-of-two-sorted-arrays/median-example.png"
+<Image
+  src={medianExampleImg}
+  quality="high"
   alt="Example of a median in an array with 9 elements"
-  width="1611"
-  height="445"
+  loading="eager"
 />
 
 With this out of the way, it's time to introduce the test case for our break down:
@@ -54,33 +64,30 @@ j = half_len - i
 
 This ensures that the left and the right parts have the same size:
 
-<img
-  src="/blog/median-of-two-sorted-arrays/step-1.png"
+<Image
+  src={step1Img}
+  quality="high"
   alt="Step 1. Splitting arrays at random point and joining them into two sets left and right"
-  width="1611"
-  height="1413"
 />
 
 For the split to be correct it needs to satisfy the following condition:
 
 > The biggest element on the left side is smaller or equals to the smallest element on the right side.
 
-<img
-  src="/blog/median-of-two-sorted-arrays/step-1-verification.png"
+<Image
+  src={step1VerificationImg}
+  quality="high"
   alt="Verification of step 1, sizes are correct, but max of left is bigger than min of right"
-  width="1611"
-  height="1214"
 />
 
 After the initial split, we have the case when the biggest element on the left side is bigger than the smallest element on the right side, which means we need to adjust the split point by moving `imin` to `i + 1` position. This is the binary search approach. Where before the first split we were considering values between `0` and `len(A)` and now the set of values had been reduced and only includes the range between `3` and `len(A)`.
 
 Using the same formula from before calculate next split point:
 
-<img
-  src="/blog/median-of-two-sorted-arrays/step-2-next-split-point.png"
+<Image
+  src={step2NextSplitPointImg}
+  quality="high"
   alt="Step 2. The adjusted split point"
-  width="1611"
-  height="1418"
 />
 
 This split point satisfies all of the required conditions and there is only one step left which is to calculate a median using the following formula:
@@ -100,45 +107,25 @@ Let's consider the following edge cases:
 
 In case when `i = 0`, `max_of_left` equals to `B[j-1]`.
 
-<img
-  src="/blog/median-of-two-sorted-arrays/i-0-edge-case.png"
-  alt="Edge case 1. i = 0"
-  width="1611"
-  height="814"
-/>
+<Image src={i0EdgeCaseImg} quality="high" alt="Edge case 1. i = 0" />
 
 ### Nothing on the right side of A.
 
 In case when `i = len(A)`, `min_of_right` equals to `B[j]`.
 
-<img
-  src="/blog/median-of-two-sorted-arrays/i-len-a-edge-case.png"
-  alt="Edge case 2. i = len(A)"
-  width="1611"
-  height="818"
-/>
+<Image src={iLenAEdgeCaseImg} quality="high" alt="Edge case 2. i = len(A)" />
 
 ### Nothing on the left side of B.
 
 In case when `j = 0`, `max_of_left` equals to `A[i-1]`.
 
-<img
-  src="/blog/median-of-two-sorted-arrays/j-0-edge-case.png"
-  alt="Edge case 3. j = 0"
-  width="1611"
-  height="755"
-/>
+<Image src={j0EdgeCaseImg} quality="high" alt="Edge case 3. j = 0" />
 
 ### Nothing on the right side of B.
 
 In case when `j = len(B)`, `min_of_right` equals to `A[i]`.
 
-<img
-  src="/blog/median-of-two-sorted-arrays/j-len-b-edge-case.png"
-  alt="Edge case 4. j = len(B)"
-  width="1611"
-  height="678"
-/>
+<Image src={jLenBEdgeCaseImg} quality="high" alt="Edge case 4. j = len(B)" />
 
 ## Runtime complexity
 
