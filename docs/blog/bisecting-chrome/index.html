@@ -33,7 +33,7 @@
 <p>More info and examples are in this guide: <a href="https://www.chromium.org/developers/bisect-builds-py">Bisect builds</a>.</p>
 <h2 id="2-finding-a-version-range">2. Finding a version range</h2>
 <p>For any bisecting we need to have a ref of one good and one bad revision. In most cases the bad one is going to be the current stable version that we or our customers use. We can look it up in <a href="chrome://version">chrome://version</a>. For example: <code>83.0.4103.61</code>. Unfortunately this is not what the tool expects, and we need to convert semver version number into a <code>Branch Base Position</code>. And we can do that by using another tool, called <a href="https://chromiumdash.appspot.com/">chromiumdash</a>.</p>
-<img src="/blog/bisecting-chrome/chromiumdash.jpg" alt="omahaproxy" width="3322" height="1544"/>
+<img src="/assets/chromiumdash.3d04f36e_znr6M.webp" alt="chromiumdash — Chromium data, all in one place." width="3322" height="1544" loading="lazy" decoding="async">
 <blockquote>
 <p>IMPORTANT: Branch Base Position is not a build number.</p>
 </blockquote>

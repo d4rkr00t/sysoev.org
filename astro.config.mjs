@@ -8,6 +8,9 @@ export default defineConfig({
   site: "https://sysoev.org/",
   outDir: "docs",
   integrations: [mdx()],
+  experimental: {
+    assets: true,
+  },
   build: {
     assets: "assets",
   },
