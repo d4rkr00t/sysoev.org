@@ -15,10 +15,10 @@ const { title } = Astro.props;
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <title>{title}</title>
     <link rel="icon" sizes="256x256" href="/favicon_256.png" />
     <link rel="apple-touch-icon" href="/favicon_256.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
   </head>
   <body>
     <slot />
