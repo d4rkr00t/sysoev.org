@@ -255,6 +255,39 @@ ul.about__contacts {
 }
 /* END BLOG POSTS LIST */
 
+/* BLOG POST NAV */
+.blog-post-nav {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 4rem 4rem 0;
+}
+
+.blog-post-nav .blog-post-nav__back {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 2px;
+  background: var(--alt-bg);
+  transition: background 0.1s ease-in;
+  color: var(--default-text-color);
+  margin-left: -1rem;
+}
+
+
+@media screen and (max-width: 549px) {
+  .blog-post-nav {
+    padding: 4rem 1.7rem 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .blog-post-nav {
+    padding: 4rem 1rem 0;
+  }
+}
+/* END BLOG POST NAV */
+
 /* BLOG POST */
 .blog-post {
   font-family: var(--font-family-blog);

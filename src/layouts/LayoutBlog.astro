@@ -12,7 +12,7 @@ export interface Props {
 const { entry } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -36,6 +36,9 @@ const { entry } = Astro.props;
     <title>{entry.data.title} | Stanislav Sysoev</title>
   </head>
   <body>
+    <nav class="blog-post-nav">
+      <a href="/" class="blog-post-nav__back">◀︎ Home Page</a>
+    </nav>
     <main class="generic-section">
       <article class="blog-post">
         <h1>
@@ -58,8 +61,7 @@ const { entry } = Astro.props;
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-9621040-14"
-    ></script>
+      src="https://www.googletagmanager.com/gtag/js?id=UA-9621040-14"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
