@@ -596,11 +596,12 @@
     <details id="p4details">
       <summary><h2><span class="step">4</span>Chords in key <span class="part-badge" id="p3badge">To do</span></h2><span class="chev"></span></summary>
       <div class="details-body">
-        <p>Play these 4 chords from today's scale. One of them is the chord you just inverted.</p>
+        <p>Play these 4 chords from today's scale using today's pattern, one bar per chord. One of them is the chord you just inverted.</p>
+        <p><strong id="p3patternName">–</strong>: <span id="p3patternHow"></span></p>
         <div class="arpeggio-box" id="p3box"></div>
         <label class="check-row">
           <input type="checkbox" id="p3done">
-          I played these chords
+          I played the progression with this pattern
         </label>
       </div>
     </details>
@@ -644,6 +645,22 @@
   };
   var INVERSION_NAMES = ["root position", "1st inversion", "2nd inversion"];
   var INVERSION_SHORT = ["root", "1st inv", "2nd inv"];
+  // slot note indices: 0 LH root, 1 LH fifth, 2 LH octave, 3/4/5 RH chord low/mid/high
+  var PATTERNS = [
+    { name: "Broken chord", how: "RH: low, middle, high, then the whole chord.", slots: [[3], [4], [5], [3, 4, 5]] },
+    { name: "Up and down", how: "RH arpeggio: low, middle, high, middle, twice per chord.", slots: [[3], [4], [5], [4], [3], [4], [5], [4]] },
+    { name: "Alberti bass", how: "RH: low, high, middle, high, twice per chord.", slots: [[3], [5], [4], [5], [3], [5], [4], [5]] },
+    { name: "Bass + chord", how: "LH root on beat 1, RH chord on beats 2, 3, 4.", slots: [[0], [3, 4, 5], [3, 4, 5], [3, 4, 5]] },
+    { name: "Waltz", how: "3/4 oom-pah-pah: LH root, then RH chord twice.", slots: [[0], [3, 4, 5], [3, 4, 5]] },
+    { name: "Root–fifth bass", how: "RH chord with LH root on beat 1, then LH fifth, root, fifth.", slots: [[0, 3, 4, 5], [1], [0], [1]] },
+    { name: "Pop eighths", how: "LH root on beat 1, RH repeats the chord in steady eighths.", slots: [[0, 3, 4, 5], [3, 4, 5], [3, 4, 5], [3, 4, 5], [3, 4, 5], [3, 4, 5], [3, 4, 5], [3, 4, 5]] },
+    { name: "Two-hand arpeggio", how: "LH root, fifth, octave, then RH chord notes upward.", slots: [[0], [1], [2], [3], [4], [5]] }
+  ];
+  function patternNotes(chord, midis) {
+    var top = midis[0] - 13;
+    var b = top - ((top - chord.pcs[0]) % 12 + 12) % 12;
+    return [b, b + (chord.pcs[2] - chord.pcs[0] + 12) % 12, b + 12].concat(midis);
+  }
 
   // ---- date + seeded RNG ----
   function pad(n) { return n < 10 ? "0" + n : "" + n; }
@@ -811,7 +828,8 @@
       roman: degrees.map(function (d) { return ROMAN[key.mode][d]; }).join(" – "),
       chords: chords,
       voicings: voiceLead(chords),
-      inversionChord: chords[Math.floor(rng() * chords.length)]
+      inversionChord: chords[Math.floor(rng() * chords.length)],
+      pattern: PATTERNS[seed % PATTERNS.length]
     };
   }
 
@@ -1084,11 +1102,21 @@
         '</span><span class="notes">' + rotate(c.names, v.inv).join(" · ") +
         '</span><button type="button" class="play" data-i="' + i + '">▶</button></div>';
     }).join("");
+  document.getElementById("p3patternName").textContent = session.pattern.name;
+  document.getElementById("p3patternHow").textContent = session.pattern.how;
+  var BAR = 1.6;
+  function playPattern(i, delay) {
+    var notes = patternNotes(session.chords[i], session.voicings[i].midis);
+    var slots = session.pattern.slots;
+    slots.forEach(function (s, k) {
+      s.forEach(function (n) { tone(notes[n], delay + k * BAR / slots.length, 0.9, 0.14); });
+    });
+  }
   box.querySelectorAll(".chord-row .play").forEach(function (btn) {
-    btn.addEventListener("click", function () { playChord(session.voicings[+btn.dataset.i].midis); });
+    btn.addEventListener("click", function () { playPattern(+btn.dataset.i, 0); });
   });
   document.getElementById("playProg").addEventListener("click", function () {
-    session.voicings.forEach(function (v, i) { playChord(v.midis, i * 1.1); });
+    session.chords.forEach(function (c, i) { playPattern(i, i * BAR); });
   });
 
   var p3done = document.getElementById("p3done");
