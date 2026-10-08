@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Fuji → iPhone</title>
+<style>
+:root{--bg:#0a0a0a;--card:#141414;--well:#1e1e1e;--line:#262626;--fg:#f2f2f2;--dim:#8a8a8a;--faint:#5a5a5a;--acc:#ffb340;--mono:ui-monospace,"SF Mono",Menlo,monospace;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font:15px/1.4 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) calc(96px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+header,main,footer{max-width:560px;margin:0 auto}
+button{font:inherit;color:inherit;cursor:pointer}
+header{padding:8px 0 4px}
+.brand{font:600 13px/1 var(--mono);letter-spacing:.22em}
+.brand i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 10px var(--acc);margin-right:10px;vertical-align:1px}
+.brand em{font-style:normal;color:var(--acc);margin:0 .3em}
+.sub{color:var(--dim);font-size:13px;margin-top:10px}
+h2{font:600 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin:28px 0 10px;display:flex;gap:10px;align-items:center;min-height:28px}
+h2 b{color:var(--acc);font-weight:600}
+h2 small{margin-left:auto;font:inherit;letter-spacing:.06em;text-transform:none;color:var(--faint)}
+.acts{margin-left:auto;display:flex;gap:6px}
+.acts button{background:var(--well);border:1px solid var(--line);border-radius:999px;padding:0 12px;height:34px;font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg)}
+.acts button:active{background:var(--line)}
+.acts #save{background:var(--acc);border-color:var(--acc);color:#111}
+.list>div{display:flex;align-items:center;border-top:1px solid var(--line)}
+.list>div:first-child{border-top:0}
+.list .load{flex:1;min-width:0;display:grid;gap:3px;text-align:left;background:none;border:0;padding:10px 16px;min-height:58px}
+.list .load span{font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.list small{font:500 12px var(--mono);color:var(--dim)}
+.list .del{flex:none;width:52px;height:58px;background:none;border:0;color:var(--faint);font-size:22px}
+.list .del:active{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px}
+textarea{display:block;width:100%;background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font:16px/1.55 var(--mono);resize:vertical;min-height:200px}
+textarea:focus{outline:none;border-color:var(--acc)}
+
+.style{display:grid;grid-template-columns:minmax(104px,132px) 1fr;gap:18px;padding:16px;align-items:center}
+.pad{position:relative;aspect-ratio:1;border-radius:12px;border:1px solid var(--line);overflow:hidden;
+  background:linear-gradient(90deg,transparent calc(50% - .5px),#3a3a3a calc(50% - .5px),#3a3a3a calc(50% + .5px),transparent calc(50% + .5px)),
+  linear-gradient(transparent calc(50% - .5px),#3a3a3a calc(50% - .5px),#3a3a3a calc(50% + .5px),transparent calc(50% + .5px)),
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/25% 25%,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/25% 25%,
+  linear-gradient(90deg,#181818,#2a1e0e)}
+.pad i{position:absolute;width:14px;height:14px;margin:-7px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px #ffb34040,0 0 18px var(--acc);transition:left .25s,top .25s}
+.pad span{position:absolute;font:600 8px var(--mono);letter-spacing:.14em;color:var(--faint)}
+.pad .t{top:6px;left:6px}.pad .c{bottom:6px;right:6px}
+.kind,dt{font:600 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.name{font-size:28px;font-weight:600;letter-spacing:-.01em;margin:2px 0 14px;line-height:1.1}
+dl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+dd{font:500 17px/1.2 var(--mono);margin:3px 0 0}
+dl div:last-child{grid-column:span 2}
+
+.adj{padding:2px 16px}
+.adj div{display:grid;grid-template-columns:1fr 88px 48px;gap:14px;align-items:center;min-height:48px;border-top:1px solid var(--line)}
+.adj div:first-child{border-top:0}
+.bar{position:relative;height:4px;background:var(--well);border-radius:2px}
+.bar.c::after{content:"";position:absolute;left:50%;top:-3px;width:1px;height:10px;background:var(--faint)}
+.bar i{position:absolute;top:0;bottom:0;background:var(--acc);border-radius:2px}
+.val{font:500 15px var(--mono);text-align:right}
+.empty{color:var(--dim);padding:14px 0}
+.notes{color:var(--dim);font-size:13px;line-height:1.5;margin:12px 4px 0}
+.notes b{font:600 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-right:6px}
+
+form{display:grid;gap:12px}
+h3{font:600 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--acc);padding:14px 16px 10px}
+.row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;min-height:56px;padding:6px 16px;border-top:1px solid var(--line)}
+.row>label,.row>span{font-size:15px}
+select{appearance:none;-webkit-appearance:none;margin-left:auto;max-width:62%;min-height:44px;padding:0 34px 0 12px;background:var(--well) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23ffb340' fill='none' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 12px center;color:var(--fg);border:1px solid var(--line);border-radius:10px;font:16px -apple-system,sans-serif}
+.seg{display:flex;margin-left:auto;background:var(--well);border-radius:10px;padding:3px;gap:2px}
+.seg label{position:relative}
+.seg input{position:absolute;inset:0;margin:0;opacity:0}
+.seg span{display:flex;align-items:center;justify-content:center;min-width:46px;height:38px;padding:0 10px;border-radius:8px;font:500 13px var(--mono);color:var(--dim)}
+.seg input:checked+span{background:var(--acc);color:#111}
+.seg input:focus-visible+span,select:focus-visible,.step :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.step{display:flex;align-items:center;margin-left:auto;background:var(--well);border-radius:10px}
+.step button{width:44px;height:44px;border:0;background:none;color:var(--acc);font-size:22px;line-height:1}
+.step button:active{color:var(--fg)}
+.step input{width:64px;text-align:center;background:none;border:0;color:var(--fg);font:500 16px var(--mono);padding:0}
+.step input:focus{outline:none;color:var(--acc)}
+
+footer{color:var(--faint);font-size:12px;line-height:1.5;margin-top:28px}
+.hud{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;align-items:center;gap:10px;max-width:calc(100% - 32px);white-space:nowrap;overflow:hidden;background:#141414d9;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid var(--line);border-radius:999px;padding:12px 18px;font:500 13px var(--mono)}
+.hud i{flex:none;width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 10px var(--acc)}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><i></i>FUJI<em>→</em>iPHONE</div>
+  <p class="sub">Fujifilm recipe to Photographic Style + Photos edits · iPhone 18 Pro · iOS 27</p>
+</header>
+<main>
+  <section id="saved" hidden>
+    <h2><b>★</b> Saved</h2>
+    <div class="card list" id="list"></div>
+  </section>
+
+  <h2><b>01</b> Recipe <span class="acts"><button type="button" id="paste">Paste</button><button type="button" id="clear">Clear</button><button type="button" id="save">Save</button></span></h2>
+  <textarea id="src" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Recipe text" placeholder="Paste a recipe…">Classic Negative
+Dynamic Range: 400
+Highlight: 0
+Shadow: +3
+Color: -2
+Noise Reduction: -4
+Sharpening: -2
+Clarity: 0
+Grain Effect: Strong, Small
+Color Chrome Effect: Strong
+Color Chrome Effect Blue: Strong
+White Balance: Auto (R7 B-7)</textarea>
+
+  <section id="out" aria-live="polite">
+    <h2><b>02</b> Camera <small>Styles ▸ Customize</small></h2>
+    <div class="card style">
+      <div class="pad" aria-hidden="true"><span class="t">TONE</span><span class="c">COLOR</span><i id="dot"></i></div>
+      <div>
+        <div class="kind" id="kind"></div>
+        <div class="name" id="name"></div>
+        <dl id="readouts"></dl>
+      </div>
+    </div>
+    <h2><b>03</b> Photos <small>Edit ▸ Adjust</small></h2>
+    <div class="card adj" id="adjust"></div>
+    <p class="notes" id="notes"></p>
+  </section>
+
+  <h2><b>04</b> Fine-tune</h2>
+  <form id="f" autocomplete="off"></form>
+</main>
+<footer>Approximations, not a colour-science match. Styles need HEIF capture (Settings ▸ Camera ▸ Formats ▸ High Efficiency) to be editable later.</footer>
+<button type="button" class="hud" id="hud" hidden></button>
+
+<script src="map.js"></script>
+<script>
+const $ = s => document.querySelector(s)
+const sign = v => (v > 0 ? '+' : '') + v
+const LVL = [['off', 'Off'], ['weak', 'Weak'], ['strong', 'Strong']]
+const GROUPS = [
+  ['Film', [['sim', 'Film Simulation', 'select', Object.entries(SIMS).map(([k, v]) => [k, v.label])], ['filter', 'Filter', 'seg', [['', 'None'], ['Ye', 'Ye'], ['R', 'R'], ['G', 'G']]]]],
+  ['Tone', [['dr', 'Dynamic Range', 'seg', [['100', '100'], ['200', '200'], ['400', '400'], ['auto', 'Auto']]], ['h', 'Highlight', 'num', [-2, 4, 0.5]], ['s', 'Shadow', 'num', [-2, 4, 0.5]]]],
+  ['Color', [['c', 'Color', 'num', [-4, 4, 1]], ['cce', 'Color Chrome', 'seg', LVL], ['cceBlue', 'Color Chrome Blue', 'seg', LVL]]],
+  ['Detail', [['nr', 'Noise Reduction', 'num', [-4, 4, 1]], ['sharp', 'Sharpening', 'num', [-4, 4, 1]], ['clarity', 'Clarity', 'num', [-5, 5, 1]], ['grain', 'Grain', 'seg', LVL]]],
+  ['White Balance', [['wb', 'Preset', 'select', Object.entries(WB).map(([k, v]) => [k, v[0]])], ['kelvin', 'Kelvin', 'num', [2500, 10000, 100]], ['r', 'Red', 'num', [-9, 9, 1]], ['b', 'Blue', 'num', [-9, 9, 1]]]],
+  ['Exposure', [['exp', 'Compensation', 'num', [-3, 3, 1 / 3]]]],
+]
+
+const f = $('#f'), src = $('#src'), hud = $('#hud')
+let parsed = parse(src.value)
+
+function row([k, label, type, o]) {
+  const ctl = type === 'select'
+    ? `<select id="${k}" name="${k}">${o.map(([v, t]) => `<option value="${v}">${t}</option>`).join('')}</select>`
+    : type === 'seg'
+    ? `<div class="seg" role="radiogroup" aria-label="${label}">${o.map(([v, t]) => `<label><input type="radio" name="${k}" value="${v}"><span>${t}</span></label>`).join('')}</div>`
+    : `<div class="step"><button type="button" data-d="-1" aria-label="Decrease ${label}">−</button><input id="${k}" name="${k}" data-min="${o[0]}" data-max="${o[1]}" data-step="${o[2]}"><button type="button" data-d="1" aria-label="Increase ${label}">+</button></div>`
+  return `<div class="row" data-k="${k}">${type === 'seg' ? `<span>${label}</span>` : `<label for="${k}">${label}</label>`}${ctl}</div>`
+}
+f.innerHTML = GROUPS.map(([g, rows]) => `<div class="card" data-k="${g}"><h3>${g}</h3>${rows.map(row).join('')}</div>`).join('')
+
+function fill(r) {
+  for (const k in DEFAULTS) f.elements[k].value = typeof r[k] === 'number' && k !== 'kelvin' ? sign(+r[k].toFixed(2)) : r[k]
+}
+
+function render() {
+  const form = Object.fromEntries(new FormData(f))
+  localStorage.setItem('fuji-current', JSON.stringify({ text: src.value, form }))
+  const r = { unknown: parsed.unknown, simRaw: parsed.simRaw, ...form }
+  const bw = !!SIMS[r.sim].bw
+  const show = { filter: bw && r.sim !== 'sepia', kelvin: r.wb === 'kelvin', Color: !bw, 'White Balance': !bw }
+  for (const el of f.querySelectorAll('[data-k]')) el.hidden = show[el.dataset.k] === false
+
+  const { style: s, adjust, notes } = toIos(r)
+  const color = s.color === null ? '—' : sign(s.color)
+  $('#kind').textContent = s.name === 'Standard' ? 'Undertone' : 'Mood'
+  $('#name').textContent = s.name
+  $('#dot').style.left = ((s.color ?? 0) + 100) / 2 + '%'
+  $('#dot').style.top = (100 - s.tone) / 2 + '%'
+  const palette = s.palette ?? '—'
+  $('#readouts').innerHTML = [['Tone', sign(s.tone)], ['Color', color], ['Palette', palette], ['Grain', s.grain ? 'On' : 'Off'], ['Texture', s.texture === 'Standard' ? 'Standard' : `${s.texture} ${s.textureAmount}`]]
+    .map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')
+  $('#adjust').innerHTML = adjust.length
+    ? adjust.map(([k, v]) => {
+        const pos = POSITIVE.includes(k)
+        const [l, w] = pos ? [0, v] : [50 + Math.min(0, v) / 2, Math.abs(v) / 2]
+        return `<div><span>${k}</span><span class="bar${pos ? '' : ' c'}"><i style="left:${l}%;width:${w}%"></i></span><span class="val">${sign(v)}</span></div>`
+      }).join('')
+    : '<p class="empty">No edits needed</p>'
+  $('#notes').innerHTML = notes.length ? '<b>Not mapped</b>' : ''
+  $('#notes').append(notes.join(' · '))
+  hud.innerHTML = `<i></i>${s.name} · T ${sign(s.tone)} · C ${color} · P ${palette} · ${adjust.length} edit${adjust.length === 1 ? '' : 's'}`
+}
+
+f.addEventListener('input', render)
+f.addEventListener('click', e => {
+  const b = e.target.closest('[data-d]')
+  if (!b) return
+  const i = b.parentNode.querySelector('input'), st = +i.dataset.step
+  const v = Math.min(+i.dataset.max, Math.max(+i.dataset.min, Math.round((num(i.value) + b.dataset.d * st) / st) * st))
+  i.value = i.name === 'kelvin' ? v : sign(+v.toFixed(2))
+  render()
+})
+src.addEventListener('input', () => { parsed = parse(src.value); fill(parsed); render() })
+$('#paste').onclick = async () => {
+  try { src.value = await navigator.clipboard.readText(); src.dispatchEvent(new Event('input')) } catch { src.focus() }
+}
+$('#clear').onclick = () => { src.value = ''; src.dispatchEvent(new Event('input')); src.focus() }
+const KEY = 'fuji-saved'
+const saved = () => JSON.parse(localStorage.getItem(KEY) || '[]')
+function store(list) {
+  localStorage.setItem(KEY, JSON.stringify(list))
+  $('#saved').hidden = !list.length
+  $('#list').innerHTML = list.map((it, i) => {
+    const s = toIos({ unknown: [], ...it.form }).style
+    return `<div><button type="button" class="load" data-i="${i}"><span></span><small>${s.name} · T ${sign(s.tone)} · P ${s.palette ?? '—'}</small></button><button type="button" class="del" data-i="${i}" aria-label="Delete">×</button></div>`
+  }).join('')
+  list.forEach((it, i) => { $('#list').children[i].querySelector('span').textContent = it.name })
+}
+$('#save').onclick = e => {
+  const def = src.value.split('\n').find(l => l.trim() && !l.includes(':'))?.trim() || SIMS[f.elements.sim.value].label
+  const name = prompt('Save recipe as', def)?.trim()
+  if (!name) return
+  store([{ name, text: src.value, form: Object.fromEntries(new FormData(f)) }, ...saved().filter(it => it.name !== name)])
+  e.target.textContent = 'Saved ✓'
+  setTimeout(() => { e.target.textContent = 'Save' }, 1500)
+}
+$('#list').onclick = e => {
+  const b = e.target.closest('button')
+  if (!b) return
+  const list = saved(), it = list[b.dataset.i]
+  if (b.classList.contains('del')) {
+    if (confirm(`Delete "${it.name}"?`)) store(list.filter((_, i) => i !== +b.dataset.i))
+    return
+  }
+  src.value = it.text
+  parsed = parse(it.text)
+  fill({ ...DEFAULTS, ...it.form })
+  render()
+  $('#out').scrollIntoView({ behavior: 'smooth' })
+}
+store(saved())
+hud.onclick = () => $('#out').scrollIntoView({ behavior: 'smooth' })
+new IntersectionObserver(([e]) => { hud.hidden = e.isIntersecting || e.boundingClientRect.top > 0 }).observe($('#out'))
+
+const cur = JSON.parse(localStorage.getItem('fuji-current') || 'null')
+if (cur) {
+  src.value = cur.text
+  parsed = parse(cur.text)
+}
+fill({ ...parsed, ...cur?.form })
+render()
+</script>
+</body>
+</html>
