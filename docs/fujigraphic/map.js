@@ -6,26 +6,27 @@ const SIMS = {
   classicchrome: { label: 'Classic Chrome', style: 'Natural', tone: -15, color: -40, palette: 80, adjust: { Warmth: -5 } },
   proneghi: { label: 'Pro Neg. Hi', style: 'Neutral', tone: -5, color: -10, palette: 60 },
   pronegstd: { label: 'Pro Neg. Std', style: 'Neutral', tone: 15, color: -15, palette: 60 },
-  classicneg: { label: 'Classic Negative', style: 'Dramatic', tone: -10, color: -30, palette: 80, adjust: { Tint: -8 } },
+  classicneg: { label: 'Classic Negative', style: 'Dramatic', tone: -10, color: -30, palette: 60, adjust: { Warmth: 10, Tint: -4 } },
   eterna: { label: 'Eterna / Cinema', style: 'Natural', tone: 25, color: -40, palette: 80, adjust: { Warmth: -5 } },
   bleach: { label: 'Eterna Bleach Bypass', style: 'Dramatic', tone: -25, color: -80, palette: 100 },
   nostalgic: { label: 'Nostalgic Neg.', style: 'Amber', tone: 5, color: 10, palette: 80 },
-  reala: { label: 'Reala Ace', style: 'Neutral', tone: 0, color: 0, palette: 40 },
+  reala: { label: 'Reala Ace', style: 'Standard', tone: 0, color: 0 },
   acros: { label: 'Acros', style: 'Stark B&W', tone: -10, palette: 100, bw: true },
   mono: { label: 'Monochrome', style: 'Muted B&W', tone: 0, palette: 80, bw: true },
   sepia: { label: 'Sepia', style: 'Quiet', tone: 5, color: -80, palette: 100 },
   unknown: { label: 'Other', style: 'Standard', tone: 0, color: 0 },
 }
 
+// [label, equivalent Kelvin]; 5500 = neutral daylight
 const WB = {
-  auto: ['Auto', 0],
-  awp: ['Auto White Priority', 0],
-  ambience: ['Ambience Priority', 0],
-  daylight: ['Daylight', 0],
-  shade: ['Shade', 20],
-  fluorescent: ['Fluorescent', -15],
-  incandescent: ['Incandescent', -40],
-  kelvin: ['Kelvin', 0],
+  auto: ['Auto', 5500],
+  awp: ['Auto White Priority', 5500],
+  ambience: ['Ambience Priority', 5500],
+  daylight: ['Daylight', 5500],
+  shade: ['Shade', 7500],
+  fluorescent: ['Fluorescent', 4000],
+  incandescent: ['Incandescent', 3000],
+  kelvin: ['Kelvin', 5500],
 }
 
 const ADJUST = ['Exposure', 'Brilliance', 'Highlights', 'Shadows', 'Contrast', 'Brightness', 'Black Point', 'Saturation', 'Vibrance', 'Warmth', 'Tint', 'Sharpness', 'Definition', 'Noise Reduction', 'Vignette']
@@ -114,16 +115,18 @@ function toIos(r) {
 
   if (sim === SIMS.unknown) notes.push(`Film simulation${r.simRaw ? ` "${r.simRaw}"` : ''} (not recognised, using Standard)`)
   for (const k in sim.adjust) add(k, sim.adjust[k])
-  add('Highlights', ({ 200: -10, auto: -10, 400: -20 }[r.dr] || 0) + 8 * n('h'))
+  add('Highlights', ({ 200: -5, auto: -5, 400: -10 }[r.dr] || 0) + 8 * n('h'))
   add('Shadows', -8 * n('s'))
+  add('Black Point', 1.5 * n('s')) // iOS Black Point: + = deeper blacks, - = washed
 
-  for (const [k, slider, label] of [['nr', 'Noise Reduction', 'Noise Reduction'], ['sharp', 'Sharpness', 'Sharpening']]) {
-    if (n(k) > 0) add(slider, 15 * n(k))
-    else if (n(k) < 0) notes.push(`${label} ${fmt(n(k))} (below iPhone default)`)
-  }
-
+  if (n('nr') > 0) add('Noise Reduction', 15 * n('nr'))
+  else if (n('nr') < 0) notes.push(`Noise Reduction ${fmt(n('nr'))} (below iPhone default)`)
+  if (n('sharp') > 0) add('Sharpness', 15 * n('sharp'))
   if (n('clarity') > 0) add('Definition', 15 * n('clarity'))
-  else if (n('clarity') < 0) Object.assign(style, { texture: 'Glow', textureAmount: -10 * n('clarity') })
+
+  // Photos can't soften below 0; Glow texture is the only softening/bloom control
+  const glow = Math.max(-10 * n('clarity'), -20 * n('sharp'))
+  if (glow > 0) Object.assign(style, { texture: 'Glow', textureAmount: glow })
 
   if (r.grain === 'weak' || r.grain === 'strong') {
     style.grain = true
@@ -135,14 +138,14 @@ function toIos(r) {
     if (r.filter) notes.push(`${r.filter} filter (not available)`)
   } else {
     add('Vibrance', { weak: 5, strong: 8 }[r.cce] || 0)
-    if (r.cce === 'strong') add('Black Point', 3)
     if (r.cceBlue === 'weak' || r.cceBlue === 'strong') {
       add('Vibrance', r.cceBlue === 'strong' ? 5 : 3)
       notes.push('Color Chrome Blue (approximated, no per-hue control)')
     }
-    add('Warmth', r.wb === 'kelvin' ? ((+r.kelvin || 5500) - 5500) / 50 : (WB[r.wb] || WB.auto)[1])
-    add('Warmth', 2 * (n('r') - n('b')))
-    add('Tint', 2 * (n('r') + n('b')))
+    // mired delta: Kelvin's visual effect is linear in 1e6/K, so 3000K shifts far more than 8000K
+    const k = r.wb === 'kelvin' ? +r.kelvin || 5500 : (WB[r.wb] || WB.auto)[1]
+    add('Warmth', 0.2 * (1e6 / 5500 - 1e6 / k) + 2 * (n('r') - n('b')))
+    add('Tint', n('r') + n('b'))
   }
   add('Exposure', 30 * n('exp'))
   for (const k of r.unknown || []) notes.push(`Unrecognised: ${k}`)
