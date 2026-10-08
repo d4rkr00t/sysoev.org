@@ -1,18 +1,19 @@
+// tone: iOS pad vertical axis, + brighter / lifted shadows, - darker / deeper shadows
 const SIMS = {
   provia: { label: 'Provia / Standard', style: 'Standard', tone: 0, color: 0 },
-  velvia: { label: 'Velvia / Vivid', style: 'Vibrant', tone: 20, color: 30, palette: 100 },
-  astia: { label: 'Astia / Soft', style: 'Rose Gold', tone: -10, color: 10, palette: 60 },
-  classicchrome: { label: 'Classic Chrome', style: 'Natural', tone: 20, color: -40, palette: 80, adjust: { Warmth: -5 } },
-  proneghi: { label: 'Pro Neg. Hi', style: 'Neutral', tone: 10, color: -10, palette: 60 },
-  pronegstd: { label: 'Pro Neg. Std', style: 'Neutral', tone: -20, color: -15, palette: 60 },
-  classicneg: { label: 'Classic Negative', style: 'Dramatic', tone: 10, color: -30, palette: 80, adjust: { Tint: -8 } },
-  eterna: { label: 'Eterna / Cinema', style: 'Quiet', tone: -40, color: -40, palette: 70 },
-  bleach: { label: 'Eterna Bleach Bypass', style: 'Dramatic', tone: 40, color: -80, palette: 100 },
-  nostalgic: { label: 'Nostalgic Neg.', style: 'Amber', tone: -10, color: 10, palette: 80 },
+  velvia: { label: 'Velvia / Vivid', style: 'Vibrant', tone: -15, color: 30, palette: 100 },
+  astia: { label: 'Astia / Soft', style: 'Rose Gold', tone: 10, color: 10, palette: 60 },
+  classicchrome: { label: 'Classic Chrome', style: 'Natural', tone: -15, color: -40, palette: 80, adjust: { Warmth: -5 } },
+  proneghi: { label: 'Pro Neg. Hi', style: 'Neutral', tone: -5, color: -10, palette: 60 },
+  pronegstd: { label: 'Pro Neg. Std', style: 'Neutral', tone: 15, color: -15, palette: 60 },
+  classicneg: { label: 'Classic Negative', style: 'Dramatic', tone: -10, color: -30, palette: 80, adjust: { Tint: -8 } },
+  eterna: { label: 'Eterna / Cinema', style: 'Natural', tone: 25, color: -40, palette: 80, adjust: { Warmth: -5 } },
+  bleach: { label: 'Eterna Bleach Bypass', style: 'Dramatic', tone: -25, color: -80, palette: 100 },
+  nostalgic: { label: 'Nostalgic Neg.', style: 'Amber', tone: 5, color: 10, palette: 80 },
   reala: { label: 'Reala Ace', style: 'Neutral', tone: 0, color: 0, palette: 40 },
-  acros: { label: 'Acros', style: 'Stark B&W', tone: 10, palette: 100, bw: true },
+  acros: { label: 'Acros', style: 'Stark B&W', tone: -10, palette: 100, bw: true },
   mono: { label: 'Monochrome', style: 'Muted B&W', tone: 0, palette: 80, bw: true },
-  sepia: { label: 'Sepia', style: 'Muted B&W', tone: -10, palette: 60, bw: true },
+  sepia: { label: 'Sepia', style: 'Quiet', tone: 5, color: -80, palette: 100 },
   unknown: { label: 'Other', style: 'Standard', tone: 0, color: 0 },
 }
 
@@ -109,12 +110,12 @@ function toIos(r) {
   const notes = []
   const adj = {}
   const add = (k, v) => (adj[k] = (adj[k] || 0) + v)
-  const style = { name: sim.style, tone: sim.tone, color: sim.bw ? null : sim.color + 15 * n('c'), palette: sim.palette ?? null, texture: 'Standard', textureAmount: 0, grain: false }
+  const style = { name: sim.style, tone: sim.tone, color: sim.bw ? null : sim.color + 10 * n('c'), palette: sim.palette ?? null, texture: 'Standard', textureAmount: 0, grain: false }
 
   if (sim === SIMS.unknown) notes.push(`Film simulation${r.simRaw ? ` "${r.simRaw}"` : ''} (not recognised, using Standard)`)
   for (const k in sim.adjust) add(k, sim.adjust[k])
-  add('Highlights', ({ 200: -10, auto: -10, 400: -20 }[r.dr] || 0) + 12 * n('h'))
-  add('Shadows', -12 * n('s'))
+  add('Highlights', ({ 200: -10, auto: -10, 400: -20 }[r.dr] || 0) + 8 * n('h'))
+  add('Shadows', -8 * n('s'))
 
   for (const [k, slider, label] of [['nr', 'Noise Reduction', 'Noise Reduction'], ['sharp', 'Sharpness', 'Sharpening']]) {
     if (n(k) > 0) add(slider, 15 * n(k))
@@ -122,7 +123,7 @@ function toIos(r) {
   }
 
   if (n('clarity') > 0) add('Definition', 15 * n('clarity'))
-  else if (n('clarity') < 0) Object.assign(style, { texture: 'Glow', textureAmount: -15 * n('clarity') })
+  else if (n('clarity') < 0) Object.assign(style, { texture: 'Glow', textureAmount: -10 * n('clarity') })
 
   if (r.grain === 'weak' || r.grain === 'strong') {
     style.grain = true
@@ -132,17 +133,16 @@ function toIos(r) {
 
   if (sim.bw) {
     if (r.filter) notes.push(`${r.filter} filter (not available)`)
-    if (r.sim === 'sepia') notes.push('Sepia toning (not available)')
   } else {
-    add('Vibrance', { weak: 8, strong: 15 }[r.cce] || 0)
-    if (r.cce === 'strong') add('Black Point', 5)
+    add('Vibrance', { weak: 5, strong: 8 }[r.cce] || 0)
+    if (r.cce === 'strong') add('Black Point', 3)
     if (r.cceBlue === 'weak' || r.cceBlue === 'strong') {
-      add('Vibrance', r.cceBlue === 'strong' ? 8 : 4)
+      add('Vibrance', r.cceBlue === 'strong' ? 5 : 3)
       notes.push('Color Chrome Blue (approximated, no per-hue control)')
     }
     add('Warmth', r.wb === 'kelvin' ? ((+r.kelvin || 5500) - 5500) / 50 : (WB[r.wb] || WB.auto)[1])
-    add('Warmth', 3 * (n('r') - n('b')))
-    add('Tint', 3 * (n('r') + n('b')))
+    add('Warmth', 2 * (n('r') - n('b')))
+    add('Tint', 2 * (n('r') + n('b')))
   }
   add('Exposure', 30 * n('exp'))
   for (const k of r.unknown || []) notes.push(`Unrecognised: ${k}`)
